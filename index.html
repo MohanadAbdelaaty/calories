@@ -1391,14 +1391,14 @@
   </header>
 
   <nav class="tabs">
-    <button class="tab active" data-tab="camera"><span class="tab-icon">📸</span>صورة</button>
+    <button class="tab" data-tab="camera"><span class="tab-icon">📸</span>صورة</button>
     <button class="tab" data-tab="search"><span class="tab-icon">🔍</span>الأكل</button>
-    <button class="tab" data-tab="today"><span class="tab-icon">📋</span>اليوم</button>
+    <button class="tab active" data-tab="today"><span class="tab-icon">📋</span>اليوم</button>
     <button class="tab" data-tab="week"><span class="tab-icon">📊</span>الأسبوع</button>
   </nav>
 
   <div class="content">
-    <section id="sec-camera" class="section active">
+    <section id="sec-camera" class="section">
       <div class="upload-zone" id="uploadZone">
         <input type="file" id="photoInput" accept="image/*" capture="environment" style="display:none" />
         <span class="upload-icon">📷</span>
@@ -1477,7 +1477,7 @@
       <div id="searchResults"></div>
     </section>
 
-    <section id="sec-today" class="section">
+    <section id="sec-today" class="section active">
       <div class="goal-card">
         <div class="goal-header">
           <div>
@@ -1736,8 +1736,12 @@
   let pendingItem = null;
   let pendingQty = 1;
   let editingLogId = null;
-  const todayKey = new Date().toISOString().split('T')[0];
-  if (!history[todayKey]) history[todayKey] = [];
+  
+  // Dynamic today key - always returns the current date (auto-rolls over at midnight)
+  function getTodayKey() {
+    return new Date().toISOString().split('T')[0];
+  }
+  if (!history[getTodayKey()]) history[getTodayKey()] = [];
   
   document.documentElement.setAttribute('data-theme', theme);
   document.getElementById('themeToggle').textContent = theme === 'dark' ? '☀️' : '🌙';
@@ -1766,7 +1770,7 @@
   }
   
   function todayTotals() {
-    return history[todayKey].reduce((t, i) => ({
+    return history[getTodayKey()].reduce((t, i) => ({
       cal: t.cal + i.cal, p: t.p + (i.p || 0),
       c: t.c + (i.c || 0), f: t.f + (i.f || 0)
     }), { cal: 0, p: 0, c: 0, f: 0 });
@@ -2014,9 +2018,9 @@
       baseFood: { name: f.name, cal: f.cal, p: f.p, c: f.c, f: f.f, serving: f.serving }
     };
     if (editingLogId !== null) {
-      const idx = history[todayKey].findIndex(i => i.id == editingLogId);
+      const idx = history[getTodayKey()].findIndex(i => i.id == editingLogId);
       if (idx !== -1) {
-        history[todayKey][idx] = { ...history[todayKey][idx], ...newItem };
+        history[getTodayKey()][idx] = { ...history[getTodayKey()][idx], ...newItem };
         toast('✓ تم تحديث الكمية');
       }
       editingLogId = null;
@@ -2063,7 +2067,7 @@
   });
   
   function addToLog(item) {
-    history[todayKey].push({ ...item, time: new Date().toLocaleTimeString('ar-EG', { hour: '2-digit', minute: '2-digit' }), id: Date.now() + Math.random() });
+    history[getTodayKey()].push({ ...item, time: new Date().toLocaleTimeString('ar-EG', { hour: '2-digit', minute: '2-digit' }), id: Date.now() + Math.random() });
     saveAll();
     toast('✓ ' + item.name + ' (' + item.cal + ' kcal)');
     renderToday();
@@ -2093,7 +2097,7 @@
     document.getElementById('fatBar').style.width = Math.min(100, (t.f / m.fat) * 100) + '%';
     
     const list = document.getElementById('logList');
-    const todayLog = history[todayKey];
+    const todayLog = history[getTodayKey()];
     const clearBtn = document.getElementById('clearBtn');
     const waBtn = document.getElementById('waDayBtn');
     if (todayLog.length === 0) {
@@ -2111,13 +2115,13 @@
     }).join('') + '</div>';
     list.querySelectorAll('[data-del]').forEach(b => {
       b.addEventListener('click', () => {
-        history[todayKey] = history[todayKey].filter(i => i.id != b.dataset.del);
+        history[getTodayKey()] = history[getTodayKey()].filter(i => i.id != b.dataset.del);
         saveAll(); renderToday();
       });
     });
     list.querySelectorAll('[data-edit]').forEach(b => {
       b.addEventListener('click', () => {
-        const item = history[todayKey].find(i => i.id == b.dataset.edit);
+        const item = history[getTodayKey()].find(i => i.id == b.dataset.edit);
         if (item && item.baseFood) {
           editingLogId = item.id;
           openQtyModal(item.baseFood, item);
@@ -2128,7 +2132,7 @@
   
   document.getElementById('clearBtn').addEventListener('click', () => {
     if (confirm('متأكد عايز تمسح سجل اليوم؟')) {
-      history[todayKey] = [];
+      history[getTodayKey()] = [];
       saveAll(); renderToday();
     }
   });
@@ -2148,7 +2152,7 @@
     const maxCal = Math.max(goal, ...dayData.map(d => d.cal), 1);
     document.getElementById('weekList').innerHTML = dayData.map(d => {
       const date = new Date(d.key);
-      const isToday = d.key === todayKey;
+      const isToday = d.key === getTodayKey();
       const dayName = dayNames[date.getDay()];
       const dateStr = date.getDate() + '/' + (date.getMonth() + 1);
       const pct = (d.cal / maxCal) * 100;
@@ -2171,7 +2175,7 @@
   
   function buildDayMessage() {
     const t = todayTotals(); const m = getMacroGoals();
-    const log = history[todayKey];
+    const log = history[getTodayKey()];
     const date = new Date().toLocaleDateString('ar-EG', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
     let msg = '🍽️ *ملخص سعراتي اليوم*\n📅 ' + date + '\n\n━━━━━━━━━━━━━━━\n';
     msg += '🔥 الإجمالي: *' + Math.round(t.cal) + '* / ' + goal + ' سعرة\n';
@@ -2228,6 +2232,35 @@
   
   renderSearch('');
   renderToday();
+  
+  // Auto-detect day change while app is open
+  let lastKnownDay = getTodayKey();
+  setInterval(() => {
+    const currentDay = getTodayKey();
+    if (currentDay !== lastKnownDay) {
+      lastKnownDay = currentDay;
+      // Ensure today's array exists in history
+      if (!history[currentDay]) history[currentDay] = [];
+      saveAll();
+      renderToday();
+      renderWeek();
+      toast('🌅 يوم جديد بدأ');
+    }
+  }, 30000); // Check every 30 seconds
+  
+  // Also check when tab becomes visible again (e.g., user returns after midnight)
+  document.addEventListener('visibilitychange', () => {
+    if (!document.hidden) {
+      const currentDay = getTodayKey();
+      if (currentDay !== lastKnownDay) {
+        lastKnownDay = currentDay;
+        if (!history[currentDay]) history[currentDay] = [];
+        saveAll();
+        renderToday();
+        renderWeek();
+      }
+    }
+  });
 })();
 </script>
 </body>
