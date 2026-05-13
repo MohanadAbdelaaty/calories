@@ -12,722 +12,165 @@
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-  
   :root {
-    --bg-primary: #0f0f0f;
-    --bg-secondary: #1a1a1a;
-    --bg-tertiary: #242424;
-    --bg-card: #1e1e1e;
-    --bg-elevated: #2a2a2a;
-    --text-primary: #f5f5f5;
-    --text-secondary: #a0a0a0;
-    --text-tertiary: #6b6b6b;
-    --accent: #d4a574;
-    --accent-dim: #8b6f4a;
-    --green: #4ade80;
-    --amber: #fbbf24;
-    --red: #f87171;
-    --blue: #60a5fa;
-    --pink: #f472b6;
-    --border: rgba(255,255,255,0.08);
-    --border-strong: rgba(255,255,255,0.15);
-    --whatsapp: #25d366;
+    --bg-primary: #0f0f0f; --bg-secondary: #1a1a1a; --bg-tertiary: #242424;
+    --bg-card: #1e1e1e; --bg-elevated: #2a2a2a;
+    --text-primary: #f5f5f5; --text-secondary: #a0a0a0; --text-tertiary: #6b6b6b;
+    --accent: #d4a574; --accent-dim: #8b6f4a;
+    --green: #4ade80; --amber: #fbbf24; --red: #f87171; --blue: #60a5fa; --pink: #f472b6;
+    --border: rgba(255,255,255,0.08); --border-strong: rgba(255,255,255,0.15);
   }
-  
-  html, body {
-    background: var(--bg-primary);
-    color: var(--text-primary);
-    font-family: 'Cairo', sans-serif;
-    min-height: 100vh;
-    overflow-x: hidden;
-  }
-  
-  body {
-    background: 
-      radial-gradient(ellipse at top right, rgba(212, 165, 116, 0.08), transparent 50%),
-      radial-gradient(ellipse at bottom left, rgba(96, 165, 250, 0.05), transparent 50%),
-      var(--bg-primary);
-    background-attachment: fixed;
-  }
-  
-  .app {
-    max-width: 480px;
-    margin: 0 auto;
-    min-height: 100vh;
-    padding-bottom: 100px;
-    position: relative;
-  }
-  
-  /* Header */
-  .header {
-    padding: 24px 20px 16px;
-    position: sticky;
-    top: 0;
-    z-index: 50;
-    background: linear-gradient(to bottom, var(--bg-primary) 60%, transparent);
-    backdrop-filter: blur(20px);
-  }
-  
-  .header-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  
-  .logo-icon {
-    width: 36px;
-    height: 36px;
-    background: linear-gradient(135deg, var(--accent), var(--accent-dim));
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-  }
-  
-  .logo-text {
-    font-size: 18px;
-    font-weight: 700;
-    letter-spacing: -0.3px;
-  }
-  
-  .logo-text span {
-    color: var(--accent);
-  }
-  
-  .status-pills {
-    display: flex;
-    gap: 6px;
-  }
-  
-  .pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    font-size: 11px;
-    padding: 4px 10px;
-    border-radius: 999px;
-    font-weight: 500;
-    border: 1px solid var(--border);
-  }
-  
+  html, body { background: var(--bg-primary); color: var(--text-primary); font-family: 'Cairo', sans-serif; min-height: 100vh; overflow-x: hidden; }
+  body { background: radial-gradient(ellipse at top right, rgba(212, 165, 116, 0.08), transparent 50%), radial-gradient(ellipse at bottom left, rgba(96, 165, 250, 0.05), transparent 50%), var(--bg-primary); background-attachment: fixed; }
+  .app { max-width: 480px; margin: 0 auto; min-height: 100vh; padding-bottom: 100px; position: relative; }
+  .header { padding: 24px 20px 16px; position: sticky; top: 0; z-index: 50; background: linear-gradient(to bottom, var(--bg-primary) 60%, transparent); backdrop-filter: blur(20px); }
+  .header-row { display: flex; justify-content: space-between; align-items: center; }
+  .logo { display: flex; align-items: center; gap: 10px; }
+  .logo-icon { width: 36px; height: 36px; background: linear-gradient(135deg, var(--accent), var(--accent-dim)); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; }
+  .logo-text { font-size: 18px; font-weight: 700; letter-spacing: -0.3px; }
+  .logo-text span { color: var(--accent); }
+  .status-pills { display: flex; gap: 6px; }
+  .pill { display: inline-flex; align-items: center; gap: 4px; font-size: 11px; padding: 4px 10px; border-radius: 999px; font-weight: 500; border: 1px solid var(--border); }
   .pill.online { background: rgba(74, 222, 128, 0.1); color: var(--green); border-color: rgba(74, 222, 128, 0.2); }
   .pill.offline { background: rgba(248, 113, 113, 0.1); color: var(--red); border-color: rgba(248, 113, 113, 0.2); }
   .pill.saved { background: rgba(96, 165, 250, 0.1); color: var(--blue); border-color: rgba(96, 165, 250, 0.2); }
-  
   .dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
-  
-  /* Tabs */
-  .tabs {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 4px;
-    margin: 0 20px 20px;
-    background: var(--bg-secondary);
-    border-radius: 14px;
-    padding: 5px;
-    border: 1px solid var(--border);
-  }
-  
-  .tab {
-    padding: 10px 4px;
-    background: transparent;
-    border: none;
-    border-radius: 10px;
-    color: var(--text-secondary);
-    font-size: 12px;
-    font-weight: 500;
-    font-family: inherit;
-    cursor: pointer;
-    transition: all 0.2s;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 3px;
-  }
-  
-  .tab.active {
-    background: var(--bg-elevated);
-    color: var(--text-primary);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-  }
-  
+  .tabs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; margin: 0 20px 20px; background: var(--bg-secondary); border-radius: 14px; padding: 5px; border: 1px solid var(--border); }
+  .tab { padding: 10px 4px; background: transparent; border: none; border-radius: 10px; color: var(--text-secondary); font-size: 12px; font-weight: 500; font-family: inherit; cursor: pointer; transition: all 0.2s; display: flex; flex-direction: column; align-items: center; gap: 3px; }
+  .tab.active { background: var(--bg-elevated); color: var(--text-primary); box-shadow: 0 2px 8px rgba(0,0,0,0.2); }
   .tab-icon { font-size: 16px; }
-  
   .content { padding: 0 20px; }
   .section { display: none; animation: fadeIn 0.3s ease; }
   .section.active { display: block; }
-  
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(8px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  
-  /* Upload Zone */
-  .upload-zone {
-    border: 2px dashed var(--border-strong);
-    border-radius: 18px;
-    padding: 36px 20px;
-    text-align: center;
-    cursor: pointer;
-    transition: all 0.2s;
-    background: var(--bg-secondary);
-    position: relative;
-    overflow: hidden;
-  }
-  
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+  .upload-zone { border: 2px dashed var(--border-strong); border-radius: 18px; padding: 36px 20px; text-align: center; cursor: pointer; transition: all 0.2s; background: var(--bg-secondary); position: relative; overflow: hidden; }
   .upload-zone:hover { border-color: var(--accent); background: var(--bg-card); }
   .upload-zone.has-image { padding: 0; border-style: solid; }
   .upload-zone img { width: 100%; display: block; }
-  
-  .upload-icon {
-    font-size: 40px;
-    margin-bottom: 12px;
-    display: block;
-  }
-  
-  .upload-title {
-    font-size: 16px;
-    font-weight: 600;
-    margin-bottom: 6px;
-  }
-  
-  .upload-hint {
-    font-size: 13px;
-    color: var(--text-secondary);
-  }
-  
-  /* Buttons */
-  .btn {
-    width: 100%;
-    padding: 14px;
-    border: none;
-    border-radius: 14px;
-    font-size: 14px;
-    font-weight: 600;
-    font-family: inherit;
-    cursor: pointer;
-    transition: all 0.15s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-  }
-  
+  .upload-icon { font-size: 40px; margin-bottom: 12px; display: block; }
+  .upload-title { font-size: 16px; font-weight: 600; margin-bottom: 6px; }
+  .upload-hint { font-size: 13px; color: var(--text-secondary); }
+  .btn { width: 100%; padding: 14px; border: none; border-radius: 14px; font-size: 14px; font-weight: 600; font-family: inherit; cursor: pointer; transition: all 0.15s; display: flex; align-items: center; justify-content: center; gap: 8px; }
   .btn:active { transform: scale(0.98); }
   .btn:disabled { opacity: 0.4; cursor: not-allowed; }
-  
-  .btn-primary {
-    background: linear-gradient(135deg, var(--accent), var(--accent-dim));
-    color: #1a1208;
-    margin-top: 12px;
-  }
-  
-  .btn-whatsapp {
-    background: linear-gradient(135deg, #25d366, #128c7e);
-    color: white;
-  }
-  
-  .btn-secondary {
-    background: var(--bg-elevated);
-    color: var(--text-primary);
-    border: 1px solid var(--border);
-  }
-  
-  .btn-icon {
-    padding: 8px 12px;
-    width: auto;
-  }
-  
-  /* Search */
-  .search-wrap {
-    position: relative;
-    margin-bottom: 14px;
-  }
-  
-  .search-input {
-    width: 100%;
-    padding: 14px 44px 14px 16px;
-    background: var(--bg-secondary);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    color: var(--text-primary);
-    font-size: 14px;
-    font-family: inherit;
-    transition: all 0.2s;
-  }
-  
-  .search-input:focus {
-    outline: none;
-    border-color: var(--accent);
-    background: var(--bg-card);
-  }
-  
-  .search-icon {
-    position: absolute;
-    left: 16px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: var(--text-tertiary);
-    font-size: 16px;
-    pointer-events: none;
-  }
-  
-  /* Food items */
-  .food-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 14px 16px;
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    margin-bottom: 8px;
-    cursor: pointer;
-    transition: all 0.15s;
-  }
-  
+  .btn-primary { background: linear-gradient(135deg, var(--accent), var(--accent-dim)); color: #1a1208; margin-top: 12px; }
+  .btn-whatsapp { background: linear-gradient(135deg, #25d366, #128c7e); color: white; }
+  .btn-secondary { background: var(--bg-elevated); color: var(--text-primary); border: 1px solid var(--border); }
+  .btn-icon { padding: 8px 12px; width: auto; }
+  .search-wrap { position: relative; margin-bottom: 14px; }
+  .search-input { width: 100%; padding: 14px 44px 14px 16px; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 14px; color: var(--text-primary); font-size: 14px; font-family: inherit; transition: all 0.2s; }
+  .search-input:focus { outline: none; border-color: var(--accent); background: var(--bg-card); }
+  .search-icon { position: absolute; left: 16px; top: 50%; transform: translateY(-50%); color: var(--text-tertiary); font-size: 16px; pointer-events: none; }
+  .food-item { display: flex; justify-content: space-between; align-items: center; padding: 14px 16px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; margin-bottom: 8px; cursor: pointer; transition: all 0.15s; }
   .food-item:hover { border-color: var(--accent-dim); transform: translateX(-2px); }
   .food-item:active { transform: scale(0.98); }
-  
-  .food-info { flex: 1; }
-  .food-name { font-size: 14px; font-weight: 600; margin-bottom: 3px; }
+  .food-item.custom { border-color: rgba(212, 165, 116, 0.3); }
+  .food-info { flex: 1; min-width: 0; }
+  .food-name { font-size: 14px; font-weight: 600; margin-bottom: 3px; display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
   .food-meta { font-size: 11px; color: var(--text-tertiary); }
-  
-  .cal-badge {
-    background: rgba(212, 165, 116, 0.15);
-    color: var(--accent);
-    padding: 6px 12px;
-    border-radius: 999px;
-    font-size: 13px;
-    font-weight: 700;
-    border: 1px solid rgba(212, 165, 116, 0.2);
-    min-width: 70px;
-    text-align: center;
-  }
-  
-  /* Goal Card */
-  .goal-card {
-    background: linear-gradient(135deg, var(--bg-card), var(--bg-secondary));
-    border: 1px solid var(--border);
-    border-radius: 20px;
-    padding: 20px;
-    margin-bottom: 16px;
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .goal-card::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    right: -20%;
-    width: 200px;
-    height: 200px;
-    background: radial-gradient(circle, rgba(212, 165, 116, 0.1), transparent 70%);
-    pointer-events: none;
-  }
-  
-  .goal-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 16px;
-    position: relative;
-  }
-  
-  .goal-label {
-    font-size: 11px;
-    color: var(--text-tertiary);
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    margin-bottom: 6px;
-    font-family: 'Plus Jakarta Sans', sans-serif;
-  }
-  
-  .goal-total {
-    display: flex;
-    align-items: baseline;
-    gap: 6px;
-  }
-  
-  .total-num {
-    font-size: 36px;
-    font-weight: 800;
-    line-height: 1;
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    background: linear-gradient(135deg, var(--text-primary), var(--accent));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-  
-  .total-suffix {
-    font-size: 14px;
-    color: var(--text-secondary);
-    font-weight: 500;
-  }
-  
-  .progress-track {
-    height: 8px;
-    background: var(--bg-tertiary);
-    border-radius: 999px;
-    overflow: hidden;
-    margin: 12px 0 10px;
-    position: relative;
-  }
-  
-  .progress-fill {
-    height: 100%;
-    background: linear-gradient(90deg, var(--green), var(--accent));
-    border-radius: 999px;
-    transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1), background 0.3s;
-    position: relative;
-  }
-  
-  .progress-fill::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-    animation: shimmer 2s infinite;
-  }
-  
-  @keyframes shimmer {
-    0% { transform: translateX(-100%); }
-    100% { transform: translateX(100%); }
-  }
-  
-  .remaining {
-    font-size: 12px;
-    color: var(--text-secondary);
-    text-align: left;
-    font-weight: 500;
-  }
-  
-  .goal-edit {
-    display: none;
-    gap: 8px;
-    margin-top: 10px;
-  }
-  
+  .custom-badge { font-size: 9px; background: rgba(212, 165, 116, 0.2); color: var(--accent); padding: 2px 6px; border-radius: 4px; font-weight: 600; }
+  .cal-badge { background: rgba(212, 165, 116, 0.15); color: var(--accent); padding: 6px 12px; border-radius: 999px; font-size: 13px; font-weight: 700; border: 1px solid rgba(212, 165, 116, 0.2); min-width: 70px; text-align: center; }
+  .qty-modal-bg { position: fixed; inset: 0; background: rgba(0,0,0,0.7); backdrop-filter: blur(8px); z-index: 200; display: none; align-items: center; justify-content: center; padding: 20px; }
+  .qty-modal-bg.show { display: flex; }
+  .qty-modal { background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px; padding: 20px; width: 100%; max-width: 360px; animation: modalIn 0.2s ease; }
+  @keyframes modalIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+  .qty-title { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+  .qty-sub { font-size: 12px; color: var(--text-secondary); margin-bottom: 16px; }
+  .qty-row { display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 16px; }
+  .qty-btn-circle { width: 44px; height: 44px; border-radius: 50%; background: var(--bg-tertiary); border: 1px solid var(--border); color: var(--text-primary); font-size: 20px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+  .qty-display { font-size: 32px; font-weight: 800; font-family: 'Plus Jakarta Sans', sans-serif; min-width: 80px; text-align: center; color: var(--accent); }
+  .qty-preview { background: var(--bg-tertiary); border-radius: 12px; padding: 12px; margin-bottom: 16px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; text-align: center; }
+  .qty-preview-item .label { font-size: 10px; color: var(--text-tertiary); }
+  .qty-preview-item .val { font-size: 14px; font-weight: 700; color: var(--accent); }
+  .qty-actions { display: flex; gap: 8px; }
+  .qty-actions .btn { margin: 0; }
+  .add-food-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 16px; margin-bottom: 14px; display: none; }
+  .add-food-card.show { display: block; }
+  .add-food-title { font-size: 14px; font-weight: 700; margin-bottom: 12px; color: var(--accent); display: flex; align-items: center; gap: 6px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 8px; }
+  .form-input { width: 100%; padding: 10px 12px; background: var(--bg-tertiary); border: 1px solid var(--border); border-radius: 10px; color: var(--text-primary); font-family: inherit; font-size: 13px; }
+  .form-input:focus { outline: none; border-color: var(--accent); }
+  .form-input.full { grid-column: 1 / -1; }
+  .form-label { font-size: 10px; color: var(--text-tertiary); margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px; display: block; }
+  .add-food-actions { display: flex; gap: 8px; margin-top: 12px; }
+  .add-food-actions .btn { margin: 0; }
+  .goal-card { background: linear-gradient(135deg, var(--bg-card), var(--bg-secondary)); border: 1px solid var(--border); border-radius: 20px; padding: 20px; margin-bottom: 16px; position: relative; overflow: hidden; }
+  .goal-card::before { content: ''; position: absolute; top: -50%; right: -20%; width: 200px; height: 200px; background: radial-gradient(circle, rgba(212, 165, 116, 0.1), transparent 70%); pointer-events: none; }
+  .goal-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px; position: relative; }
+  .goal-label { font-size: 11px; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 6px; font-family: 'Plus Jakarta Sans', sans-serif; }
+  .goal-total { display: flex; align-items: baseline; gap: 6px; }
+  .total-num { font-size: 36px; font-weight: 800; line-height: 1; font-family: 'Plus Jakarta Sans', sans-serif; background: linear-gradient(135deg, var(--text-primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .total-suffix { font-size: 14px; color: var(--text-secondary); font-weight: 500; }
+  .progress-track { height: 8px; background: var(--bg-tertiary); border-radius: 999px; overflow: hidden; margin: 12px 0 10px; position: relative; }
+  .progress-fill { height: 100%; background: linear-gradient(90deg, var(--green), var(--accent)); border-radius: 999px; transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1), background 0.3s; position: relative; }
+  .progress-fill::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent); animation: shimmer 2s infinite; }
+  @keyframes shimmer { 0% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
+  .remaining { font-size: 12px; color: var(--text-secondary); text-align: left; font-weight: 500; }
+  .goal-edit { display: none; gap: 8px; margin-top: 10px; }
   .goal-edit.show { display: flex; }
-  
-  .goal-input {
-    flex: 1;
-    padding: 10px 14px;
-    background: var(--bg-tertiary);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    color: var(--text-primary);
-    font-family: inherit;
-    font-size: 14px;
-  }
-  
-  /* Macros */
-  .macros {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    margin-top: 16px;
-    position: relative;
-  }
-  
-  .macro {
-    background: var(--bg-tertiary);
-    border-radius: 14px;
-    padding: 12px 10px;
-    text-align: center;
-    border: 1px solid var(--border);
-  }
-  
+  .goal-input { flex: 1; padding: 10px 14px; background: var(--bg-tertiary); border: 1px solid var(--border); border-radius: 10px; color: var(--text-primary); font-family: inherit; font-size: 14px; }
+  .macros { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 16px; position: relative; }
+  .macro { background: var(--bg-tertiary); border-radius: 14px; padding: 12px 10px; text-align: center; border: 1px solid var(--border); }
   .macro-icon { font-size: 18px; margin-bottom: 4px; }
   .macro-label { font-size: 10px; color: var(--text-tertiary); margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px; font-family: 'Plus Jakarta Sans', sans-serif; }
   .macro-val { font-size: 15px; font-weight: 700; font-family: 'Plus Jakarta Sans', sans-serif; }
   .macro-goal { font-size: 10px; color: var(--text-tertiary); font-weight: 500; }
-  
-  .macro-bar {
-    height: 3px;
-    background: rgba(255,255,255,0.06);
-    border-radius: 999px;
-    margin-top: 8px;
-    overflow: hidden;
-  }
-  
-  .macro-bar-fill {
-    height: 100%;
-    border-radius: 999px;
-    transition: width 0.4s ease;
-  }
-  
+  .macro-bar { height: 3px; background: rgba(255,255,255,0.06); border-radius: 999px; margin-top: 8px; overflow: hidden; }
+  .macro-bar-fill { height: 100%; border-radius: 999px; transition: width 0.4s ease; }
   .macro.protein .macro-icon { color: var(--green); }
   .macro.protein .macro-bar-fill { background: var(--green); }
   .macro.carbs .macro-icon { color: var(--amber); }
   .macro.carbs .macro-bar-fill { background: var(--amber); }
   .macro.fat .macro-icon { color: var(--pink); }
   .macro.fat .macro-bar-fill { background: var(--pink); }
-  
-  /* Log items */
-  .log-section {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    overflow: hidden;
-  }
-  
-  .log-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 12px 14px;
-    border-bottom: 1px solid var(--border);
-  }
-  
+  .log-section { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+  .log-item { display: flex; justify-content: space-between; align-items: center; padding: 12px 14px; border-bottom: 1px solid var(--border); }
   .log-item:last-child { border-bottom: none; }
   .log-name { font-size: 14px; font-weight: 500; }
   .log-meta { font-size: 11px; color: var(--text-tertiary); margin-top: 2px; }
-  
   .log-actions { display: flex; align-items: center; gap: 8px; }
-  
-  .delete-btn {
-    color: var(--red);
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    padding: 4px 6px;
-    border-radius: 6px;
-    opacity: 0.6;
-    transition: all 0.15s;
-  }
-  
+  .delete-btn { color: var(--red); background: transparent; border: none; cursor: pointer; font-size: 16px; padding: 4px 6px; border-radius: 6px; opacity: 0.6; transition: all 0.15s; }
   .delete-btn:hover { opacity: 1; background: rgba(248, 113, 113, 0.1); }
-  
-  /* Empty state */
-  .empty {
-    text-align: center;
-    padding: 60px 20px;
-    color: var(--text-tertiary);
-  }
-  
-  .empty-icon {
-    font-size: 48px;
-    margin-bottom: 12px;
-    opacity: 0.4;
-  }
-  
+  .empty { text-align: center; padding: 60px 20px; color: var(--text-tertiary); }
+  .empty-icon { font-size: 48px; margin-bottom: 12px; opacity: 0.4; }
   .empty-text { font-size: 14px; }
-  
-  /* AI Result */
-  .ai-result {
-    margin-top: 16px;
-    background: var(--bg-card);
-    border: 1px solid rgba(212, 165, 116, 0.2);
-    border-radius: 16px;
-    padding: 16px;
-  }
-  
-  .ai-title {
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--accent);
-    margin-bottom: 12px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-  
-  .ai-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 0;
-    border-bottom: 1px solid var(--border);
-  }
-  
+  .ai-result { margin-top: 16px; background: var(--bg-card); border: 1px solid rgba(212, 165, 116, 0.2); border-radius: 16px; padding: 16px; }
+  .ai-title { font-size: 13px; font-weight: 600; color: var(--accent); margin-bottom: 12px; display: flex; align-items: center; gap: 6px; }
+  .ai-item { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--border); }
   .ai-item:last-of-type { border-bottom: none; }
-  
-  .ai-total {
-    margin-top: 10px;
-    padding-top: 12px;
-    border-top: 2px solid var(--border-strong);
-    display: flex;
-    justify-content: space-between;
-    font-weight: 700;
-    font-size: 14px;
-  }
-  
-  /* Week view */
-  .week-day {
-    display: grid;
-    grid-template-columns: 70px 1fr 70px;
-    align-items: center;
-    gap: 14px;
-    padding: 14px;
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    margin-bottom: 8px;
-  }
-  
+  .ai-total { margin-top: 10px; padding-top: 12px; border-top: 2px solid var(--border-strong); display: flex; justify-content: space-between; font-weight: 700; font-size: 14px; }
+  .week-day { display: grid; grid-template-columns: 70px 1fr 70px; align-items: center; gap: 14px; padding: 14px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; margin-bottom: 8px; }
   .day-name { font-size: 13px; font-weight: 600; }
   .day-name.today { color: var(--accent); }
   .day-date { font-size: 10px; color: var(--text-tertiary); margin-top: 2px; }
-  
-  .day-bar-wrap {
-    height: 6px;
-    background: var(--bg-tertiary);
-    border-radius: 999px;
-    overflow: hidden;
-    position: relative;
-  }
-  
-  .day-bar-fill {
-    height: 100%;
-    border-radius: 999px;
-    transition: width 0.4s ease;
-  }
-  
-  .goal-marker {
-    position: absolute;
-    top: -3px;
-    bottom: -3px;
-    width: 2px;
-    background: var(--text-tertiary);
-    opacity: 0.4;
-  }
-  
-  .day-cal {
-    text-align: left;
-    font-size: 14px;
-    font-weight: 700;
-    font-family: 'Plus Jakarta Sans', sans-serif;
-  }
-  
+  .day-bar-wrap { height: 6px; background: var(--bg-tertiary); border-radius: 999px; overflow: hidden; position: relative; }
+  .day-bar-fill { height: 100%; border-radius: 999px; transition: width 0.4s ease; }
+  .goal-marker { position: absolute; top: -3px; bottom: -3px; width: 2px; background: var(--text-tertiary); opacity: 0.4; }
+  .day-cal { text-align: left; font-size: 14px; font-weight: 700; font-family: 'Plus Jakarta Sans', sans-serif; }
   .day-cal-suffix { font-size: 10px; color: var(--text-tertiary); display: block; }
-  
-  /* Stats */
-  .stats-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    margin: 16px 0;
-  }
-  
-  .stat-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 14px;
-  }
-  
-  .stat-label {
-    font-size: 11px;
-    color: var(--text-tertiary);
-    margin-bottom: 6px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    font-family: 'Plus Jakarta Sans', sans-serif;
-  }
-  
+  .stats-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin: 16px 0; }
+  .stat-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 14px; }
+  .stat-label { font-size: 11px; color: var(--text-tertiary); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px; font-family: 'Plus Jakarta Sans', sans-serif; }
   .stat-val { font-size: 22px; font-weight: 700; font-family: 'Plus Jakarta Sans', sans-serif; }
-  
-  /* Toast */
-  .toast {
-    position: fixed;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--bg-elevated);
-    color: var(--text-primary);
-    padding: 12px 20px;
-    border-radius: 999px;
-    font-size: 13px;
-    font-weight: 500;
-    border: 1px solid var(--border-strong);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.4);
-    z-index: 1000;
-    animation: toastIn 0.3s ease, toastOut 0.3s ease 1.7s forwards;
-  }
-  
-  @keyframes toastIn {
-    from { opacity: 0; transform: translate(-50%, 20px); }
-    to { opacity: 1; transform: translate(-50%, 0); }
-  }
-  
-  @keyframes toastOut {
-    to { opacity: 0; transform: translate(-50%, 20px); }
-  }
-  
-  /* API Settings */
-  .settings-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 14px;
-    margin-bottom: 14px;
-  }
-  
-  .settings-title {
-    font-size: 13px;
-    font-weight: 600;
-    margin-bottom: 8px;
-    color: var(--accent);
-  }
-  
-  .settings-desc {
-    font-size: 11px;
-    color: var(--text-secondary);
-    line-height: 1.6;
-    margin-bottom: 10px;
-  }
-  
-  .api-input {
-    width: 100%;
-    padding: 10px 14px;
-    background: var(--bg-tertiary);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    color: var(--text-primary);
-    font-family: monospace;
-    font-size: 12px;
-  }
-  
-  .install-hint {
-    background: rgba(74, 222, 128, 0.08);
-    border: 1px solid rgba(74, 222, 128, 0.2);
-    border-radius: 12px;
-    padding: 12px 14px;
-    margin-top: 12px;
-    font-size: 12px;
-    color: var(--text-secondary);
-    line-height: 1.6;
-  }
-  
+  .toast { position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%); background: var(--bg-elevated); color: var(--text-primary); padding: 12px 20px; border-radius: 999px; font-size: 13px; font-weight: 500; border: 1px solid var(--border-strong); box-shadow: 0 8px 24px rgba(0,0,0,0.4); z-index: 1000; animation: toastIn 0.3s ease, toastOut 0.3s ease 1.7s forwards; }
+  @keyframes toastIn { from { opacity: 0; transform: translate(-50%, 20px); } to { opacity: 1; transform: translate(-50%, 0); } }
+  @keyframes toastOut { to { opacity: 0; transform: translate(-50%, 20px); } }
+  .settings-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 14px; margin-bottom: 14px; }
+  .settings-title { font-size: 13px; font-weight: 600; margin-bottom: 8px; color: var(--accent); }
+  .settings-desc { font-size: 11px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 10px; }
+  .api-input { width: 100%; padding: 10px 14px; background: var(--bg-tertiary); border: 1px solid var(--border); border-radius: 10px; color: var(--text-primary); font-family: monospace; font-size: 12px; }
+  .install-hint { background: rgba(74, 222, 128, 0.08); border: 1px solid rgba(74, 222, 128, 0.2); border-radius: 12px; padding: 12px 14px; margin-top: 12px; font-size: 12px; color: var(--text-secondary); line-height: 1.6; }
   .install-hint strong { color: var(--green); }
-
-  /* Section title */
-  .sec-title {
-    font-size: 12px;
-    color: var(--text-tertiary);
-    margin-bottom: 10px;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    font-weight: 600;
-  }
+  .sec-title { font-size: 12px; color: var(--text-tertiary); margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1.5px; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 600; display: flex; justify-content: space-between; align-items: center; }
+  .sec-title button { font-size: 11px; padding: 6px 10px; background: var(--bg-elevated); color: var(--accent); border: 1px solid var(--border); border-radius: 8px; cursor: pointer; font-family: inherit; text-transform: none; letter-spacing: 0; font-weight: 500; }
+  .filter-tabs { display: flex; gap: 6px; margin-bottom: 12px; overflow-x: auto; padding-bottom: 4px; }
+  .filter-tabs::-webkit-scrollbar { display: none; }
+  .filter-tab { padding: 6px 12px; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 999px; color: var(--text-secondary); font-size: 12px; cursor: pointer; white-space: nowrap; font-family: inherit; font-weight: 500; }
+  .filter-tab.active { background: var(--accent); color: #1a1208; border-color: var(--accent); }
 </style>
 </head>
 <body>
 <div class="app">
-
-  <!-- HEADER -->
   <header class="header">
     <div class="header-row">
       <div class="logo">
@@ -741,17 +184,14 @@
     </div>
   </header>
 
-  <!-- TABS -->
   <nav class="tabs">
     <button class="tab active" data-tab="camera"><span class="tab-icon">📸</span>صورة</button>
-    <button class="tab" data-tab="search"><span class="tab-icon">🔍</span>بحث</button>
+    <button class="tab" data-tab="search"><span class="tab-icon">🔍</span>الأكل</button>
     <button class="tab" data-tab="today"><span class="tab-icon">📋</span>اليوم</button>
     <button class="tab" data-tab="week"><span class="tab-icon">📊</span>الأسبوع</button>
   </nav>
 
   <div class="content">
-
-    <!-- CAMERA TAB -->
     <section id="sec-camera" class="section active">
       <div class="upload-zone" id="uploadZone">
         <input type="file" id="photoInput" accept="image/*" capture="environment" style="display:none" />
@@ -761,27 +201,70 @@
       </div>
       <button id="analyzeBtn" class="btn btn-primary" disabled>✨ حلل الصورة</button>
       <div id="aiResult"></div>
-      
       <div class="settings-card" style="margin-top: 20px;">
         <div class="settings-title">⚙️ مفتاح Anthropic API</div>
-        <div class="settings-desc">
-          عشان تحليل الصور يشتغل، لازم تحط مفتاح API من <a href="https://console.anthropic.com" target="_blank" style="color: var(--accent);">console.anthropic.com</a>. المفتاح بيتحفظ في جهازك بس.
-        </div>
+        <div class="settings-desc">عشان تحليل الصور يشتغل، لازم تحط مفتاح API من <a href="https://console.anthropic.com" target="_blank" style="color: var(--accent);">console.anthropic.com</a>. المفتاح بيتحفظ في جهازك بس.</div>
         <input type="password" class="api-input" id="apiKeyInput" placeholder="sk-ant-..." />
         <button class="btn btn-secondary" id="saveApiBtn" style="margin-top: 8px;">حفظ المفتاح</button>
       </div>
     </section>
 
-    <!-- SEARCH TAB -->
     <section id="sec-search" class="section">
       <div class="search-wrap">
         <span class="search-icon">🔍</span>
-        <input type="text" class="search-input" id="searchInput" placeholder="ابحث عن أكلة... (كشري، فول، فراخ)" />
+        <input type="text" class="search-input" id="searchInput" placeholder="ابحث... (بيض، رز، فراخ)" />
+      </div>
+      <div class="filter-tabs" id="filterTabs">
+        <button class="filter-tab active" data-cat="all">الكل</button>
+        <button class="filter-tab" data-cat="protein">بروتين</button>
+        <button class="filter-tab" data-cat="carb">نشويات</button>
+        <button class="filter-tab" data-cat="veg">خضار</button>
+        <button class="filter-tab" data-cat="fruit">فاكهة</button>
+        <button class="filter-tab" data-cat="dairy">ألبان</button>
+        <button class="filter-tab" data-cat="fat">دهون</button>
+        <button class="filter-tab" data-cat="drink">مشروبات</button>
+        <button class="filter-tab" data-cat="custom">المضاف</button>
+      </div>
+      <div class="sec-title">
+        <span>اختر من القائمة</span>
+        <button id="toggleAddFood">+ أضف أكلة</button>
+      </div>
+      <div class="add-food-card" id="addFoodCard">
+        <div class="add-food-title">➕ إضافة أكلة جديدة</div>
+        <div style="margin-bottom: 8px;">
+          <label class="form-label">اسم الأكلة</label>
+          <input type="text" class="form-input full" id="newFoodName" placeholder="مثال: عجة بالجبنة" />
+        </div>
+        <div style="margin-bottom: 8px;">
+          <label class="form-label">حجم الحصة</label>
+          <input type="text" class="form-input full" id="newFoodServing" placeholder="مثال: قطعة، 100جم، طبق" />
+        </div>
+        <div>
+          <label class="form-label">السعرات (إجباري)</label>
+          <input type="number" class="form-input full" id="newFoodCal" placeholder="بالكيلو كالوري" />
+        </div>
+        <div class="form-row" style="margin-top: 8px;">
+          <div>
+            <label class="form-label">بروتين (جم)</label>
+            <input type="number" class="form-input" id="newFoodP" placeholder="0" step="0.1" />
+          </div>
+          <div>
+            <label class="form-label">كارب (جم)</label>
+            <input type="number" class="form-input" id="newFoodC" placeholder="0" step="0.1" />
+          </div>
+        </div>
+        <div style="margin-top: 8px;">
+          <label class="form-label">دهون (جم)</label>
+          <input type="number" class="form-input full" id="newFoodF" placeholder="0" step="0.1" />
+        </div>
+        <div class="add-food-actions">
+          <button class="btn btn-secondary" id="cancelAddBtn">إلغاء</button>
+          <button class="btn btn-primary" id="saveAddBtn" style="margin: 0;">حفظ الأكلة</button>
+        </div>
       </div>
       <div id="searchResults"></div>
     </section>
 
-    <!-- TODAY TAB -->
     <section id="sec-today" class="section">
       <div class="goal-card">
         <div class="goal-header">
@@ -794,16 +277,12 @@
           </div>
           <button class="btn btn-secondary btn-icon" id="editGoalBtn">✏️</button>
         </div>
-        <div class="progress-track">
-          <div class="progress-fill" id="progressFill" style="width: 0%"></div>
-        </div>
+        <div class="progress-track"><div class="progress-fill" id="progressFill" style="width: 0%"></div></div>
         <div class="remaining" id="remainingText">المتبقي: 2000 سعرة</div>
-        
         <div class="goal-edit" id="goalEdit">
           <input type="number" class="goal-input" id="goalInput" min="800" max="5000" />
           <button class="btn btn-primary" id="saveGoalBtn" style="margin: 0; width: auto; padding: 10px 16px;">حفظ</button>
         </div>
-
         <div class="macros">
           <div class="macro protein">
             <div class="macro-icon">💪</div>
@@ -825,114 +304,185 @@
           </div>
         </div>
       </div>
-
-      <div class="sec-title">وجبات اليوم</div>
+      <div class="sec-title"><span>وجبات اليوم</span></div>
       <div id="logList">
         <div class="empty">
           <div class="empty-icon">🍴</div>
           <div class="empty-text">لسه مفيش حاجة اتسجلت النهاردة</div>
         </div>
       </div>
-
-      <button id="waDayBtn" class="btn btn-whatsapp" style="margin-top: 14px; display: none;">
-        💬 ابعت ملخص اليوم على واتساب
-      </button>
+      <button id="waDayBtn" class="btn btn-whatsapp" style="margin-top: 14px; display: none;">💬 ابعت ملخص اليوم على واتساب</button>
       <button id="clearBtn" class="btn btn-secondary" style="margin-top: 8px; display: none;">امسح سجل اليوم</button>
     </section>
 
-    <!-- WEEK TAB -->
     <section id="sec-week" class="section">
-      <div class="sec-title">آخر 7 أيام</div>
+      <div class="sec-title"><span>آخر 7 أيام</span></div>
       <div id="weekList"></div>
       <div class="stats-grid" id="weekStats"></div>
-      <button id="waWeekBtn" class="btn btn-whatsapp">
-        💬 ابعت ملخص الأسبوع على واتساب
-      </button>
-      
+      <button id="waWeekBtn" class="btn btn-whatsapp">💬 ابعت ملخص الأسبوع على واتساب</button>
       <div class="install-hint">
         <strong>💡 نصيحة:</strong> أضف هذا التطبيق لشاشة الموبايل الرئيسية:<br>
         <strong>iPhone:</strong> اضغط زر المشاركة في Safari → "إضافة إلى الشاشة الرئيسية"<br>
         <strong>Android:</strong> اضغط على القائمة (⋮) → "إضافة إلى الشاشة الرئيسية"
       </div>
     </section>
+  </div>
+</div>
 
+<div class="qty-modal-bg" id="qtyModal">
+  <div class="qty-modal">
+    <div class="qty-title" id="qtyFoodName">اسم الأكلة</div>
+    <div class="qty-sub" id="qtyServing">حجم الحصة</div>
+    <div class="qty-row">
+      <button class="qty-btn-circle" id="qtyMinus">−</button>
+      <div class="qty-display" id="qtyDisplay">1</div>
+      <button class="qty-btn-circle" id="qtyPlus">+</button>
+    </div>
+    <div class="qty-preview">
+      <div class="qty-preview-item"><div class="label">سعرة</div><div class="val" id="qtyPrevCal">0</div></div>
+      <div class="qty-preview-item"><div class="label">بروتين</div><div class="val" id="qtyPrevP">0</div></div>
+      <div class="qty-preview-item"><div class="label">كارب</div><div class="val" id="qtyPrevC">0</div></div>
+      <div class="qty-preview-item"><div class="label">دهون</div><div class="val" id="qtyPrevF">0</div></div>
+    </div>
+    <div class="qty-actions">
+      <button class="btn btn-secondary" id="qtyCancelBtn">إلغاء</button>
+      <button class="btn btn-primary" id="qtyAddBtn" style="margin: 0;">أضف للسجل</button>
+    </div>
   </div>
 </div>
 
 <script>
 (function() {
-  // ============ FOOD DATABASE ============
   const FOOD_DB = [
-    { name: "كشري", cal: 580, p: 18, c: 105, f: 10, serving: "طبق متوسط" },
-    { name: "فول مدمس", cal: 180, p: 12, c: 25, f: 5, serving: "طبق صغير" },
-    { name: "طعمية / فلافل", cal: 80, p: 3, c: 8, f: 4, serving: "قرص واحد" },
-    { name: "ملوخية", cal: 120, p: 4, c: 10, f: 7, serving: "طبق" },
-    { name: "محشي ورق عنب", cal: 35, p: 1, c: 5, f: 1, serving: "ورقة" },
-    { name: "محشي كرنب", cal: 50, p: 1.5, c: 7, f: 2, serving: "حبة" },
-    { name: "رز أبيض", cal: 210, p: 4, c: 45, f: 1, serving: "كوب مطبوخ" },
-    { name: "مكرونة بالصلصة", cal: 320, p: 10, c: 55, f: 7, serving: "طبق متوسط" },
-    { name: "فراخ مشوية (صدر)", cal: 165, p: 31, c: 0, f: 4, serving: "100 جرام" },
-    { name: "فراخ بانيه", cal: 290, p: 22, c: 18, f: 14, serving: "قطعة" },
-    { name: "لحم مشوي", cal: 250, p: 26, c: 0, f: 16, serving: "100 جرام" },
-    { name: "كفتة", cal: 280, p: 18, c: 8, f: 20, serving: "3 أصابع" },
-    { name: "سمك مشوي (بلطي)", cal: 130, p: 22, c: 0, f: 4, serving: "سمكة متوسطة" },
-    { name: "سمك بوري مقلي", cal: 220, p: 20, c: 5, f: 14, serving: "سمكة" },
-    { name: "بيض مقلي", cal: 90, p: 6, c: 0.5, f: 7, serving: "بيضة" },
-    { name: "بيض مسلوق", cal: 70, p: 6, c: 0.5, f: 5, serving: "بيضة" },
-    { name: "عيش بلدي", cal: 130, p: 5, c: 27, f: 1, serving: "رغيف" },
-    { name: "عيش فينو", cal: 110, p: 4, c: 22, f: 1, serving: "رغيف" },
-    { name: "جبنة بيضاء", cal: 70, p: 4, c: 1, f: 5, serving: "ملعقة كبيرة" },
-    { name: "جبنة رومي", cal: 110, p: 7, c: 1, f: 9, serving: "شريحة" },
-    { name: "زبادي", cal: 60, p: 5, c: 7, f: 2, serving: "علبة صغيرة" },
-    { name: "لبن كامل الدسم", cal: 150, p: 8, c: 12, f: 8, serving: "كوب" },
-    { name: "تفاح", cal: 95, p: 0.5, c: 25, f: 0.3, serving: "حبة متوسطة" },
-    { name: "موز", cal: 105, p: 1, c: 27, f: 0.4, serving: "حبة" },
-    { name: "برتقال", cal: 65, p: 1, c: 16, f: 0.2, serving: "حبة" },
-    { name: "بطيخ", cal: 85, p: 1.5, c: 21, f: 0.4, serving: "شريحة" },
-    { name: "مانجو", cal: 200, p: 2.5, c: 50, f: 1, serving: "حبة" },
-    { name: "بطاطس مقلية", cal: 320, p: 4, c: 40, f: 16, serving: "طبق متوسط" },
-    { name: "بيتزا", cal: 285, p: 12, c: 36, f: 10, serving: "شريحة" },
-    { name: "برجر", cal: 540, p: 25, c: 40, f: 30, serving: "ساندويتش" },
-    { name: "شاورما فراخ", cal: 450, p: 28, c: 35, f: 20, serving: "ساندويتش" },
-    { name: "شاورما لحمة", cal: 550, p: 30, c: 35, f: 28, serving: "ساندويتش" },
-    { name: "شاي بسكر", cal: 50, p: 0, c: 12, f: 0, serving: "كوب" },
-    { name: "قهوة بسكر", cal: 30, p: 0, c: 7, f: 0, serving: "كوب" },
-    { name: "عصير برتقال", cal: 110, p: 2, c: 26, f: 0.5, serving: "كوب" },
-    { name: "عصير قصب", cal: 180, p: 0, c: 45, f: 0, serving: "كوب" },
-    { name: "مكسرات مشكلة", cal: 170, p: 6, c: 6, f: 15, serving: "ربع كوب" },
-    { name: "تمر", cal: 20, p: 0.2, c: 5, f: 0, serving: "حبة" },
-    { name: "بسبوسة", cal: 280, p: 4, c: 45, f: 10, serving: "قطعة" },
-    { name: "كنافة", cal: 320, p: 5, c: 42, f: 15, serving: "قطعة" },
-    { name: "أم علي", cal: 380, p: 9, c: 45, f: 18, serving: "طبق" },
-    { name: "قطايف بالكريمة", cal: 250, p: 4, c: 35, f: 10, serving: "قطعة" },
-    { name: "شوكولاتة", cal: 230, p: 3, c: 25, f: 13, serving: "قطعة 40جم" },
-    { name: "بسكويت", cal: 50, p: 1, c: 7, f: 2, serving: "قطعة" },
-    { name: "سلطة خضراء", cal: 30, p: 1.5, c: 6, f: 0.3, serving: "طبق" },
-    { name: "بابا غنوج", cal: 100, p: 3, c: 8, f: 7, serving: "طبق صغير" },
-    { name: "حمص بالطحينة", cal: 170, p: 6, c: 14, f: 10, serving: "طبق صغير" },
-    { name: "خيار", cal: 15, p: 0.7, c: 3, f: 0.1, serving: "حبة" },
-    { name: "طماطم", cal: 22, p: 1, c: 5, f: 0.2, serving: "حبة" },
-    { name: "حلاوة طحينية", cal: 150, p: 4, c: 14, f: 9, serving: "ملعقة كبيرة" },
-    { name: "كورن فليكس بلبن", cal: 200, p: 7, c: 35, f: 4, serving: "طبق" },
-    { name: "شوربة عدس", cal: 180, p: 12, c: 28, f: 1, serving: "طبق" },
-    { name: "شوربة فراخ", cal: 80, p: 8, c: 5, f: 3, serving: "طبق" },
+    { name: "بيض مسلوق", cal: 70, p: 6, c: 0.5, f: 5, serving: "بيضة", cat: "protein" },
+    { name: "بيض مقلي", cal: 90, p: 6, c: 0.5, f: 7, serving: "بيضة", cat: "protein" },
+    { name: "بياض بيض", cal: 17, p: 3.6, c: 0.2, f: 0.1, serving: "بيضة", cat: "protein" },
+    { name: "فراخ صدر مشوي", cal: 165, p: 31, c: 0, f: 4, serving: "100 جرام", cat: "protein" },
+    { name: "فراخ ورك مشوي", cal: 209, p: 26, c: 0, f: 11, serving: "100 جرام", cat: "protein" },
+    { name: "فراخ مسلوقة (صدر)", cal: 150, p: 30, c: 0, f: 3, serving: "100 جرام", cat: "protein" },
+    { name: "فراخ بانيه", cal: 290, p: 22, c: 18, f: 14, serving: "100 جرام", cat: "protein" },
+    { name: "لحمة مشوية (هبرة)", cal: 250, p: 26, c: 0, f: 16, serving: "100 جرام", cat: "protein" },
+    { name: "لحمة مسلوقة", cal: 220, p: 27, c: 0, f: 12, serving: "100 جرام", cat: "protein" },
+    { name: "لحمة مفرومة", cal: 280, p: 25, c: 0, f: 20, serving: "100 جرام", cat: "protein" },
+    { name: "كبدة فراخ مطبوخة", cal: 170, p: 24, c: 1, f: 7, serving: "100 جرام", cat: "protein" },
+    { name: "كبدة بقري مطبوخة", cal: 175, p: 27, c: 4, f: 5, serving: "100 جرام", cat: "protein" },
+    { name: "سمك بلطي مشوي", cal: 130, p: 26, c: 0, f: 3, serving: "100 جرام", cat: "protein" },
+    { name: "سمك بلطي مقلي", cal: 200, p: 22, c: 5, f: 11, serving: "100 جرام", cat: "protein" },
+    { name: "سمك بوري مشوي", cal: 150, p: 25, c: 0, f: 5, serving: "100 جرام", cat: "protein" },
+    { name: "سمك تونة (علبة)", cal: 130, p: 28, c: 0, f: 1, serving: "100 جرام", cat: "protein" },
+    { name: "جمبري مسلوق", cal: 100, p: 24, c: 0, f: 1, serving: "100 جرام", cat: "protein" },
+    { name: "فول مدمس مطبوخ", cal: 120, p: 8, c: 18, f: 1, serving: "100 جرام", cat: "protein" },
+    { name: "فول مدمس", cal: 180, p: 12, c: 25, f: 5, serving: "طبق صغير", cat: "protein" },
+    { name: "عدس مطبوخ", cal: 115, p: 9, c: 20, f: 0.4, serving: "100 جرام", cat: "protein" },
+    { name: "حمص مسلوق", cal: 165, p: 9, c: 27, f: 3, serving: "100 جرام", cat: "protein" },
+    { name: "لوبيا مطبوخة", cal: 130, p: 9, c: 23, f: 0.5, serving: "100 جرام", cat: "protein" },
+    { name: "رز أبيض مطبوخ (100جم)", cal: 130, p: 2.7, c: 28, f: 0.3, serving: "100 جرام", cat: "carb" },
+    { name: "رز أبيض مطبوخ (كوب)", cal: 205, p: 4.3, c: 45, f: 0.4, serving: "كوب", cat: "carb" },
+    { name: "رز بني مطبوخ", cal: 110, p: 2.5, c: 23, f: 0.9, serving: "100 جرام", cat: "carb" },
+    { name: "بطاطس مسلوقة (100جم)", cal: 87, p: 2, c: 20, f: 0.1, serving: "100 جرام", cat: "carb" },
+    { name: "بطاطس مسلوقة (حبة)", cal: 130, p: 3, c: 30, f: 0.2, serving: "حبة متوسطة", cat: "carb" },
+    { name: "بطاطس مشوية", cal: 95, p: 2.5, c: 22, f: 0.1, serving: "100 جرام", cat: "carb" },
+    { name: "بطاطس مقلية", cal: 320, p: 4, c: 40, f: 16, serving: "100 جرام", cat: "carb" },
+    { name: "بطاطس بيوريه", cal: 110, p: 2, c: 17, f: 4, serving: "100 جرام", cat: "carb" },
+    { name: "بطاطا حلوة مسلوقة", cal: 90, p: 2, c: 20, f: 0.1, serving: "100 جرام", cat: "carb" },
+    { name: "مكرونة مسلوقة سادة", cal: 130, p: 5, c: 25, f: 1, serving: "100 جرام", cat: "carb" },
+    { name: "عيش بلدي", cal: 130, p: 5, c: 27, f: 1, serving: "رغيف", cat: "carb" },
+    { name: "عيش فينو", cal: 110, p: 4, c: 22, f: 1, serving: "رغيف", cat: "carb" },
+    { name: "عيش توست", cal: 75, p: 3, c: 14, f: 1, serving: "شريحة", cat: "carb" },
+    { name: "شوفان جاف", cal: 380, p: 13, c: 67, f: 7, serving: "100 جرام", cat: "carb" },
+    { name: "شوفان مطبوخ بالماء", cal: 70, p: 2.5, c: 12, f: 1.5, serving: "100 جرام", cat: "carb" },
+    { name: "سكر أبيض", cal: 16, p: 0, c: 4, f: 0, serving: "ملعقة صغيرة", cat: "carb" },
+    { name: "عسل أبيض", cal: 60, p: 0, c: 17, f: 0, serving: "ملعقة كبيرة", cat: "carb" },
+    { name: "عسل أسود", cal: 60, p: 0, c: 15, f: 0, serving: "ملعقة كبيرة", cat: "carb" },
+    { name: "مربى", cal: 50, p: 0, c: 13, f: 0, serving: "ملعقة كبيرة", cat: "carb" },
+    { name: "جبنة قريش (100جم)", cal: 100, p: 17, c: 3, f: 2, serving: "100 جرام", cat: "dairy" },
+    { name: "جبنة قريش (ملعقة)", cal: 50, p: 8, c: 1.5, f: 1, serving: "ملعقة كبيرة", cat: "dairy" },
+    { name: "جبنة بيضاء دمياطي (100جم)", cal: 270, p: 14, c: 4, f: 22, serving: "100 جرام", cat: "dairy" },
+    { name: "جبنة بيضاء (ملعقة)", cal: 70, p: 4, c: 1, f: 5, serving: "ملعقة كبيرة", cat: "dairy" },
+    { name: "جبنة فيتا", cal: 265, p: 14, c: 4, f: 21, serving: "100 جرام", cat: "dairy" },
+    { name: "جبنة رومي (100جم)", cal: 380, p: 25, c: 2, f: 30, serving: "100 جرام", cat: "dairy" },
+    { name: "جبنة رومي (شريحة)", cal: 110, p: 7, c: 1, f: 9, serving: "شريحة", cat: "dairy" },
+    { name: "جبنة شيدر", cal: 400, p: 25, c: 1, f: 33, serving: "100 جرام", cat: "dairy" },
+    { name: "جبنة موزاريلا", cal: 280, p: 28, c: 3, f: 17, serving: "100 جرام", cat: "dairy" },
+    { name: "جبنة كيري/مثلثات", cal: 50, p: 2, c: 1, f: 4, serving: "مثلث", cat: "dairy" },
+    { name: "لبن كامل الدسم", cal: 150, p: 8, c: 12, f: 8, serving: "كوب", cat: "dairy" },
+    { name: "لبن نص دسم", cal: 110, p: 8, c: 12, f: 4, serving: "كوب", cat: "dairy" },
+    { name: "لبن خالي الدسم", cal: 85, p: 8, c: 12, f: 0.5, serving: "كوب", cat: "dairy" },
+    { name: "زبادي كامل الدسم", cal: 100, p: 5, c: 7, f: 5, serving: "علبة 150جم", cat: "dairy" },
+    { name: "زبادي خالي الدسم", cal: 60, p: 6, c: 9, f: 0.4, serving: "علبة 150جم", cat: "dairy" },
+    { name: "زبادي يوناني", cal: 130, p: 17, c: 6, f: 4, serving: "علبة 150جم", cat: "dairy" },
+    { name: "خس", cal: 15, p: 1, c: 3, f: 0.2, serving: "100 جرام", cat: "veg" },
+    { name: "خيار", cal: 15, p: 0.7, c: 3, f: 0.1, serving: "حبة", cat: "veg" },
+    { name: "طماطم", cal: 22, p: 1, c: 5, f: 0.2, serving: "حبة", cat: "veg" },
+    { name: "جزر", cal: 25, p: 0.6, c: 6, f: 0.1, serving: "حبة", cat: "veg" },
+    { name: "كوسة مطبوخة", cal: 20, p: 1.2, c: 4, f: 0.3, serving: "100 جرام", cat: "veg" },
+    { name: "باذنجان مشوي", cal: 35, p: 1, c: 9, f: 0.2, serving: "100 جرام", cat: "veg" },
+    { name: "فلفل أخضر", cal: 20, p: 0.9, c: 5, f: 0.2, serving: "100 جرام", cat: "veg" },
+    { name: "فلفل ألوان", cal: 30, p: 1, c: 7, f: 0.3, serving: "100 جرام", cat: "veg" },
+    { name: "بصل", cal: 40, p: 1.1, c: 9, f: 0.1, serving: "100 جرام", cat: "veg" },
+    { name: "ثوم", cal: 5, p: 0.2, c: 1, f: 0, serving: "فص", cat: "veg" },
+    { name: "بروكلي مسلوق", cal: 35, p: 2.5, c: 7, f: 0.4, serving: "100 جرام", cat: "veg" },
+    { name: "قرنبيط مسلوق", cal: 25, p: 2, c: 5, f: 0.3, serving: "100 جرام", cat: "veg" },
+    { name: "سبانخ مطبوخة", cal: 25, p: 3, c: 4, f: 0.3, serving: "100 جرام", cat: "veg" },
+    { name: "كرنب", cal: 25, p: 1.3, c: 6, f: 0.1, serving: "100 جرام", cat: "veg" },
+    { name: "تفاح", cal: 95, p: 0.5, c: 25, f: 0.3, serving: "حبة متوسطة", cat: "fruit" },
+    { name: "موز", cal: 105, p: 1.3, c: 27, f: 0.4, serving: "حبة", cat: "fruit" },
+    { name: "برتقال", cal: 65, p: 1.3, c: 16, f: 0.2, serving: "حبة", cat: "fruit" },
+    { name: "يوسفي", cal: 50, p: 0.8, c: 13, f: 0.3, serving: "حبة", cat: "fruit" },
+    { name: "جوافة", cal: 70, p: 2.6, c: 14, f: 1, serving: "حبة", cat: "fruit" },
+    { name: "فراولة", cal: 30, p: 0.7, c: 8, f: 0.3, serving: "100 جرام", cat: "fruit" },
+    { name: "عنب", cal: 70, p: 0.7, c: 18, f: 0.2, serving: "100 جرام", cat: "fruit" },
+    { name: "بطيخ", cal: 30, p: 0.6, c: 8, f: 0.2, serving: "100 جرام", cat: "fruit" },
+    { name: "كنتالوب", cal: 35, p: 0.8, c: 8, f: 0.2, serving: "100 جرام", cat: "fruit" },
+    { name: "مانجو", cal: 60, p: 0.8, c: 15, f: 0.4, serving: "100 جرام", cat: "fruit" },
+    { name: "خوخ", cal: 40, p: 1, c: 10, f: 0.2, serving: "حبة", cat: "fruit" },
+    { name: "كمثرى", cal: 100, p: 0.6, c: 27, f: 0.2, serving: "حبة", cat: "fruit" },
+    { name: "تمر", cal: 20, p: 0.2, c: 5, f: 0, serving: "حبة", cat: "fruit" },
+    { name: "بلح طازج", cal: 75, p: 0.5, c: 20, f: 0.1, serving: "100 جرام", cat: "fruit" },
+    { name: "زيت زيتون", cal: 120, p: 0, c: 0, f: 14, serving: "ملعقة كبيرة", cat: "fat" },
+    { name: "زيت ذرة", cal: 120, p: 0, c: 0, f: 14, serving: "ملعقة كبيرة", cat: "fat" },
+    { name: "زبدة", cal: 100, p: 0.1, c: 0, f: 11, serving: "ملعقة كبيرة", cat: "fat" },
+    { name: "سمنة بلدي", cal: 110, p: 0, c: 0, f: 12, serving: "ملعقة كبيرة", cat: "fat" },
+    { name: "أفوكادو", cal: 160, p: 2, c: 9, f: 15, serving: "100 جرام", cat: "fat" },
+    { name: "لوز", cal: 165, p: 6, c: 6, f: 14, serving: "28 جرام", cat: "fat" },
+    { name: "عين جمل (جوز)", cal: 185, p: 4, c: 4, f: 18, serving: "28 جرام", cat: "fat" },
+    { name: "كاجو", cal: 155, p: 5, c: 9, f: 12, serving: "28 جرام", cat: "fat" },
+    { name: "فول سوداني", cal: 165, p: 7, c: 6, f: 14, serving: "28 جرام", cat: "fat" },
+    { name: "زبدة فول سوداني", cal: 95, p: 4, c: 3, f: 8, serving: "ملعقة كبيرة", cat: "fat" },
+    { name: "طحينة", cal: 90, p: 3, c: 3, f: 8, serving: "ملعقة كبيرة", cat: "fat" },
+    { name: "ماء", cal: 0, p: 0, c: 0, f: 0, serving: "كوب", cat: "drink" },
+    { name: "شاي سادة", cal: 2, p: 0, c: 0, f: 0, serving: "كوب", cat: "drink" },
+    { name: "شاي بسكر ملعقة", cal: 20, p: 0, c: 5, f: 0, serving: "كوب", cat: "drink" },
+    { name: "شاي بسكر ملعقتين", cal: 40, p: 0, c: 10, f: 0, serving: "كوب", cat: "drink" },
+    { name: "قهوة سادة", cal: 2, p: 0, c: 0, f: 0, serving: "كوب", cat: "drink" },
+    { name: "قهوة بسكر ملعقة", cal: 20, p: 0, c: 5, f: 0, serving: "كوب", cat: "drink" },
+    { name: "نسكافيه باللبن", cal: 80, p: 3, c: 12, f: 2, serving: "كوب", cat: "drink" },
+    { name: "عصير برتقال طازج", cal: 110, p: 2, c: 26, f: 0.5, serving: "كوب", cat: "drink" },
+    { name: "عصير ليمون بسكر", cal: 80, p: 0, c: 20, f: 0, serving: "كوب", cat: "drink" },
+    { name: "كركديه", cal: 30, p: 0, c: 7, f: 0, serving: "كوب", cat: "drink" },
   ];
   
-  // ============ STATE ============
   let goal = parseInt(localStorage.getItem('ct_goal') || '2000');
   let history = JSON.parse(localStorage.getItem('ct_history') || '{}');
+  let customFoods = JSON.parse(localStorage.getItem('ct_custom') || '[]');
   let apiKey = localStorage.getItem('ct_apikey') || '';
+  let currentFilter = 'all';
+  let pendingItem = null;
+  let pendingQty = 1;
   const todayKey = new Date().toISOString().split('T')[0];
   if (!history[todayKey]) history[todayKey] = [];
   
-  // ============ STORAGE ============
+  function getAllFoods() {
+    return [...customFoods.map(f => ({ ...f, cat: 'custom', isCustom: true })), ...FOOD_DB];
+  }
+  
   function saveAll() {
     flashSave();
-    // Keep only last 60 days
     const keys = Object.keys(history).sort();
     if (keys.length > 60) keys.slice(0, keys.length - 60).forEach(k => delete history[k]);
     localStorage.setItem('ct_history', JSON.stringify(history));
     localStorage.setItem('ct_goal', String(goal));
+    localStorage.setItem('ct_custom', JSON.stringify(customFoods));
   }
   
   function flashSave() {
@@ -942,46 +492,29 @@
   }
   
   function getMacroGoals() {
-    return {
-      protein: Math.round((goal * 0.20) / 4),
-      carbs: Math.round((goal * 0.50) / 4),
-      fat: Math.round((goal * 0.30) / 9)
-    };
+    return { protein: Math.round((goal * 0.20) / 4), carbs: Math.round((goal * 0.50) / 4), fat: Math.round((goal * 0.30) / 9) };
   }
   
   function todayTotals() {
-    return history[todayKey].reduce((t, i) => ({
-      cal: t.cal + i.cal,
-      p: t.p + (i.p || 0),
-      c: t.c + (i.c || 0),
-      f: t.f + (i.f || 0)
-    }), { cal: 0, p: 0, c: 0, f: 0 });
+    return history[todayKey].reduce((t, i) => ({ cal: t.cal + i.cal, p: t.p + (i.p || 0), c: t.c + (i.c || 0), f: t.f + (i.f || 0) }), { cal: 0, p: 0, c: 0, f: 0 });
   }
   
   function toast(msg) {
     const el = document.createElement('div');
-    el.className = 'toast';
-    el.textContent = msg;
+    el.className = 'toast'; el.textContent = msg;
     document.body.appendChild(el);
     setTimeout(() => el.remove(), 2200);
   }
   
-  // ============ NETWORK STATUS ============
   function updateNet() {
     const el = document.getElementById('netStatus');
-    if (navigator.onLine) {
-      el.className = 'pill online';
-      el.innerHTML = '<span class="dot"></span>أونلاين';
-    } else {
-      el.className = 'pill offline';
-      el.innerHTML = '<span class="dot"></span>أوفلاين';
-    }
+    if (navigator.onLine) { el.className = 'pill online'; el.innerHTML = '<span class="dot"></span>أونلاين'; }
+    else { el.className = 'pill offline'; el.innerHTML = '<span class="dot"></span>أوفلاين'; }
   }
   window.addEventListener('online', updateNet);
   window.addEventListener('offline', updateNet);
   updateNet();
   
-  // ============ TABS ============
   document.querySelectorAll('.tab').forEach(btn => {
     btn.addEventListener('click', () => {
       document.querySelectorAll('.tab').forEach(b => b.classList.remove('active'));
@@ -993,40 +526,28 @@
     });
   });
   
-  // ============ API KEY ============
   if (apiKey) document.getElementById('apiKeyInput').value = apiKey;
   document.getElementById('saveApiBtn').addEventListener('click', () => {
     const k = document.getElementById('apiKeyInput').value.trim();
-    if (k) {
-      apiKey = k;
-      localStorage.setItem('ct_apikey', k);
-      toast('✓ تم حفظ المفتاح');
-    }
+    if (k) { apiKey = k; localStorage.setItem('ct_apikey', k); toast('✓ تم حفظ المفتاح'); }
   });
   
-  // ============ GOAL EDIT ============
   document.getElementById('editGoalBtn').addEventListener('click', () => {
     const edit = document.getElementById('goalEdit');
     const input = document.getElementById('goalInput');
     edit.classList.toggle('show');
-    if (edit.classList.contains('show')) {
-      input.value = goal;
-      input.focus();
-    }
+    if (edit.classList.contains('show')) { input.value = goal; input.focus(); }
   });
   
   document.getElementById('saveGoalBtn').addEventListener('click', () => {
     const v = parseInt(document.getElementById('goalInput').value);
     if (v >= 800 && v <= 5000) {
-      goal = v;
-      saveAll();
+      goal = v; saveAll();
       document.getElementById('goalEdit').classList.remove('show');
-      renderToday();
-      toast('✓ تم تحديث الهدف');
+      renderToday(); toast('✓ تم تحديث الهدف');
     }
   });
   
-  // ============ PHOTO UPLOAD ============
   let currentImage = null;
   const uploadZone = document.getElementById('uploadZone');
   const photoInput = document.getElementById('photoInput');
@@ -1048,14 +569,8 @@
   
   analyzeBtn.addEventListener('click', async () => {
     if (!currentImage) return;
-    if (!apiKey) {
-      toast('⚠️ ضع مفتاح API أولاً');
-      return;
-    }
-    if (!navigator.onLine) {
-      toast('⚠️ تحتاج إنترنت لتحليل الصور');
-      return;
-    }
+    if (!apiKey) { toast('⚠️ ضع مفتاح API أولاً'); return; }
+    if (!navigator.onLine) { toast('⚠️ تحتاج إنترنت لتحليل الصور'); return; }
     
     analyzeBtn.disabled = true;
     analyzeBtn.innerHTML = '⏳ جاري التحليل...';
@@ -1080,7 +595,7 @@
             role: "user",
             content: [
               { type: "image", source: { type: "base64", media_type: mediaType, data: base64Data } },
-              { type: "text", text: 'حلل الأكل في الصورة وقدر السعرات والماكروز. رد بـ JSON فقط بدون أي نص: {"items": [{"name": "اسم بالعربي", "calories": رقم, "protein": رقم, "carbs": رقم, "fat": رقم, "portion": "حجم"}], "total": إجمالي}' }
+              { type: "text", text: 'حلل الأكل في الصورة وقدر السعرات والماكروز. رد بـ JSON فقط: {"items": [{"name": "اسم بالعربي", "calories": رقم, "protein": رقم, "carbs": رقم, "fat": رقم, "portion": "حجم"}], "total": إجمالي}' }
             ]
           }]
         })
@@ -1117,51 +632,147 @@
     }
   });
   
-  // ============ SEARCH ============
+  document.querySelectorAll('.filter-tab').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-tab').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentFilter = btn.dataset.cat;
+      renderSearch(document.getElementById('searchInput').value.trim());
+    });
+  });
+  
   function renderSearch(q) {
-    const results = q ? FOOD_DB.filter(f => f.name.includes(q)) : FOOD_DB.slice(0, 20);
+    const all = getAllFoods();
+    let results = all;
+    if (currentFilter !== 'all') results = results.filter(f => f.cat === currentFilter);
+    if (q) results = results.filter(f => f.name.includes(q));
+    
     const c = document.getElementById('searchResults');
     if (results.length === 0) {
       c.innerHTML = '<div class="empty"><div class="empty-icon">🔍</div><div class="empty-text">لا توجد نتائج</div></div>';
       return;
     }
-    c.innerHTML = results.map(f => '<div class="food-item" data-food="' + FOOD_DB.indexOf(f) + '"><div class="food-info"><div class="food-name">' + f.name + '</div><div class="food-meta">' + f.serving + ' • ب:' + f.p + ' ك:' + f.c + ' د:' + f.f + '</div></div><span class="cal-badge">' + f.cal + '</span></div>').join('');
-    c.querySelectorAll('[data-food]').forEach(el => {
-      el.addEventListener('click', () => {
-        const f = FOOD_DB[parseInt(el.dataset.food)];
-        addToLog({ name: f.name, cal: f.cal, p: f.p, c: f.c, f: f.f, serving: f.serving });
+    
+    c.innerHTML = results.map((f, idx) => {
+      const customBadge = f.isCustom ? '<span class="custom-badge">مضاف</span>' : '';
+      const delBtn = f.isCustom ? '<button class="delete-btn" data-del-custom="' + customFoods.indexOf(f) + '" style="margin-right: 8px;">🗑️</button>' : '';
+      return '<div class="food-item ' + (f.isCustom ? 'custom' : '') + '" data-food-idx="' + idx + '"><div class="food-info"><div class="food-name">' + f.name + customBadge + '</div><div class="food-meta">' + f.serving + ' • ب:' + f.p + ' ك:' + f.c + ' د:' + f.f + '</div></div><div style="display:flex;align-items:center;">' + delBtn + '<span class="cal-badge">' + f.cal + '</span></div></div>';
+    }).join('');
+    
+    c.querySelectorAll('[data-food-idx]').forEach(el => {
+      el.addEventListener('click', (e) => {
+        if (e.target.closest('[data-del-custom]')) return;
+        const idx = parseInt(el.dataset.foodIdx);
+        openQtyModal(results[idx]);
+      });
+    });
+    
+    c.querySelectorAll('[data-del-custom]').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const idx = parseInt(btn.dataset.delCustom);
+        if (confirm('تمسح "' + customFoods[idx].name + '" من قائمتك؟')) {
+          customFoods.splice(idx, 1);
+          saveAll();
+          renderSearch(document.getElementById('searchInput').value.trim());
+        }
       });
     });
   }
   
   document.getElementById('searchInput').addEventListener('input', e => renderSearch(e.target.value.trim()));
   
-  // ============ LOG ============
+  function openQtyModal(food) {
+    pendingItem = food;
+    pendingQty = 1;
+    document.getElementById('qtyFoodName').textContent = food.name;
+    document.getElementById('qtyServing').textContent = food.serving;
+    updateQtyPreview();
+    document.getElementById('qtyModal').classList.add('show');
+  }
+  
+  function updateQtyPreview() {
+    document.getElementById('qtyDisplay').textContent = pendingQty;
+    document.getElementById('qtyPrevCal').textContent = Math.round(pendingItem.cal * pendingQty);
+    document.getElementById('qtyPrevP').textContent = Math.round(pendingItem.p * pendingQty * 10) / 10;
+    document.getElementById('qtyPrevC').textContent = Math.round(pendingItem.c * pendingQty * 10) / 10;
+    document.getElementById('qtyPrevF').textContent = Math.round(pendingItem.f * pendingQty * 10) / 10;
+  }
+  
+  document.getElementById('qtyMinus').addEventListener('click', () => {
+    if (pendingQty > 0.5) { pendingQty = Math.round((pendingQty - 0.5) * 2) / 2; updateQtyPreview(); }
+  });
+  document.getElementById('qtyPlus').addEventListener('click', () => {
+    pendingQty = Math.round((pendingQty + 0.5) * 2) / 2; updateQtyPreview();
+  });
+  document.getElementById('qtyCancelBtn').addEventListener('click', () => {
+    document.getElementById('qtyModal').classList.remove('show');
+  });
+  document.getElementById('qtyAddBtn').addEventListener('click', () => {
+    const f = pendingItem;
+    const qtyText = pendingQty === 1 ? f.serving : pendingQty + ' × ' + f.serving;
+    addToLog({
+      name: f.name,
+      cal: Math.round(f.cal * pendingQty),
+      p: Math.round(f.p * pendingQty * 10) / 10,
+      c: Math.round(f.c * pendingQty * 10) / 10,
+      f: Math.round(f.f * pendingQty * 10) / 10,
+      serving: qtyText
+    });
+    document.getElementById('qtyModal').classList.remove('show');
+  });
+  document.getElementById('qtyModal').addEventListener('click', (e) => {
+    if (e.target.id === 'qtyModal') document.getElementById('qtyModal').classList.remove('show');
+  });
+  
+  document.getElementById('toggleAddFood').addEventListener('click', () => {
+    document.getElementById('addFoodCard').classList.toggle('show');
+  });
+  document.getElementById('cancelAddBtn').addEventListener('click', () => {
+    document.getElementById('addFoodCard').classList.remove('show');
+    ['newFoodName','newFoodServing','newFoodCal','newFoodP','newFoodC','newFoodF'].forEach(id => {
+      document.getElementById(id).value = '';
+    });
+  });
+  document.getElementById('saveAddBtn').addEventListener('click', () => {
+    const name = document.getElementById('newFoodName').value.trim();
+    const serving = document.getElementById('newFoodServing').value.trim() || 'حصة';
+    const cal = parseFloat(document.getElementById('newFoodCal').value);
+    const p = parseFloat(document.getElementById('newFoodP').value) || 0;
+    const c = parseFloat(document.getElementById('newFoodC').value) || 0;
+    const f = parseFloat(document.getElementById('newFoodF').value) || 0;
+    if (!name) { toast('⚠️ اكتب اسم الأكلة'); return; }
+    if (!cal || cal <= 0) { toast('⚠️ اكتب السعرات'); return; }
+    customFoods.unshift({ name, cal, p, c, f, serving });
+    saveAll();
+    toast('✓ تمت إضافة ' + name);
+    ['newFoodName','newFoodServing','newFoodCal','newFoodP','newFoodC','newFoodF'].forEach(id => {
+      document.getElementById(id).value = '';
+    });
+    document.getElementById('addFoodCard').classList.remove('show');
+    renderSearch(document.getElementById('searchInput').value.trim());
+  });
+  
   function addToLog(item) {
     history[todayKey].push({ ...item, time: new Date().toLocaleTimeString('ar-EG', { hour: '2-digit', minute: '2-digit' }), id: Date.now() + Math.random() });
     saveAll();
-    toast('✓ ' + item.name);
+    toast('✓ ' + item.name + ' (' + item.cal + ' سعرة)');
     renderToday();
   }
   
   function renderToday() {
     const t = todayTotals();
     const m = getMacroGoals();
-    
     document.getElementById('totalCal').textContent = Math.round(t.cal);
     document.getElementById('goalDisplay').textContent = goal;
-    
     const pct = Math.min(100, (t.cal / goal) * 100);
     const bar = document.getElementById('progressFill');
     bar.style.width = pct + '%';
-    
     if (t.cal > goal) bar.style.background = 'linear-gradient(90deg, var(--amber), var(--red))';
     else if (pct > 90) bar.style.background = 'linear-gradient(90deg, var(--green), var(--amber))';
     else bar.style.background = 'linear-gradient(90deg, var(--green), var(--accent))';
-    
     const rem = goal - t.cal;
     document.getElementById('remainingText').textContent = rem >= 0 ? 'المتبقي: ' + Math.round(rem) + ' سعرة' : 'تجاوزت بـ ' + Math.round(-rem) + ' سعرة';
-    
     document.getElementById('proteinVal').textContent = Math.round(t.p);
     document.getElementById('carbsVal').textContent = Math.round(t.c);
     document.getElementById('fatVal').textContent = Math.round(t.f);
@@ -1183,19 +794,15 @@
       waBtn.style.display = 'none';
       return;
     }
-    
     clearBtn.style.display = 'flex';
     waBtn.style.display = 'flex';
-    
     list.innerHTML = '<div class="log-section">' + todayLog.map(it => 
       '<div class="log-item"><div class="food-info"><div class="log-name">' + it.name + '</div><div class="log-meta">' + it.time + ' • ' + it.serving + ' • ب:' + Math.round(it.p || 0) + ' ك:' + Math.round(it.c || 0) + ' د:' + Math.round(it.f || 0) + '</div></div><div class="log-actions"><span class="cal-badge">' + it.cal + '</span><button class="delete-btn" data-del="' + it.id + '">🗑️</button></div></div>'
     ).join('') + '</div>';
-    
     list.querySelectorAll('[data-del]').forEach(b => {
       b.addEventListener('click', () => {
         history[todayKey] = history[todayKey].filter(i => i.id != b.dataset.del);
-        saveAll();
-        renderToday();
+        saveAll(); renderToday();
       });
     });
   }
@@ -1203,28 +810,22 @@
   document.getElementById('clearBtn').addEventListener('click', () => {
     if (confirm('متأكد عايز تمسح سجل اليوم؟')) {
       history[todayKey] = [];
-      saveAll();
-      renderToday();
+      saveAll(); renderToday();
     }
   });
   
-  // ============ WEEK ============
   function renderWeek() {
     const days = [];
     for (let i = 6; i >= 0; i--) {
-      const d = new Date();
-      d.setDate(d.getDate() - i);
+      const d = new Date(); d.setDate(d.getDate() - i);
       days.push(d.toISOString().split('T')[0]);
     }
     const dayNames = ['الأحد', 'الإثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة', 'السبت'];
-    
     const dayData = days.map(k => {
       const log = history[k] || [];
       return { key: k, cal: log.reduce((s, i) => s + i.cal, 0), count: log.length };
     });
-    
     const maxCal = Math.max(goal, ...dayData.map(d => d.cal), 1);
-    
     document.getElementById('weekList').innerHTML = dayData.map(d => {
       const date = new Date(d.key);
       const isToday = d.key === todayKey;
@@ -1236,30 +837,22 @@
       if (d.cal > goal) color = 'var(--red)';
       else if (d.cal > goal * 0.9) color = 'var(--amber)';
       else if (d.cal === 0) color = 'var(--text-tertiary)';
-      
       return '<div class="week-day"><div><div class="day-name ' + (isToday ? 'today' : '') + '">' + dayName + (isToday ? ' •' : '') + '</div><div class="day-date">' + dateStr + '</div></div><div class="day-bar-wrap"><div class="day-bar-fill" style="width:' + pct + '%;background:' + color + ';"></div><div class="goal-marker" style="right:' + (100 - goalPct) + '%;"></div></div><div class="day-cal">' + Math.round(d.cal) + '<span class="day-cal-suffix">سعرة</span></div></div>';
     }).join('');
-    
     const totalWeek = dayData.reduce((s, d) => s + d.cal, 0);
     const activeDays = dayData.filter(d => d.cal > 0).length;
     const avg = activeDays > 0 ? Math.round(totalWeek / activeDays) : 0;
     const hit = dayData.filter(d => d.cal > 0 && Math.abs(d.cal - goal) <= goal * 0.1).length;
-    
     document.getElementById('weekStats').innerHTML = 
       '<div class="stat-card"><div class="stat-label">📈 المتوسط اليومي</div><div class="stat-val">' + avg + '</div></div>' +
       '<div class="stat-card"><div class="stat-label">🎯 قريب من الهدف</div><div class="stat-val">' + hit + '/' + activeDays + '</div></div>';
   }
   
-  // ============ WHATSAPP ============
   function buildDayMessage() {
-    const t = todayTotals();
-    const m = getMacroGoals();
+    const t = todayTotals(); const m = getMacroGoals();
     const log = history[todayKey];
     const date = new Date().toLocaleDateString('ar-EG', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
-    
-    let msg = '🍽️ *ملخص سعراتي اليوم*\n';
-    msg += '📅 ' + date + '\n\n';
-    msg += '━━━━━━━━━━━━━━━\n';
+    let msg = '🍽️ *ملخص سعراتي اليوم*\n📅 ' + date + '\n\n━━━━━━━━━━━━━━━\n';
     msg += '🔥 الإجمالي: *' + Math.round(t.cal) + '* / ' + goal + ' سعرة\n';
     const diff = goal - t.cal;
     if (diff >= 0) msg += '✅ متبقي: ' + Math.round(diff) + ' سعرة\n';
@@ -1268,66 +861,50 @@
     msg += '💪 بروتين: ' + Math.round(t.p) + ' / ' + m.protein + ' جم\n';
     msg += '🍞 كارب: ' + Math.round(t.c) + ' / ' + m.carbs + ' جم\n';
     msg += '🥑 دهون: ' + Math.round(t.f) + ' / ' + m.fat + ' جم\n';
-    msg += '━━━━━━━━━━━━━━━\n\n';
-    msg += '🍴 *وجبات اليوم:*\n';
-    log.forEach(it => {
-      msg += '• ' + it.time + ' — ' + it.name + ' (' + it.cal + ' سعرة)\n';
-    });
+    msg += '━━━━━━━━━━━━━━━\n\n🍴 *وجبات اليوم:*\n';
+    log.forEach(it => { msg += '• ' + it.time + ' — ' + it.name + ' (' + it.cal + ' سعرة)\n'; });
     return msg;
   }
   
   function buildWeekMessage() {
     const days = [];
     for (let i = 6; i >= 0; i--) {
-      const d = new Date();
-      d.setDate(d.getDate() - i);
+      const d = new Date(); d.setDate(d.getDate() - i);
       days.push(d.toISOString().split('T')[0]);
     }
     const dayNames = ['الأحد', 'الإثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة', 'السبت'];
-    
-    let msg = '📊 *ملخص سعراتي الأسبوع*\n\n';
-    msg += '🎯 الهدف اليومي: ' + goal + ' سعرة\n';
-    msg += '━━━━━━━━━━━━━━━\n';
-    
+    let msg = '📊 *ملخص سعراتي الأسبوع*\n\n🎯 الهدف اليومي: ' + goal + ' سعرة\n━━━━━━━━━━━━━━━\n';
     let weekTotal = 0, activeDays = 0, hitGoal = 0;
-    
     days.forEach(k => {
       const log = history[k] || [];
       const cal = log.reduce((s, i) => s + i.cal, 0);
       const date = new Date(k);
       const dayName = dayNames[date.getDay()];
       const dateStr = date.getDate() + '/' + (date.getMonth() + 1);
-      
       let icon = '⚪';
       if (cal === 0) icon = '⚪';
       else if (cal > goal) icon = '🔴';
       else if (cal > goal * 0.9) icon = '🟡';
       else icon = '🟢';
-      
       if (cal > 0) {
-        activeDays++;
-        weekTotal += cal;
+        activeDays++; weekTotal += cal;
         if (Math.abs(cal - goal) <= goal * 0.1) hitGoal++;
       }
       msg += icon + ' ' + dayName + ' ' + dateStr + ': *' + Math.round(cal) + '* سعرة\n';
     });
-    
-    msg += '━━━━━━━━━━━━━━━\n\n';
-    msg += '📈 *الإحصائيات:*\n';
+    msg += '━━━━━━━━━━━━━━━\n\n📈 *الإحصائيات:*\n';
     msg += '• المتوسط: ' + (activeDays > 0 ? Math.round(weekTotal / activeDays) : 0) + ' سعرة/يوم\n';
     msg += '• أيام قريبة من الهدف: ' + hitGoal + ' من ' + activeDays + '\n';
     return msg;
   }
   
   function shareWhatsApp(msg) {
-    const url = 'https://wa.me/?text=' + encodeURIComponent(msg);
-    window.open(url, '_blank');
+    window.open('https://wa.me/?text=' + encodeURIComponent(msg), '_blank');
   }
   
   document.getElementById('waDayBtn').addEventListener('click', () => shareWhatsApp(buildDayMessage()));
   document.getElementById('waWeekBtn').addEventListener('click', () => shareWhatsApp(buildWeekMessage()));
   
-  // ============ INIT ============
   renderSearch('');
   renderToday();
 })();
