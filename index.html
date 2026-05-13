@@ -1737,9 +1737,13 @@
   let pendingQty = 1;
   let editingLogId = null;
   
-  // Dynamic today key - always returns the current date (auto-rolls over at midnight)
+  // Dynamic today key - uses LOCAL time (not UTC) so day changes at local midnight
   function getTodayKey() {
-    return new Date().toISOString().split('T')[0];
+    const d = new Date();
+    const year = d.getFullYear();
+    const month = String(d.getMonth() + 1).padStart(2, '0');
+    const day = String(d.getDate()).padStart(2, '0');
+    return year + '-' + month + '-' + day;
   }
   if (!history[getTodayKey()]) history[getTodayKey()] = [];
   
@@ -2142,7 +2146,10 @@
     for (let i = 6; i >= 0; i--) {
       const d = new Date();
       d.setDate(d.getDate() - i);
-      days.push(d.toISOString().split('T')[0]);
+      const year = d.getFullYear();
+      const month = String(d.getMonth() + 1).padStart(2, '0');
+      const day = String(d.getDate()).padStart(2, '0');
+      days.push(year + '-' + month + '-' + day);
     }
     const dayNames = ['الأحد', 'الإثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة', 'السبت'];
     const dayData = days.map(k => {
@@ -2195,7 +2202,10 @@
     const days = [];
     for (let i = 6; i >= 0; i--) {
       const d = new Date(); d.setDate(d.getDate() - i);
-      days.push(d.toISOString().split('T')[0]);
+      const year = d.getFullYear();
+      const month = String(d.getMonth() + 1).padStart(2, '0');
+      const day = String(d.getDate()).padStart(2, '0');
+      days.push(year + '-' + month + '-' + day);
     }
     const dayNames = ['الأحد', 'الإثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة', 'السبت'];
     let msg = '📊 *ملخص سعراتي الأسبوع*\n\n🎯 الهدف اليومي: ' + goal + ' سعرة\n━━━━━━━━━━━━━━━\n';
