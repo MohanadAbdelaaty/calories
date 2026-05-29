@@ -201,7 +201,7 @@
   /* ============ TABS ============ */
   .tabs {
     display: flex;
-    gap: 6px;
+    gap: 4px;
     margin: 0 24px 24px;
     background: var(--surface);
     border-radius: 18px;
@@ -212,7 +212,7 @@
   
   .tab {
     flex: 1;
-    padding: 12px 6px;
+    padding: 10px 4px;
     background: transparent;
     border: none;
     border-radius: 12px;
@@ -1372,6 +1372,289 @@
     border-color: var(--primary);
     box-shadow: 0 2px 8px var(--primary-glow);
   }
+  
+  /* ============ WORKOUT ============ */
+  .workout-day-tabs {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 16px;
+    overflow-x: auto;
+    padding-bottom: 6px;
+  }
+  
+  .workout-day-tabs::-webkit-scrollbar { display: none; }
+  
+  .wday-tab {
+    flex: 1;
+    min-width: 0;
+    padding: 10px 8px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    color: var(--text-2);
+    font-size: 11px;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 700;
+    transition: all 0.2s;
+    text-align: center;
+    white-space: nowrap;
+  }
+  
+  .wday-tab.active {
+    background: var(--primary);
+    color: #ffffff;
+    border-color: var(--primary);
+    box-shadow: 0 2px 8px var(--primary-glow);
+  }
+  
+  .wday-tab.rest {
+    opacity: 0.5;
+  }
+  
+  .wday-tab .wday-name {
+    font-size: 10px;
+    display: block;
+    margin-bottom: 2px;
+  }
+  
+  .wday-tab .wday-label {
+    font-family: 'Fraunces', serif;
+    font-size: 13px;
+    font-weight: 500;
+  }
+  
+  .exercise-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 18px;
+    margin-bottom: 12px;
+    transition: all 0.2s;
+  }
+  
+  .exercise-card:hover {
+    border-color: var(--line-2);
+  }
+  
+  .exercise-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--primary-soft);
+    color: var(--primary);
+    font-family: 'Fraunces', serif;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+  
+  .exercise-name {
+    font-size: 15px;
+    font-weight: 800;
+    color: var(--text);
+    margin-bottom: 12px;
+    line-height: 1.4;
+  }
+  
+  .exercise-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+  }
+  
+  .exercise-stat {
+    background: var(--surface-2);
+    border-radius: 10px;
+    padding: 10px 6px;
+    text-align: center;
+    border: 1px solid var(--line);
+  }
+  
+  .exercise-stat .es-label {
+    font-size: 9px;
+    color: var(--text-3);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  
+  .exercise-stat .es-val {
+    font-family: 'Fraunces', serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text);
+  }
+  
+  .cardio-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--teal-soft);
+    color: var(--teal);
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  
+  .rest-day-msg {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--text-3);
+  }
+  
+  .rest-day-msg .rest-icon {
+    font-size: 56px;
+    margin-bottom: 16px;
+    opacity: 0.5;
+  }
+  
+  .rest-day-msg .rest-text {
+    font-family: 'Fraunces', serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--text-2);
+  }
+  
+  .today-workout-hint {
+    background: var(--primary-soft);
+    border: 1px solid var(--primary-soft);
+    border-radius: 14px;
+    padding: 14px;
+    margin-bottom: 16px;
+    font-size: 13px;
+    color: var(--text);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  /* ============ BURN/DEFICIT CARD ============ */
+  .burn-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 18px;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .burn-title {
+    font-size: 10px;
+    color: var(--text-3);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    margin-bottom: 14px;
+  }
+  
+  .exercise-toggles {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+  
+  .ex-toggle {
+    flex: 1;
+    padding: 12px;
+    background: var(--surface-2);
+    border: 1.5px solid var(--line);
+    border-radius: 14px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.25s;
+    font-family: inherit;
+    color: var(--text-2);
+  }
+  
+  .ex-toggle:hover {
+    border-color: var(--primary);
+  }
+  
+  .ex-toggle.on {
+    background: var(--teal-soft);
+    border-color: var(--teal);
+    color: var(--teal);
+  }
+  
+  .ex-toggle .ex-icon {
+    font-size: 24px;
+    display: block;
+    margin-bottom: 6px;
+  }
+  
+  .ex-toggle .ex-label {
+    font-size: 12px;
+    font-weight: 700;
+  }
+  
+  .ex-toggle .ex-cal {
+    font-size: 10px;
+    margin-top: 4px;
+    opacity: 0.7;
+  }
+  
+  .burn-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+  
+  .burn-stat {
+    background: var(--surface-2);
+    border-radius: 12px;
+    padding: 12px 8px;
+    text-align: center;
+    border: 1px solid var(--line);
+  }
+  
+  .burn-stat .bs-label {
+    font-size: 9px;
+    color: var(--text-3);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  
+  .burn-stat .bs-val {
+    font-family: 'Fraunces', serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--text);
+  }
+  
+  .burn-stat.deficit .bs-val {
+    color: var(--teal);
+  }
+  
+  .burn-stat.surplus .bs-val {
+    color: var(--over);
+  }
+  
+  /* Week day expanded */
+  .week-macros {
+    font-size: 10px;
+    color: var(--text-3);
+    margin-top: 4px;
+    font-weight: 600;
+  }
+  
+  .week-deficit {
+    font-size: 10px;
+    font-weight: 700;
+    margin-top: 2px;
+  }
+  
+  .week-deficit.positive { color: var(--teal); }
+  .week-deficit.negative { color: var(--over); }
 </style>
 </head>
 <body>
@@ -1395,6 +1678,7 @@
     <button class="tab" data-tab="search"><span class="tab-icon">🔍</span>الأكل</button>
     <button class="tab active" data-tab="today"><span class="tab-icon">📋</span>اليوم</button>
     <button class="tab" data-tab="week"><span class="tab-icon">📊</span>الأسبوع</button>
+    <button class="tab" data-tab="workout"><span class="tab-icon">💪</span>تمارين</button>
   </nav>
 
   <div class="content">
@@ -1546,6 +1830,37 @@
         </div>
       </div>
 
+      <!-- BURN & DEFICIT CARD -->
+      <div class="burn-card">
+        <div class="burn-title">🔥 الحرق والعجز</div>
+        <div class="exercise-toggles">
+          <button class="ex-toggle" id="gymToggle" data-type="gym">
+            <span class="ex-icon">🏋️</span>
+            <span class="ex-label">عملت جيم</span>
+            <span class="ex-cal">+300 سعرة</span>
+          </button>
+          <button class="ex-toggle" id="cardioToggle" data-type="cardio">
+            <span class="ex-icon">🏃</span>
+            <span class="ex-label">عملت كارديو</span>
+            <span class="ex-cal">+200 سعرة</span>
+          </button>
+        </div>
+        <div class="burn-stats">
+          <div class="burn-stat">
+            <div class="bs-label">أكلت</div>
+            <div class="bs-val" id="burnAte">0</div>
+          </div>
+          <div class="burn-stat">
+            <div class="bs-label">حرقت</div>
+            <div class="bs-val" id="burnTotal">1900</div>
+          </div>
+          <div class="burn-stat" id="deficitStat">
+            <div class="bs-label">العجز</div>
+            <div class="bs-val" id="burnDeficit">1900</div>
+          </div>
+        </div>
+      </div>
+
       <div class="sec-title"><span>وجبات اليوم</span></div>
       <div id="logList">
         <div class="empty">
@@ -1573,6 +1888,15 @@
         <strong>iPhone:</strong> اضغط زر المشاركة في Safari → "إضافة إلى الشاشة الرئيسية"<br>
         <strong>Android:</strong> اضغط على القائمة (⋮) → "إضافة إلى الشاشة الرئيسية"
       </div>
+    </section>
+
+    <!-- ============ WORKOUT SECTION ============ -->
+    <section id="sec-workout" class="section">
+      <div class="today-workout-hint" id="todayWorkoutHint"></div>
+      
+      <div class="workout-day-tabs" id="workoutDayTabs"></div>
+      
+      <div id="workoutContent"></div>
     </section>
   </div>
 </div>
@@ -1644,7 +1968,11 @@
     { name: "شوفان مطبوخ بالماء", cal: 70, p: 2.5, c: 12, f: 1.5, serving: "100 جرام", cat: "carb" },
     { name: "سكر أبيض", cal: 16, p: 0, c: 4, f: 0, serving: "ملعقة صغيرة", cat: "carb" },
     { name: "عسل أبيض", cal: 60, p: 0, c: 17, f: 0, serving: "ملعقة كبيرة", cat: "carb" },
+    { name: "عسل نحل (ملعقة صغيرة)", cal: 21, p: 0, c: 6, f: 0, serving: "ملعقة صغيرة", cat: "carb" },
+    { name: "عسل نحل (ملعقة كبيرة)", cal: 64, p: 0.1, c: 17, f: 0, serving: "ملعقة كبيرة", cat: "carb" },
     { name: "عسل أسود", cal: 60, p: 0, c: 15, f: 0, serving: "ملعقة كبيرة", cat: "carb" },
+    { name: "شوربة لحمة", cal: 60, p: 5, c: 4, f: 2, serving: "كوب (250مل)", cat: "protein" },
+    { name: "شوربة لحمة بخضار", cal: 90, p: 6, c: 10, f: 3, serving: "كوب (250مل)", cat: "protein" },
     { name: "مربى", cal: 50, p: 0, c: 13, f: 0, serving: "ملعقة كبيرة", cat: "carb" },
     { name: "جبنة قريش (100جم)", cal: 100, p: 17, c: 3, f: 2, serving: "100 جرام", cat: "dairy" },
     { name: "جبنة قريش (ملعقة)", cal: 50, p: 8, c: 1.5, f: 1, serving: "ملعقة كبيرة", cat: "dairy" },
@@ -1803,6 +2131,9 @@
       document.getElementById('sec-' + btn.dataset.tab).classList.add('active');
       if (btn.dataset.tab === 'today') renderToday();
       if (btn.dataset.tab === 'week') renderWeek();
+      if (btn.dataset.tab === 'workout') {
+        renderWorkout(activeWorkoutDay);
+      }
     });
   });
   
@@ -2100,6 +2431,20 @@
     document.getElementById('carbsBar').style.width = Math.min(100, (t.c / m.carbs) * 100) + '%';
     document.getElementById('fatBar').style.width = Math.min(100, (t.f / m.fat) * 100) + '%';
     
+    // Burn & Deficit
+    const ex = getExerciseToday();
+    const totalBurn = getTodayBurn();
+    const deficit = totalBurn - t.cal;
+    
+    document.getElementById('gymToggle').classList.toggle('on', ex.gym);
+    document.getElementById('cardioToggle').classList.toggle('on', ex.cardio);
+    document.getElementById('burnAte').textContent = Math.round(t.cal);
+    document.getElementById('burnTotal').textContent = totalBurn;
+    document.getElementById('burnDeficit').textContent = (deficit >= 0 ? '-' : '+') + Math.abs(Math.round(deficit));
+    
+    const deficitStat = document.getElementById('deficitStat');
+    deficitStat.className = 'burn-stat ' + (deficit >= 0 ? 'deficit' : 'surplus');
+    
     const list = document.getElementById('logList');
     const todayLog = history[getTodayKey()];
     const clearBtn = document.getElementById('clearBtn');
@@ -2141,6 +2486,21 @@
     }
   });
   
+  // Exercise toggles
+  document.getElementById('gymToggle').addEventListener('click', () => {
+    const ex = getExerciseToday();
+    ex.gym = !ex.gym;
+    saveExercise();
+    renderToday();
+  });
+  
+  document.getElementById('cardioToggle').addEventListener('click', () => {
+    const ex = getExerciseToday();
+    ex.cardio = !ex.cardio;
+    saveExercise();
+    renderToday();
+  });
+  
   function renderWeek() {
     const days = [];
     for (let i = 6; i >= 0; i--) {
@@ -2154,7 +2514,11 @@
     const dayNames = ['الأحد', 'الإثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة', 'السبت'];
     const dayData = days.map(k => {
       const log = history[k] || [];
-      return { key: k, cal: log.reduce((s, i) => s + i.cal, 0), count: log.length };
+      const cal = log.reduce((s, i) => s + i.cal, 0);
+      const p = log.reduce((s, i) => s + (i.p || 0), 0);
+      const c = log.reduce((s, i) => s + (i.c || 0), 0);
+      const f = log.reduce((s, i) => s + (i.f || 0), 0);
+      return { key: k, cal, p, c, f, count: log.length };
     });
     const maxCal = Math.max(goal, ...dayData.map(d => d.cal), 1);
     document.getElementById('weekList').innerHTML = dayData.map(d => {
@@ -2169,15 +2533,36 @@
       else if (d.cal > goal * 0.9) color = 'var(--amber)';
       else if (d.cal === 0) color = 'var(--text-3)';
       else color = 'var(--primary)';
-      return '<div class="week-day"><div><div class="day-name ' + (isToday ? 'today' : '') + '">' + dayName + (isToday ? ' •' : '') + '</div><div class="day-date">' + dateStr + '</div></div><div class="day-bar-wrap"><div class="day-bar-fill" style="width:' + pct + '%;background:' + color + ';"></div><div class="goal-marker" style="right:' + (100 - goalPct) + '%;"></div></div><div class="day-cal">' + Math.round(d.cal) + '<span class="day-cal-suffix">KCAL</span></div></div>';
+      
+      // Daily burn & deficit
+      const dayEx = exerciseLog[d.key] || { gym: false, cardio: false };
+      const dayBurn = BASE_BURN + (dayEx.gym ? GYM_BURN : 0) + (dayEx.cardio ? CARDIO_BURN : 0);
+      const dayDeficit = d.cal > 0 ? dayBurn - d.cal : 0;
+      const defClass = dayDeficit >= 0 ? 'positive' : 'negative';
+      const defText = d.cal > 0 ? ((dayDeficit >= 0 ? '-' : '+') + Math.abs(Math.round(dayDeficit))) : '—';
+      
+      // Macros
+      const macroText = d.cal > 0 ? 'P:' + Math.round(d.p) + ' C:' + Math.round(d.c) + ' F:' + Math.round(d.f) : '';
+      
+      return '<div class="week-day" style="grid-template-columns: 80px 1fr 80px;"><div><div class="day-name ' + (isToday ? 'today' : '') + '">' + dayName + (isToday ? ' •' : '') + '</div><div class="day-date">' + dateStr + '</div></div><div><div class="day-bar-wrap"><div class="day-bar-fill" style="width:' + pct + '%;background:' + color + ';"></div><div class="goal-marker" style="right:' + (100 - goalPct) + '%;"></div></div><div class="week-macros">' + macroText + '</div><div class="week-deficit ' + defClass + '">عجز: ' + defText + '</div></div><div class="day-cal">' + Math.round(d.cal) + '<span class="day-cal-suffix">KCAL</span></div></div>';
     }).join('');
     const totalWeek = dayData.reduce((s, d) => s + d.cal, 0);
     const activeDays = dayData.filter(d => d.cal > 0).length;
     const avg = activeDays > 0 ? Math.round(totalWeek / activeDays) : 0;
-    const hit = dayData.filter(d => d.cal > 0 && Math.abs(d.cal - goal) <= goal * 0.1).length;
+    
+    // Cumulative deficit for the week
+    let cumulativeDeficit = 0;
+    dayData.forEach(d => {
+      if (d.cal > 0) {
+        const dayEx = exerciseLog[d.key] || { gym: false, cardio: false };
+        const dayBurn = BASE_BURN + (dayEx.gym ? GYM_BURN : 0) + (dayEx.cardio ? CARDIO_BURN : 0);
+        cumulativeDeficit += (dayBurn - d.cal);
+      }
+    });
+    
     document.getElementById('weekStats').innerHTML = 
       '<div class="stat-card"><div class="stat-label">📈 المتوسط اليومي</div><div class="stat-val">' + avg + '</div></div>' +
-      '<div class="stat-card"><div class="stat-label">🎯 قريب من الهدف</div><div class="stat-val">' + hit + '/' + activeDays + '</div></div>';
+      '<div class="stat-card"><div class="stat-label">🔥 عجز تراكمي</div><div class="stat-val" style="color:' + (cumulativeDeficit >= 0 ? 'var(--teal)' : 'var(--over)') + '">' + (cumulativeDeficit >= 0 ? '-' : '+') + Math.abs(Math.round(cumulativeDeficit)) + '</div></div>';
   }
   
   function buildDayMessage() {
@@ -2240,6 +2625,118 @@
   document.getElementById('waDayBtn').addEventListener('click', () => shareWhatsApp(buildDayMessage()));
   document.getElementById('waWeekBtn').addEventListener('click', () => shareWhatsApp(buildWeekMessage()));
   
+  // ============ WORKOUT DATA (Coach Joie Plan) ============
+  const WORKOUT_DAYS = [
+    {
+      id: 'day1', label: 'يوم 1', subtitle: 'صدر + كتف + ترايسبس',
+      exercises: [
+        { name: 'Smith Machine Flat Bench Press', nameAr: 'بنش بريس (سميث ماشين)', sets: 2, reps: '6-12', rpe: 9, rest: '3 د' },
+        { name: 'Hammer Strength Incline Chest Press', nameAr: 'بنش عالي (هامر)', sets: 2, reps: '6-12', rpe: 9, rest: '3 د' },
+        { name: 'Machine Lateral Raise', nameAr: 'رفرفة جانبي (ماشين)', sets: 3, reps: '6-12', rpe: 9, rest: '3 د' },
+        { name: 'Single Arm Cable Tri-Pushdown', nameAr: 'ترايسبس كابل (إيد واحدة)', sets: 3, reps: '6-12', rpe: 9, rest: '3 د' },
+        { name: 'Chest Fly Machine', nameAr: 'تفتيح صدر (ماشين)', sets: 2, reps: '6-12', rpe: 9, rest: '3 د' },
+        { name: 'Treadmill', nameAr: 'مشي سريع (تريدميل)', cardio: true, duration: 20, incline: 10, speed: 6 },
+      ]
+    },
+    {
+      id: 'day2', label: 'يوم 2', subtitle: 'ضهر + باي + كتف خلفي',
+      exercises: [
+        { name: 'Wide Grip Lat Pulldown', nameAr: 'سحب عالي (قبضة واسعة)', sets: 3, reps: '6-12', rpe: 9, rest: '3 د' },
+        { name: 'T-Bar Row Wide Grip', nameAr: 'تي بار رو (قبضة واسعة)', sets: 2, reps: '6-12', rpe: 9, rest: '3 د' },
+        { name: 'Seated Cable Single Row', nameAr: 'سحب أرضي كابل (إيد واحدة)', sets: 2, reps: '6-12', rpe: 9, rest: '3 د' },
+        { name: 'Incline Dumbbell Curl', nameAr: 'باي دمبل (بنش مايل)', sets: 3, reps: '6-12', rpe: 9, rest: '3 د' },
+        { name: 'Machine Rear Delt Fly', nameAr: 'كتف خلفي (ماشين)', sets: 2, reps: '6-12', rpe: 9, rest: '3 د' },
+        { name: 'Treadmill', nameAr: 'مشي سريع (تريدميل)', cardio: true, duration: 20, incline: 10, speed: 6 },
+      ]
+    },
+    {
+      id: 'day3', label: 'يوم 3', subtitle: 'رجل + بطن',
+      exercises: [
+        { name: 'Leg Press', nameAr: 'ليج بريس', sets: 2, reps: '6-12', rpe: 9, rest: '3 د' },
+        { name: 'Leg Extension', nameAr: 'ليج إكستنشن', sets: 3, reps: '6-12', rpe: 9, rest: '3 د' },
+        { name: 'Seated Leg Curl', nameAr: 'ليج كيرل (جالس)', sets: 3, reps: '6-12', rpe: 9, rest: '3 د' },
+        { name: 'Machine Thigh Adductor', nameAr: 'ضم الفخذ (ماشين)', sets: 2, reps: '6-12', rpe: 9, rest: '3 د' },
+        { name: 'Calf Press Machine', nameAr: 'سمانة (ماشين)', sets: 3, reps: '6-12', rpe: 9, rest: '3 د' },
+        { name: 'Ab Crunch Machine', nameAr: 'بطن (ماشين)', sets: 3, reps: '6-12', rpe: 9, rest: '3 د' },
+        { name: 'Plate Hyperextension', nameAr: 'ظهر سفلي (هايبر)', sets: 4, reps: '12', rpe: 9, rest: '3 د' },
+        { name: 'Treadmill', nameAr: 'مشي سريع (تريدميل)', cardio: true, duration: 20, incline: 10, speed: 6 },
+      ]
+    },
+    {
+      id: 'day4', label: 'يوم 4', subtitle: 'جسم كامل (علوي)',
+      exercises: [
+        { name: 'Smith Machine Flat Bench Press', nameAr: 'بنش بريس (سميث ماشين)', sets: 2, reps: '6-12', rpe: 9, rest: '3 د' },
+        { name: 'T-Bar Row Wide Grip', nameAr: 'تي بار رو (قبضة واسعة)', sets: 2, reps: '6-12', rpe: 9, rest: '3 د' },
+        { name: 'Chest Fly Machine', nameAr: 'تفتيح صدر (ماشين)', sets: 2, reps: '6-12', rpe: 9, rest: '3 د' },
+        { name: 'Machine Lateral Raise', nameAr: 'رفرفة جانبي (ماشين)', sets: 2, reps: '6-12', rpe: 9, rest: '3 د' },
+        { name: 'Cable Rope Tricep Push Down', nameAr: 'ترايسبس كابل (حبل)', sets: 2, reps: '6-12', rpe: 9, rest: '3 د' },
+        { name: 'Cable Bicep Curl', nameAr: 'باي كابل', sets: 2, reps: '6-12', rpe: 9, rest: '3 د' },
+        { name: 'Treadmill', nameAr: 'مشي سريع (تريدميل)', cardio: true, duration: 20, incline: 10, speed: 6 },
+      ]
+    }
+  ];
+  
+  const BASE_BURN = 1900; // سعرات الحرق الأساسي بدون تمارين
+  const GYM_BURN = 300;   // تقدير حرق الجيم
+  const CARDIO_BURN = 200; // تقدير حرق الكارديو 20 دقيقة
+  
+  // Exercise log per day { gym: bool, cardio: bool }
+  let exerciseLog = JSON.parse(localStorage.getItem('ct_exercise') || '{}');
+  
+  function getExerciseToday() {
+    const key = getTodayKey();
+    if (!exerciseLog[key]) exerciseLog[key] = { gym: false, cardio: false };
+    return exerciseLog[key];
+  }
+  
+  function saveExercise() {
+    localStorage.setItem('ct_exercise', JSON.stringify(exerciseLog));
+  }
+  
+  function getTodayBurn() {
+    const ex = getExerciseToday();
+    return BASE_BURN + (ex.gym ? GYM_BURN : 0) + (ex.cardio ? CARDIO_BURN : 0);
+  }
+  
+  function getTodayDeficit() {
+    const t = todayTotals();
+    return getTodayBurn() - t.cal;
+  }
+  
+  let activeWorkoutDay = 'day1';
+  
+  function renderWorkout(selectedId) {
+    const tabsEl = document.getElementById('workoutDayTabs');
+    
+    tabsEl.innerHTML = WORKOUT_DAYS.map(d => {
+      const isActive = d.id === selectedId;
+      return '<button class="wday-tab ' + (isActive ? 'active' : '') + '" data-wid="' + d.id + '"><span class="wday-name">' + d.label + '</span><span class="wday-label" style="font-size:9px;">' + d.subtitle + '</span></button>';
+    }).join('');
+    
+    tabsEl.querySelectorAll('.wday-tab').forEach(btn => {
+      btn.addEventListener('click', () => {
+        activeWorkoutDay = btn.dataset.wid;
+        renderWorkout(activeWorkoutDay);
+      });
+    });
+    
+    // Hide today hint in workout tab
+    document.getElementById('todayWorkoutHint').style.display = 'none';
+    
+    const contentEl = document.getElementById('workoutContent');
+    const dayData = WORKOUT_DAYS.find(d => d.id === selectedId);
+    if (!dayData) return;
+    
+    contentEl.innerHTML = '<div class="sec-title"><span>' + dayData.label + ' — ' + dayData.subtitle + '</span></div>' +
+      dayData.exercises.map((ex, i) => {
+        if (ex.cardio) {
+          return '<div class="exercise-card"><div class="exercise-num">' + (i + 1) + '</div><div class="cardio-badge">🏃 كارديو</div><div class="exercise-name">' + ex.nameAr + '</div><div class="exercise-stats" style="grid-template-columns:repeat(3,1fr)"><div class="exercise-stat"><div class="es-label">المدة</div><div class="es-val">' + ex.duration + ' د</div></div><div class="exercise-stat"><div class="es-label">الانحدار</div><div class="es-val">' + ex.incline + '</div></div><div class="exercise-stat"><div class="es-label">السرعة</div><div class="es-val">' + ex.speed + '</div></div></div><div style="font-size:11px;color:var(--text-3);margin-top:10px;">' + ex.name + '</div></div>';
+        }
+        return '<div class="exercise-card"><div class="exercise-num">' + (i + 1) + '</div><div class="exercise-name">' + ex.nameAr + '</div><div class="exercise-stats"><div class="exercise-stat"><div class="es-label">مجاميع</div><div class="es-val">' + ex.sets + '</div></div><div class="exercise-stat"><div class="es-label">عدات</div><div class="es-val">' + ex.reps + '</div></div><div class="exercise-stat"><div class="es-label">RPE</div><div class="es-val">' + ex.rpe + '</div></div><div class="exercise-stat"><div class="es-label">راحة</div><div class="es-val">' + ex.rest + '</div></div></div><div style="font-size:11px;color:var(--text-3);margin-top:10px;">' + ex.name + '</div></div>';
+      }).join('');
+  }
+  
+  // Init workout on tab click
   renderSearch('');
   renderToday();
   
