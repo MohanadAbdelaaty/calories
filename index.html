@@ -6,6 +6,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes"/>
 <meta name="theme-color" content="#0f1419"/>
 <title>Aggressive Cut — Complete</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tesseract.js/5.1.1/tesseract.min.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&display=swap" rel="stylesheet"/>
@@ -259,6 +260,25 @@ body{background-image:radial-gradient(ellipse 75% 50% at 80% 0%,var(--primary-so
 .form-btn.primary{background:var(--primary);color:#fff;box-shadow:0 4px 12px var(--primary-glow)}
 .form-btn.secondary{background:var(--surface);color:var(--text-2);border:1px solid var(--line)}
 
+/* OCR Upload */
+.ocr-upload-zone{border:2px dashed var(--line-2);border-radius:16px;padding:24px 16px;text-align:center;cursor:pointer;transition:all .25s;background:var(--surface)}
+.ocr-upload-zone:active,.ocr-upload-zone:hover{border-color:var(--primary);background:var(--primary-soft)}
+.ocr-icon{font-size:36px;margin-bottom:8px}
+.ocr-label{font-size:14px;font-weight:600;color:var(--text);margin-bottom:4px}
+.ocr-sub{font-size:12px;color:var(--text-3)}
+.ocr-progress{margin-top:12px}
+.ocr-progress-bar{height:6px;background:var(--surface-3);border-radius:3px;overflow:hidden}
+.ocr-progress-fill{height:100%;width:0%;background:linear-gradient(90deg,var(--primary),var(--teal));border-radius:3px;transition:width .3s}
+.ocr-progress-text{font-size:12px;color:var(--text-2);text-align:center;margin-top:6px}
+.ocr-preview-wrap{margin-top:12px;text-align:center}
+.ocr-preview-img{max-width:100%;max-height:180px;border-radius:12px;border:1px solid var(--line);margin-bottom:8px}
+.ocr-retry-btn{background:var(--surface-2);color:var(--text-2);border:1px solid var(--line);border-radius:10px;padding:8px 16px;font-size:12px;font-family:inherit;cursor:pointer;font-weight:600}
+.ocr-or{text-align:center;margin:16px 0 4px;position:relative}
+.ocr-or::before{content:'';position:absolute;top:50%;left:0;right:0;height:1px;background:var(--line)}
+.ocr-or span{background:var(--bg);padding:0 16px;position:relative;font-size:12px;color:var(--text-3);font-weight:600}
+.ocr-found-badge{display:inline-block;background:var(--green-soft);color:var(--green);font-size:11px;padding:2px 8px;border-radius:6px;font-weight:600;margin-right:6px}
+.ocr-filled{border-color:var(--green)!important;background:var(--green-soft)!important}
+
 /* FOOD QTY MODAL */
 .qty-modal{position:fixed;inset:0;background:rgba(0,0,0,.5);backdrop-filter:blur(6px);z-index:110;display:none;align-items:center;justify-content:center}
 .qty-modal.open{display:flex}
@@ -484,6 +504,24 @@ body{background-image:radial-gradient(ellipse 75% 50% at 80% 0%,var(--primary-so
     <div class="modal-handle"></div>
     <div class="modal-header"><div class="modal-title">تحديث InBody</div><button class="modal-close" id="closeIBModal">✕</button></div>
     <div class="modal-body">
+      <div class="form-section">
+        <div class="form-section-title">📸 استخراج من صورة InBody</div>
+        <div class="ocr-upload-zone" id="ocrDropZone">
+          <input type="file" accept="image/*" capture="environment" id="ocrFileInput" style="display:none"/>
+          <div class="ocr-icon">📷</div>
+          <div class="ocr-label">اضغط هنا لالتقاط أو رفع صورة InBody</div>
+          <div class="ocr-sub">الأرقام هتتملى تلقائي من الصورة</div>
+        </div>
+        <div class="ocr-progress" id="ocrProgress" style="display:none">
+          <div class="ocr-progress-bar"><div class="ocr-progress-fill" id="ocrFill"></div></div>
+          <div class="ocr-progress-text" id="ocrText">جاري التحليل...</div>
+        </div>
+        <div class="ocr-preview-wrap" id="ocrPreviewWrap" style="display:none">
+          <img id="ocrPreviewImg" class="ocr-preview-img"/>
+          <button class="ocr-retry-btn" id="ocrRetry">🔄 صورة تانية</button>
+        </div>
+        <div class="ocr-or"><span>أو أدخل يدوي</span></div>
+      </div>
       <div class="form-section"><div class="form-section-title">📅 التاريخ</div><div class="form-row" style="grid-template-columns:1fr"><div class="form-group"><input type="date" class="form-input" id="ib_date" style="font-family:Tajawal;font-size:13px"/></div></div></div>
       <div class="form-section"><div class="form-section-title">⚖️ الأساسيات</div>
         <div class="form-row"><div class="form-group"><label class="form-label">الوزن</label><input type="number" step="0.1" class="form-input" id="ib_weight" placeholder="98.0"/><span class="form-unit">كجم</span></div><div class="form-group"><label class="form-label">Score</label><input type="number" class="form-input" id="ib_score" placeholder="82"/><span class="form-unit">/100</span></div></div>
@@ -920,7 +958,12 @@ function renderDay(days,id,contentId,prefix){
 
 // ===== INBODY MODAL =====
 document.getElementById('openInbodyModal').addEventListener('click',function(){
-  ['ib_date','ib_weight','ib_score','ib_smm','ib_fat','ib_pbf','ib_water','ib_protein','ib_bmi','ib_visc','ib_whr'].forEach(function(id){document.getElementById(id).value=''});
+  ['ib_date','ib_weight','ib_score','ib_smm','ib_fat','ib_pbf','ib_water','ib_protein','ib_bmi','ib_visc','ib_whr'].forEach(function(id){document.getElementById(id).value='';document.getElementById(id).parentElement.classList.remove('ocr-filled')});
+  document.getElementById('ocrDropZone').style.display='';
+  document.getElementById('ocrProgress').style.display='none';
+  document.getElementById('ocrPreviewWrap').style.display='none';
+  document.getElementById('ocrFill').style.width='0%';
+  document.getElementById('ocrFill').style.background='';
   document.getElementById('inbodyModal').classList.add('open');
 });
 document.getElementById('closeIBModal').addEventListener('click',function(){document.getElementById('inbodyModal').classList.remove('open')});
@@ -950,6 +993,131 @@ document.getElementById('saveIB').addEventListener('click',function(){
   refreshAll();
   toast('✅ تم تحديث كل الداتا!');
 });
+
+// ===== OCR INBODY =====
+var ocrDropZone=document.getElementById('ocrDropZone');
+var ocrFileInput=document.getElementById('ocrFileInput');
+var ocrProgress=document.getElementById('ocrProgress');
+var ocrFill=document.getElementById('ocrFill');
+var ocrTextEl=document.getElementById('ocrText');
+var ocrPreviewWrap=document.getElementById('ocrPreviewWrap');
+var ocrPreviewImg=document.getElementById('ocrPreviewImg');
+
+ocrDropZone.addEventListener('click',function(){ocrFileInput.click()});
+document.getElementById('ocrRetry').addEventListener('click',function(){
+  ocrPreviewWrap.style.display='none';
+  ocrDropZone.style.display='';
+  ocrFileInput.click();
+});
+
+ocrFileInput.addEventListener('change',function(e){
+  var file=e.target.files[0];
+  if(!file) return;
+  ocrDropZone.style.display='none';
+  ocrProgress.style.display='';
+  ocrFill.style.width='10%';
+  ocrTextEl.textContent='جاري تحميل الصورة...';
+
+  var reader=new FileReader();
+  reader.onload=function(ev){
+    ocrPreviewImg.src=ev.target.result;
+    ocrPreviewWrap.style.display='';
+    ocrFill.style.width='25%';
+    ocrTextEl.textContent='جاري تحليل الصورة... ممكن ياخد شوية ثواني';
+
+    Tesseract.recognize(ev.target.result,'eng',{
+      logger:function(m){
+        if(m.status==='recognizing text'){
+          var pct=Math.round(25+m.progress*70);
+          ocrFill.style.width=pct+'%';
+          ocrTextEl.textContent='جاري القراءة... '+pct+'%';
+        }
+      }
+    }).then(function(result){
+      ocrFill.style.width='100%';
+      ocrTextEl.textContent='تم التحليل!';
+      var txt=result.data.text;
+      parseInBodyOCR(txt);
+      setTimeout(function(){ocrProgress.style.display='none'},1500);
+    }).catch(function(err){
+      ocrFill.style.width='100%';
+      ocrFill.style.background='var(--over)';
+      ocrTextEl.textContent='حصل خطأ — جرب صورة أوضح أو أدخل يدوي';
+      console.log('OCR error:',err);
+    });
+  };
+  reader.readAsDataURL(file);
+  e.target.value='';
+});
+
+function parseInBodyOCR(txt){
+  var lines=txt.replace(/,/g,'.').split(/\n/);
+  var all=txt.replace(/,/g,'.').replace(/\n/g,' ');
+  var filled=0;
+
+  function tryFill(id,val){
+    if(val!==null && !isNaN(val) && val>0){
+      document.getElementById(id).value=val;
+      document.getElementById(id).parentElement.classList.add('ocr-filled');
+      filled++;
+    }
+  }
+
+  // Weight — look for patterns like "Weight 98.0" or "98.0 kg"
+  var wMatch=all.match(/(?:weight|wt|الوزن)[^0-9]*(\d{2,3}\.?\d*)/i)
+    || all.match(/(\d{2,3}\.\d)\s*kg/i);
+  if(wMatch) tryFill('ib_weight',parseFloat(wMatch[1]));
+
+  // SMM — Skeletal Muscle Mass
+  var smmMatch=all.match(/(?:skeletal\s*muscle\s*mass|smm|s\.?m\.?m)[^0-9]*(\d{1,3}\.?\d*)/i)
+    || all.match(/(?:skeletal\s*muscle)[^0-9]*(\d{1,3}\.\d)/i);
+  if(smmMatch) tryFill('ib_smm',parseFloat(smmMatch[1]));
+
+  // Body Fat Mass
+  var bfmMatch=all.match(/(?:body\s*fat\s*mass|fat\s*mass)[^0-9]*(\d{1,3}\.?\d*)/i);
+  if(bfmMatch) tryFill('ib_fat',parseFloat(bfmMatch[1]));
+
+  // PBF — Percent Body Fat
+  var pbfMatch=all.match(/(?:percent\s*body\s*fat|pbf|body\s*fat\s*%|p\.?b\.?f)[^0-9]*(\d{1,3}\.?\d*)/i)
+    || all.match(/(?:body\s*fat)[^0-9]*\d+\.?\d*[^0-9]*(\d{1,3}\.\d)/i);
+  if(pbfMatch) tryFill('ib_pbf',parseFloat(pbfMatch[1]));
+
+  // Total Body Water
+  var waterMatch=all.match(/(?:total\s*body\s*water|tbw|body\s*water)[^0-9]*(\d{1,3}\.?\d*)/i);
+  if(waterMatch) tryFill('ib_water',parseFloat(waterMatch[1]));
+
+  // Protein
+  var protMatch=all.match(/(?:protein|بروتين)[^0-9]*(\d{1,3}\.?\d*)/i);
+  if(protMatch) tryFill('ib_protein',parseFloat(protMatch[1]));
+
+  // BMI
+  var bmiMatch=all.match(/(?:bmi|b\.?m\.?i)[^0-9]*(\d{1,3}\.?\d*)/i);
+  if(bmiMatch) tryFill('ib_bmi',parseFloat(bmiMatch[1]));
+
+  // Visceral Fat Level
+  var viscMatch=all.match(/(?:visceral\s*fat\s*level|visceral\s*fat|visceral)[^0-9]*(\d{1,2})/i);
+  if(viscMatch) tryFill('ib_visc',parseInt(viscMatch[1]));
+
+  // WHR — Waist-Hip Ratio
+  var whrMatch=all.match(/(?:waist[\-\s]*hip\s*ratio|whr|w\.?h\.?r)[^0-9]*(0\.\d{2,3}|1\.\d{2,3})/i);
+  if(whrMatch) tryFill('ib_whr',parseFloat(whrMatch[1]));
+
+  // InBody Score
+  var scoreMatch=all.match(/(?:inbody\s*score|total\s*score|score)[^0-9]*(\d{2,3})/i);
+  if(scoreMatch && parseInt(scoreMatch[1])<=100) tryFill('ib_score',parseInt(scoreMatch[1]));
+
+  // Auto-set today's date if not filled
+  if(!document.getElementById('ib_date').value){
+    var today=new Date();
+    document.getElementById('ib_date').value=today.getFullYear()+'-'+String(today.getMonth()+1).padStart(2,'0')+'-'+String(today.getDate()).padStart(2,'0');
+  }
+
+  if(filled>0){
+    toast('✅ تم استخراج '+filled+' قيمة من الصورة — راجع الأرقام وأكمل الناقص');
+  } else {
+    toast('⚠️ مقدرتش أقرا الأرقام — جرب صورة أوضح أو أدخل يدوي');
+  }
+}
 
 // ===== EXPORT / IMPORT =====
 document.getElementById('exportBtn').addEventListener('click',function(){
