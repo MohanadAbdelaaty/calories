@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl" data-theme="dark">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-<meta name="apple-mobile-web-app-capable" content="yes" />
-<meta name="mobile-web-app-capable" content="yes" />
-<meta name="theme-color" content="#0f1419" />
-<title>Aggressive Cut Dashboard</title>
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&display=swap" rel="stylesheet" />
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="theme-color" content="#0f1419"/>
+<title>Aggressive Cut — Complete</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&display=swap" rel="stylesheet"/>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 :root,[data-theme="dark"]{
@@ -38,7 +37,7 @@
   --purple:#7c5cbf;--purple-soft:rgba(124,92,191,0.1);
   --shadow-sm:0 2px 6px rgba(26,35,48,0.04);--shadow:0 6px 20px rgba(26,35,48,0.06);--shadow-lg:0 12px 32px rgba(26,35,48,0.08);
 }
-html,body{background:var(--bg);color:var(--text);font-family:'Tajawal',sans-serif;min-height:100vh;overflow-x:hidden;transition:background .4s,color .4s;-webkit-font-smoothing:antialiased}
+html,body{background:var(--bg);color:var(--text);font-family:'Tajawal',sans-serif;min-height:100vh;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 body{background-image:radial-gradient(ellipse 75% 50% at 80% 0%,var(--primary-soft),transparent 70%),radial-gradient(ellipse 60% 40% at 0% 100%,var(--teal-soft),transparent 70%);background-attachment:fixed}
 .app{max-width:520px;margin:0 auto;min-height:100vh;padding-bottom:100px;position:relative}
 
@@ -52,15 +51,13 @@ body{background-image:radial-gradient(ellipse 75% 50% at 80% 0%,var(--primary-so
 .brand-title em{font-style:italic;color:var(--over);font-weight:400}
 .brand-sub{font-size:9px;color:var(--text-3);letter-spacing:3px;text-transform:uppercase;margin-top:5px;font-weight:500}
 .theme-toggle{width:40px;height:40px;border-radius:12px;background:var(--surface);border:1px solid var(--line);color:var(--text);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:16px;transition:all .3s}
-.theme-toggle:hover{background:var(--surface-2);transform:rotate(15deg) scale(1.05)}
 
 /* TABS */
 .tabs{display:flex;gap:3px;margin:0 20px 20px;background:var(--surface);border-radius:16px;padding:5px;border:1px solid var(--line);box-shadow:var(--shadow-sm);overflow-x:auto}
 .tabs::-webkit-scrollbar{display:none}
-.tab{flex:1;padding:9px 4px;background:transparent;border:none;border-radius:11px;color:var(--text-2);font-size:10.5px;font-weight:700;font-family:inherit;cursor:pointer;transition:all .3s;display:flex;flex-direction:column;align-items:center;gap:4px;white-space:nowrap;min-width:0}
+.tab{flex:1;padding:9px 4px;background:transparent;border:none;border-radius:11px;color:var(--text-2);font-size:10px;font-weight:700;font-family:inherit;cursor:pointer;transition:all .3s;display:flex;flex-direction:column;align-items:center;gap:4px;white-space:nowrap;min-width:0}
 .tab.active{background:var(--surface-3);color:var(--text);box-shadow:0 2px 8px rgba(0,0,0,.1)}
-.tab-icon{font-size:15px;line-height:1;transition:transform .3s}
-.tab.active .tab-icon{transform:scale(1.1)}
+.tab-icon{font-size:15px;line-height:1}
 
 /* CONTENT */
 .content{padding:0 20px}
@@ -74,7 +71,7 @@ body{background-image:radial-gradient(ellipse 75% 50% at 80% 0%,var(--primary-so
 .card-title{font-size:10px;color:var(--text-3);text-transform:uppercase;letter-spacing:2px;font-weight:700;margin-bottom:14px;display:flex;align-items:center;gap:8px}
 .card-title .ct-icon{font-size:14px}
 
-/* HERO NUMBER */
+/* HERO */
 .hero-num{font-family:'Fraunces',serif;font-size:52px;font-weight:500;line-height:.9;color:var(--text);letter-spacing:-2.5px;position:relative;z-index:1}
 .hero-suffix{font-size:13px;color:var(--text-2);font-weight:600}
 .hero-suffix em{font-family:'Fraunces',serif;font-style:italic;color:var(--primary);font-weight:500;font-size:15px}
@@ -92,28 +89,38 @@ body{background-image:radial-gradient(ellipse 75% 50% at 80% 0%,var(--primary-so
 .prog-header{display:flex;justify-content:space-between;font-size:12px;margin-bottom:5px}
 .prog-label{font-weight:700;color:var(--text)}
 .prog-val{color:var(--text-2);font-weight:600}
-.prog-track{height:8px;background:var(--surface-2);border-radius:999px;overflow:hidden;position:relative}
+.prog-track{height:8px;background:var(--surface-2);border-radius:999px;overflow:hidden}
 .prog-fill{height:100%;border-radius:999px;transition:width .6s}
 
-/* BAR CHART (horizontal) */
+/* HBAR */
 .hbar{margin-bottom:10px}
 .hbar-label{font-size:11px;color:var(--text-2);font-weight:600;margin-bottom:4px;display:flex;justify-content:space-between}
 .hbar-track{height:24px;background:var(--surface-2);border-radius:8px;overflow:hidden;position:relative}
-.hbar-fill{height:100%;border-radius:8px;display:flex;align-items:center;padding:0 10px;font-size:10px;font-weight:800;color:#fff;transition:width .6s;min-width:0}
-.hbar-marker{position:absolute;top:-2px;bottom:-2px;width:2px;background:var(--text-3);opacity:.5;z-index:2}
+.hbar-fill{height:100%;border-radius:8px;display:flex;align-items:center;padding:0 10px;font-size:10px;font-weight:800;color:#fff;transition:width .6s}
 
-/* BODY MAP VISUAL */
+/* HISTORY CHART */
+.history-chart{display:flex;align-items:flex-end;gap:4px;height:120px;padding:0 2px;margin:12px 0}
+.history-chart div{flex:1;border-radius:4px 4px 0 0;position:relative;transition:height .4s;min-height:2px;cursor:pointer}
+.history-chart div .hc-tip{display:none;position:absolute;top:-28px;left:50%;transform:translateX(-50%);background:var(--surface);border:1px solid var(--line-2);border-radius:8px;padding:3px 8px;font-size:10px;font-weight:700;color:var(--text);white-space:nowrap;box-shadow:var(--shadow-sm);z-index:5}
+.history-chart div:hover .hc-tip{display:block}
+.history-labels{display:flex;gap:4px;margin-top:4px}
+.history-labels span{flex:1;text-align:center;font-size:8px;color:var(--text-3);font-weight:700}
+
+/* BODY MAP */
 .body-map{display:grid;grid-template-columns:1fr 80px 1fr;gap:8px;align-items:center;margin:16px 0}
 .body-side{display:flex;flex-direction:column;gap:6px}
-.body-side.right{text-align:left}
-.body-side.left{text-align:right}
 .body-part{background:var(--surface-2);border-radius:10px;padding:8px 10px;border:1px solid var(--line)}
 .body-part-name{font-size:10px;color:var(--text-3);font-weight:700}
 .body-part-val{font-family:'Fraunces',serif;font-size:14px;font-weight:500;color:var(--text)}
-.body-part-pct{font-size:10px;font-weight:700}
 .body-figure{display:flex;align-items:center;justify-content:center;font-size:64px;opacity:.6}
 
-/* MEAL TABLE */
+/* FILTER TABS / SUB TABS */
+.ftabs{display:flex;gap:6px;margin-bottom:14px;overflow-x:auto;padding-bottom:4px}
+.ftabs::-webkit-scrollbar{display:none}
+.ftab{padding:7px 14px;background:var(--surface);border:1px solid var(--line);border-radius:999px;color:var(--text-2);font-size:11.5px;cursor:pointer;white-space:nowrap;font-family:inherit;font-weight:600;transition:all .2s}
+.ftab.active{background:var(--primary);color:#fff;border-color:var(--primary);box-shadow:0 2px 8px var(--primary-glow)}
+
+/* MEAL ROW */
 .meal-row{display:flex;justify-content:space-between;align-items:center;padding:14px;background:var(--surface-2);border-radius:14px;margin-bottom:8px;border:1px solid var(--line)}
 .meal-info{flex:1;min-width:0}
 .meal-name{font-size:13.5px;font-weight:800;color:var(--text);margin-bottom:3px}
@@ -134,27 +141,68 @@ body{background-image:radial-gradient(ellipse 75% 50% at 80% 0%,var(--primary-so
 .macro-center-unit{font-size:8px;color:var(--text-3);font-weight:700;letter-spacing:1px}
 .macro-name{font-size:10px;color:var(--text-3);font-weight:700;text-transform:uppercase;letter-spacing:1px}
 
-/* WORKOUT */
-.wday-tabs{display:flex;gap:5px;margin-bottom:14px;overflow-x:auto;padding-bottom:4px}
-.wday-tabs::-webkit-scrollbar{display:none}
-.wday-tab{flex:1;min-width:0;padding:8px 6px;background:var(--surface);border:1px solid var(--line);border-radius:12px;color:var(--text-2);font-size:10px;cursor:pointer;font-family:inherit;font-weight:700;transition:all .2s;text-align:center;white-space:nowrap}
-.wday-tab.active{background:var(--primary);color:#fff;border-color:var(--primary);box-shadow:0 2px 8px var(--primary-glow)}
-.wday-tab.rest{opacity:.5}
-.wday-tab .wt-name{font-size:9px;display:block;margin-bottom:1px}
-.wday-tab .wt-label{font-family:'Fraunces',serif;font-size:11px;font-weight:500}
-.ex-card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px;margin-bottom:10px;transition:all .2s}
-.ex-num{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;background:var(--primary-soft);color:var(--primary);font-family:'Fraunces',serif;font-size:12px;font-weight:500;margin-bottom:8px}
-.ex-name{font-size:14px;font-weight:800;color:var(--text);margin-bottom:10px;line-height:1.3}
-.ex-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+/* ====== FOOD TRACKER ====== */
+.search-wrap{position:relative;margin-bottom:12px}
+.search-input{width:100%;padding:12px 16px 12px 40px;background:var(--surface);border:1px solid var(--line);border-radius:14px;color:var(--text);font-size:14px;font-family:inherit;outline:none;transition:border .2s}
+.search-input:focus{border-color:var(--primary)}
+.search-icon{position:absolute;left:14px;top:50%;transform:translateY(-50%);font-size:16px;color:var(--text-3)}
+.food-grid{display:grid;grid-template-columns:1fr;gap:8px;max-height:350px;overflow-y:auto;padding:4px 0}
+.food-grid::-webkit-scrollbar{width:4px}
+.food-grid::-webkit-scrollbar-thumb{background:var(--text-3);border-radius:4px}
+.food-card{display:flex;align-items:center;gap:12px;padding:12px;background:var(--surface-2);border:1px solid var(--line);border-radius:14px;cursor:pointer;transition:all .2s}
+.food-card:hover,.food-card:active{border-color:var(--primary);background:var(--primary-soft)}
+.food-emoji{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.food-card-info{flex:1;min-width:0}
+.food-card-name{font-size:13px;font-weight:700;color:var(--text)}
+.food-card-meta{font-size:10px;color:var(--text-3);margin-top:2px}
+.food-card-macros{display:flex;gap:6px;margin-top:4px}
+.food-card-macros span{font-size:9px;padding:2px 6px;border-radius:6px;font-weight:700}
+.food-card-cal{font-family:'Fraunces',serif;font-size:16px;font-weight:500;color:var(--primary);min-width:45px;text-align:center}
+
+/* DAILY LOG */
+.daily-header{display:flex;justify-content:space-between;align-items:center;margin:16px 0 12px}
+.daily-title{font-size:14px;font-weight:800;color:var(--text)}
+.daily-actions{display:flex;gap:6px}
+.daily-btn{padding:6px 12px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--text-2);font-size:11px;font-weight:700;font-family:inherit;cursor:pointer;display:flex;align-items:center;gap:4px;transition:all .2s}
+.daily-btn:hover{background:var(--surface-2);color:var(--text)}
+.daily-btn.wa{background:rgba(37,211,102,.1);color:#25d366;border-color:rgba(37,211,102,.2)}
+.daily-btn.danger{color:var(--over);border-color:var(--over-soft)}
+.log-item{display:flex;align-items:center;gap:10px;padding:10px 12px;background:var(--surface-2);border:1px solid var(--line);border-radius:12px;margin-bottom:6px}
+.log-item-info{flex:1}
+.log-item-name{font-size:12px;font-weight:700;color:var(--text)}
+.log-item-qty{font-size:10px;color:var(--text-3)}
+.log-item-cal{font-family:'Fraunces',serif;font-size:14px;color:var(--primary);font-weight:500}
+.log-item-del{width:28px;height:28px;border-radius:50%;border:none;background:var(--over-soft);color:var(--over);font-size:14px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.log-empty{text-align:center;padding:40px 20px;color:var(--text-3);font-size:13px}
+.macro-bars{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:12px 0}
+.macro-bar-item{text-align:center}
+.macro-bar-label{font-size:9px;color:var(--text-3);font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.macro-bar-track{height:6px;background:var(--surface-3);border-radius:999px;overflow:hidden;margin-bottom:4px}
+.macro-bar-fill{height:100%;border-radius:999px;transition:width .4s}
+.macro-bar-val{font-family:'Fraunces',serif;font-size:13px;font-weight:500;color:var(--text)}
+.macro-bar-target{font-size:9px;color:var(--text-3)}
+
+/* EXERCISE CARD */
+.ex-card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px;margin-bottom:10px}
+.ex-visual{height:100px;border-radius:12px;background:var(--surface-2);display:flex;align-items:center;justify-content:center;margin-bottom:10px;overflow:hidden;position:relative}
+.ex-visual svg{width:120px;height:80px}
+.ex-muscle-badge{position:absolute;top:8px;right:8px;padding:3px 8px;border-radius:6px;font-size:9px;font-weight:800;background:var(--primary-soft);color:var(--primary)}
+.ex-yt{position:absolute;bottom:8px;left:8px;padding:4px 8px;border-radius:8px;background:rgba(255,0,0,.12);color:#ff4444;font-size:9px;font-weight:700;text-decoration:none;display:flex;align-items:center;gap:4px}
+.ex-name-row{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px}
+.ex-name{font-size:14px;font-weight:800;color:var(--text);line-height:1.3}
+.ex-name-en{font-size:11px;color:var(--text-3);font-weight:500}
+.ex-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
 .ex-stat{background:var(--surface-2);border-radius:8px;padding:8px 4px;text-align:center;border:1px solid var(--line)}
 .ex-stat .esl{font-size:8px;color:var(--text-3);text-transform:uppercase;letter-spacing:.8px;font-weight:700;margin-bottom:2px}
 .ex-stat .esv{font-family:'Fraunces',serif;font-size:14px;font-weight:500;color:var(--text)}
-.hiit-card{background:linear-gradient(135deg,rgba(217,122,122,.08),var(--surface));border:1px solid var(--over-soft);border-radius:16px;padding:14px;margin-bottom:10px}
-.hiit-card h4{color:var(--over);font-size:13px;margin-bottom:8px;font-weight:800}
-.hiit-item{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--line);font-size:12px}
-.hiit-item:last-child{border-bottom:none}
-.hiit-ex{font-weight:700;color:var(--text)}
-.hiit-sets{color:var(--teal);font-weight:700;font-size:11px}
+
+/* WDAY TABS */
+.wday-tabs{display:flex;gap:5px;margin-bottom:14px}
+.wday-tab{flex:1;padding:10px 6px;background:var(--surface);border:1px solid var(--line);border-radius:12px;color:var(--text-2);font-size:11px;cursor:pointer;font-family:inherit;font-weight:700;transition:all .2s;text-align:center}
+.wday-tab.active{background:var(--primary);color:#fff;border-color:var(--primary)}
+.wday-tab .wt-label{font-family:'Fraunces',serif;font-size:12px;font-weight:500;display:block;margin-top:2px}
+
+/* CARDIO BADGE */
 .cardio-badge{display:inline-flex;align-items:center;gap:5px;background:var(--teal-soft);color:var(--teal);padding:4px 10px;border-radius:999px;font-size:10px;font-weight:700;margin-bottom:8px}
 
 /* TIMELINE */
@@ -164,7 +212,6 @@ body{background-image:radial-gradient(ellipse 75% 50% at 80% 0%,var(--primary-so
 .tl-dot{position:absolute;right:-20px;top:4px;width:14px;height:14px;border-radius:50%;border:2px solid var(--primary);background:var(--bg)}
 .tl-dot.now{background:var(--primary);box-shadow:0 0 12px var(--primary-glow)}
 .tl-dot.future{border-color:var(--text-3);background:var(--surface-2)}
-.tl-dot.done{background:var(--teal);border-color:var(--teal)}
 .tl-time{font-size:10px;color:var(--text-3);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
 .tl-title{font-size:14px;font-weight:800;color:var(--text);margin-bottom:4px}
 .tl-desc{font-size:12px;color:var(--text-2);line-height:1.6}
@@ -172,7 +219,7 @@ body{background-image:radial-gradient(ellipse 75% 50% at 80% 0%,var(--primary-so
 .tl-stat{background:var(--surface-2);border-radius:8px;padding:6px 10px;font-size:11px;font-weight:700;border:1px solid var(--line)}
 .tl-stat em{font-family:'Fraunces',serif;font-style:italic;font-weight:500}
 
-/* SUPP CARD */
+/* SUPP */
 .supp-item{display:flex;gap:12px;padding:14px;background:var(--surface-2);border-radius:14px;margin-bottom:8px;border:1px solid var(--line);align-items:center}
 .supp-icon{width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
 .supp-info{flex:1}
@@ -186,43 +233,15 @@ body{background-image:radial-gradient(ellipse 75% 50% at 80% 0%,var(--primary-so
 .rule-text{flex:1;line-height:1.6;color:var(--text-2)}
 .rule-text strong{color:var(--text);font-weight:800}
 
-/* HISTORY CHART */
-.history-chart{display:flex;align-items:flex-end;gap:4px;height:120px;padding:0 2px;margin:12px 0}
-.history-chart div{flex:1;border-radius:4px 4px 0 0;position:relative;transition:height .4s;min-height:2px;cursor:pointer}
-.history-chart div:hover{opacity:.8}
-.history-chart div .hc-tip{display:none;position:absolute;top:-28px;left:50%;transform:translateX(-50%);background:var(--surface);border:1px solid var(--line-2);border-radius:8px;padding:3px 8px;font-size:10px;font-weight:700;color:var(--text);white-space:nowrap;box-shadow:var(--shadow-sm);z-index:5}
-.history-chart div:hover .hc-tip{display:block}
-.history-labels{display:flex;gap:4px;margin-top:4px}
-.history-labels span{flex:1;text-align:center;font-size:8px;color:var(--text-3);font-weight:700}
-
-/* FILTER TABS */
-.ftabs{display:flex;gap:6px;margin-bottom:14px;overflow-x:auto;padding-bottom:4px}
-.ftabs::-webkit-scrollbar{display:none}
-.ftab{padding:7px 14px;background:var(--surface);border:1px solid var(--line);border-radius:999px;color:var(--text-2);font-size:11.5px;cursor:pointer;white-space:nowrap;font-family:inherit;font-weight:600;transition:all .2s}
-.ftab:hover{border-color:var(--primary);color:var(--text)}
-.ftab.active{background:var(--primary);color:#fff;border-color:var(--primary);box-shadow:0 2px 8px var(--primary-glow)}
-
-/* TOAST */
-.toast{position:fixed;bottom:36px;left:50%;transform:translateX(-50%);background:var(--surface);color:var(--text);padding:12px 22px;border-radius:999px;font-size:13px;font-weight:600;border:1px solid var(--line-2);box-shadow:var(--shadow-lg);z-index:1000;animation:toastIn .35s cubic-bezier(.34,1.56,.64,1),toastOut .3s ease 1.8s forwards}
-@keyframes toastIn{from{opacity:0;transform:translate(-50%,30px)}to{opacity:1;transform:translate(-50%,0)}}
-@keyframes toastOut{to{opacity:0;transform:translate(-50%,30px)}}
-
-/* UPDATE BUTTON */
-.update-btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:14px;background:linear-gradient(135deg,var(--primary-soft),var(--teal-soft));border:1px dashed var(--primary);border-radius:16px;color:var(--primary);font-size:13px;font-weight:700;font-family:inherit;cursor:pointer;transition:all .3s;margin-bottom:14px}
-.update-btn:hover{background:var(--primary-soft);border-style:solid;transform:translateY(-1px);box-shadow:var(--shadow-sm)}
-.update-btn .ub-icon{font-size:20px}
-
-/* MODAL OVERLAY */
-.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.65);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);z-index:100;display:none;align-items:flex-end;justify-content:center;animation:fadeIn .25s}
+/* MODAL */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.65);backdrop-filter:blur(8px);z-index:100;display:none;align-items:flex-end;justify-content:center}
 .modal-overlay.open{display:flex}
-@keyframes fadeIn{from{opacity:0}to{opacity:1}}
 .modal{width:100%;max-width:520px;max-height:88vh;background:var(--bg);border-radius:24px 24px 0 0;overflow-y:auto;padding:0 0 40px;animation:slideUp .35s cubic-bezier(.4,0,.2,1)}
 @keyframes slideUp{from{transform:translateY(100%)}to{transform:translateY(0)}}
 .modal-handle{width:40px;height:4px;border-radius:999px;background:var(--text-3);margin:12px auto 0;opacity:.4}
 .modal-header{display:flex;justify-content:space-between;align-items:center;padding:20px 24px 12px;position:sticky;top:0;background:var(--bg);z-index:2}
 .modal-title{font-family:'Fraunces',serif;font-size:20px;font-weight:500;color:var(--text)}
-.modal-close{width:36px;height:36px;border-radius:50%;background:var(--surface);border:1px solid var(--line);color:var(--text);font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s}
-.modal-close:hover{background:var(--over-soft);color:var(--over)}
+.modal-close{width:36px;height:36px;border-radius:50%;background:var(--surface);border:1px solid var(--line);color:var(--text);font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center}
 .modal-body{padding:0 24px}
 .form-section{margin-bottom:20px}
 .form-section-title{font-size:10px;color:var(--text-3);text-transform:uppercase;letter-spacing:2px;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:6px}
@@ -231,42 +250,51 @@ body{background-image:radial-gradient(ellipse 75% 50% at 80% 0%,var(--primary-so
 .form-group{position:relative}
 .form-label{font-size:10px;color:var(--text-2);font-weight:600;margin-bottom:4px;display:block}
 .form-input{width:100%;padding:10px 12px;background:var(--surface);border:1px solid var(--line);border-radius:12px;color:var(--text);font-size:14px;font-family:'Fraunces',serif;font-weight:500;outline:none;transition:all .2s;-moz-appearance:textfield}
-.form-input::-webkit-outer-spin-button,.form-input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.form-input::-webkit-outer-spin-button,.form-input::-webkit-inner-spin-button{-webkit-appearance:none}
 .form-input:focus{border-color:var(--primary);box-shadow:0 0 0 3px var(--primary-soft)}
 .form-input::placeholder{color:var(--text-3);font-family:'Tajawal',sans-serif;font-size:11px;font-weight:400}
 .form-unit{position:absolute;left:12px;top:28px;font-size:10px;color:var(--text-3);font-weight:600}
 .form-actions{display:flex;gap:10px;padding:20px 24px 0;position:sticky;bottom:0;background:linear-gradient(to top,var(--bg) 80%,transparent)}
 .form-btn{flex:1;padding:14px;border-radius:14px;font-size:14px;font-weight:700;font-family:inherit;cursor:pointer;transition:all .2s;border:none}
 .form-btn.primary{background:var(--primary);color:#fff;box-shadow:0 4px 12px var(--primary-glow)}
-.form-btn.primary:hover{transform:translateY(-1px);box-shadow:0 6px 16px var(--primary-glow)}
 .form-btn.secondary{background:var(--surface);color:var(--text-2);border:1px solid var(--line)}
-.form-btn.secondary:hover{background:var(--surface-2)}
-.form-btn.export{background:var(--teal-soft);color:var(--teal)}
+
+/* FOOD QTY MODAL */
+.qty-modal{position:fixed;inset:0;background:rgba(0,0,0,.5);backdrop-filter:blur(6px);z-index:110;display:none;align-items:center;justify-content:center}
+.qty-modal.open{display:flex}
+.qty-box{background:var(--bg);border-radius:20px;padding:24px;width:90%;max-width:340px;border:1px solid var(--line-2);box-shadow:var(--shadow-lg)}
+.qty-title{font-family:'Fraunces',serif;font-size:18px;font-weight:500;margin-bottom:4px;color:var(--text)}
+.qty-sub{font-size:11px;color:var(--text-3);margin-bottom:16px}
+.qty-input-wrap{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+.qty-input{flex:1;padding:12px;background:var(--surface);border:1px solid var(--line);border-radius:12px;color:var(--text);font-size:18px;font-family:'Fraunces',serif;text-align:center;outline:none}
+.qty-input:focus{border-color:var(--primary)}
+.qty-unit{font-size:13px;color:var(--text-2);font-weight:600;min-width:40px}
+.qty-preview{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:16px}
+.qty-preview-item{text-align:center;padding:6px;background:var(--surface-2);border-radius:8px}
+.qty-preview-label{font-size:8px;color:var(--text-3);font-weight:700;text-transform:uppercase}
+.qty-preview-val{font-family:'Fraunces',serif;font-size:14px;font-weight:500;color:var(--text)}
+.qty-btns{display:flex;gap:10px}
+
+/* UPDATE BTN */
+.update-btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:14px;background:linear-gradient(135deg,var(--primary-soft),var(--teal-soft));border:1px dashed var(--primary);border-radius:16px;color:var(--primary);font-size:13px;font-weight:700;font-family:inherit;cursor:pointer;transition:all .3s;margin-bottom:14px}
+.update-btn:hover{border-style:solid}
 .data-actions{display:flex;gap:8px;margin-bottom:14px}
 .data-btn{flex:1;padding:10px;border-radius:12px;background:var(--surface);border:1px solid var(--line);color:var(--text-2);font-size:11px;font-weight:700;font-family:inherit;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;transition:all .2s}
-.data-btn:hover{background:var(--surface-2);color:var(--text)}
 
-/* RESPONSIVE */
-@media(max-width:400px){
-  .stat-grid{grid-template-columns:1fr 1fr}
-  .stat-grid.tri{grid-template-columns:1fr 1fr 1fr}
-  .macro-row{gap:6px}
-  .macro-ring{width:60px;height:60px}
-  .hero-num{font-size:42px}
-}
+/* TOAST */
+.toast{position:fixed;bottom:36px;left:50%;transform:translateX(-50%);background:var(--surface);color:var(--text);padding:12px 22px;border-radius:999px;font-size:13px;font-weight:600;border:1px solid var(--line-2);box-shadow:var(--shadow-lg);z-index:200;animation:toastIn .35s cubic-bezier(.34,1.56,.64,1),toastOut .3s ease 1.8s forwards}
+@keyframes toastIn{from{opacity:0;transform:translate(-50%,30px)}to{opacity:1;transform:translate(-50%,0)}}
+@keyframes toastOut{to{opacity:0;transform:translate(-50%,30px)}}
 
-/* SECTION TITLE */
+/* MISC */
 .sec-title{font-size:10px;color:var(--text-3);margin-bottom:12px;text-transform:uppercase;letter-spacing:2.5px;font-weight:700}
-
-/* ALERT BOX */
 .alert{padding:14px;border-radius:14px;margin-bottom:14px;font-size:12.5px;line-height:1.6;display:flex;align-items:flex-start;gap:10px}
 .alert.info{background:var(--primary-soft);border:1px solid rgba(126,182,230,.2);color:var(--text)}
 .alert.warn{background:var(--amber-soft);border:1px solid rgba(217,184,112,.2);color:var(--text)}
 .alert.success{background:var(--green-soft);border:1px solid rgba(140,201,168,.2);color:var(--text)}
 .alert-icon{font-size:16px;flex-shrink:0;margin-top:1px}
-
-/* Divider */
 .divider{height:1px;background:var(--line);margin:16px 0}
+@media(max-width:400px){.stat-grid{grid-template-columns:1fr 1fr}.hero-num{font-size:42px}.macro-ring{width:60px;height:60px}}
 </style>
 </head>
 <body>
@@ -285,1258 +313,706 @@ body{background-image:radial-gradient(ellipse 75% 50% at 80% 0%,var(--primary-so
 </header>
 
 <nav class="tabs">
-  <button class="tab active" data-tab="dashboard"><span class="tab-icon">📊</span>لوحة القيادة</button>
-  <button class="tab" data-tab="diet"><span class="tab-icon">🍽️</span>الدايت</button>
+  <button class="tab active" data-tab="dashboard"><span class="tab-icon">📊</span>داشبورد</button>
+  <button class="tab" data-tab="food"><span class="tab-icon">🍽️</span>الأكل</button>
   <button class="tab" data-tab="workout"><span class="tab-icon">💪</span>التمرين</button>
-  <button class="tab" data-tab="timeline"><span class="tab-icon">🎯</span>الخط الزمني</button>
+  <button class="tab" data-tab="timeline"><span class="tab-icon">🎯</span>التايملاين</button>
   <button class="tab" data-tab="supps"><span class="tab-icon">💊</span>المكملات</button>
 </nav>
 
 <div class="content">
 
-<!-- ==================== TAB 1: DASHBOARD ==================== -->
+<!-- ======== TAB 1: DASHBOARD ======== -->
 <section id="sec-dashboard" class="section active">
-
-  <!-- Update InBody Button -->
-  <button class="update-btn" id="openInbodyModal">
-    <span class="ub-icon">📥</span>
-    <span>تحديث بيانات InBody جديدة</span>
-  </button>
-
-  <!-- Data Import/Export -->
+  <button class="update-btn" id="openInbodyModal">📥 تحديث بيانات InBody جديدة</button>
   <div class="data-actions">
-    <button class="data-btn" id="exportBtn">📤 تصدير الداتا (JSON)</button>
-    <button class="data-btn" id="importBtn">📂 استيراد داتا</button>
-    <input type="file" id="importFile" accept=".json" style="display:none" />
+    <button class="data-btn" id="exportBtn">📤 تصدير JSON</button>
+    <button class="data-btn" id="importBtn">📂 استيراد</button>
+    <input type="file" id="importFile" accept=".json" style="display:none"/>
   </div>
 
-  <!-- InBody Score -->
   <div class="card glow">
     <div class="card-title"><span class="ct-icon">🏆</span> InBody Score</div>
     <div style="display:flex;justify-content:space-between;align-items:flex-end;position:relative;z-index:1">
-      <div>
-        <div class="hero-num">82</div>
-        <div class="hero-suffix">من <em>100</em> نقطة</div>
-      </div>
-      <div style="text-align:left">
-        <div style="font-size:11px;color:var(--text-3);font-weight:600">26 مايو 2026</div>
-        <div style="font-size:11px;color:var(--teal);font-weight:700;margin-top:2px">فوق المتوسط</div>
-      </div>
+      <div><div class="hero-num" id="dScore">82</div><div class="hero-suffix">من <em>100</em> نقطة</div></div>
+      <div style="text-align:left"><div style="font-size:11px;color:var(--text-3);font-weight:600" id="dDate">26 مايو 2026</div><div style="font-size:11px;color:var(--teal);font-weight:700;margin-top:2px">فوق المتوسط</div></div>
     </div>
     <div style="margin-top:14px;position:relative;z-index:1">
-      <div class="prog-track" style="height:10px">
-        <div class="prog-fill" style="width:82%;background:linear-gradient(90deg,var(--primary),var(--teal))"></div>
-      </div>
-      <div style="display:flex;justify-content:space-between;margin-top:4px;font-size:9px;color:var(--text-3);font-weight:600">
-        <span>0</span><span>50</span><span>70</span><span>82</span><span>100</span>
-      </div>
+      <div class="prog-track" style="height:10px"><div class="prog-fill" id="dScoreFill" style="width:82%;background:linear-gradient(90deg,var(--primary),var(--teal))"></div></div>
     </div>
   </div>
 
-  <!-- Key Stats -->
-  <div class="stat-grid">
-    <div class="stat-box">
-      <div class="stat-label">الوزن</div>
-      <div class="stat-val" style="color:var(--over)">98.0</div>
-      <div class="stat-sub">كجم</div>
-    </div>
-    <div class="stat-box">
-      <div class="stat-label">المستهدف</div>
-      <div class="stat-val" style="color:var(--teal)">84.4</div>
-      <div class="stat-sub">كجم (-13.6)</div>
-    </div>
-    <div class="stat-box">
-      <div class="stat-label">نسبة الدهون</div>
-      <div class="stat-val" style="color:var(--amber)">26.8%</div>
-      <div class="stat-sub">فوق الطبيعي</div>
-    </div>
-    <div class="stat-box">
-      <div class="stat-label">كتلة عضلية</div>
-      <div class="stat-val" style="color:var(--teal)">41.3</div>
-      <div class="stat-sub">كجم — ممتازة</div>
-    </div>
+  <div class="stat-grid" id="dStats">
+    <div class="stat-box"><div class="stat-label">الوزن</div><div class="stat-val" style="color:var(--over)" id="dWeight">98.0</div><div class="stat-sub">كجم</div></div>
+    <div class="stat-box"><div class="stat-label">المستهدف</div><div class="stat-val" style="color:var(--teal)">84.4</div><div class="stat-sub">كجم</div></div>
+    <div class="stat-box"><div class="stat-label">نسبة الدهون</div><div class="stat-val" style="color:var(--amber)" id="dPBF">26.8%</div><div class="stat-sub">فوق الطبيعي</div></div>
+    <div class="stat-box"><div class="stat-label">كتلة عضلية</div><div class="stat-val" style="color:var(--teal)" id="dSMM">41.3</div><div class="stat-sub">كجم</div></div>
   </div>
 
-  <!-- Body Composition -->
   <div class="card">
     <div class="card-title"><span class="ct-icon">🧬</span> تكوين الجسم</div>
-    <div class="hbar">
-      <div class="hbar-label"><span>كتلة عضلية (SMM)</span><span style="color:var(--teal)">41.3 كجم</span></div>
-      <div class="hbar-track"><div class="hbar-fill" style="width:78%;background:linear-gradient(90deg,var(--teal),#5ab0a8)">ممتازة</div><div class="hbar-marker" style="right:25%"></div></div>
-    </div>
-    <div class="hbar">
-      <div class="hbar-label"><span>كتلة دهنية</span><span style="color:var(--over)">26.2 كجم</span></div>
-      <div class="hbar-track"><div class="hbar-fill" style="width:65%;background:linear-gradient(90deg,var(--amber),var(--over))">فوق — محتاج ينزل</div><div class="hbar-marker" style="right:40%"></div></div>
-    </div>
-    <div class="hbar">
-      <div class="hbar-label"><span>مياه الجسم</span><span style="color:var(--primary)">52.7 لتر</span></div>
-      <div class="hbar-track"><div class="hbar-fill" style="width:72%;background:linear-gradient(90deg,var(--primary),var(--blue-deep))">طبيعي</div></div>
-    </div>
-    <div class="hbar">
-      <div class="hbar-label"><span>بروتين</span><span style="color:var(--purple)">14.3 كجم</span></div>
-      <div class="hbar-track"><div class="hbar-fill" style="width:70%;background:linear-gradient(90deg,var(--purple),#8b6cf5)">طبيعي</div></div>
-    </div>
-    <div class="hbar" style="margin-bottom:0">
-      <div class="hbar-label"><span>معادن</span><span style="color:var(--slate)">4.74 كجم</span></div>
-      <div class="hbar-track"><div class="hbar-fill" style="width:68%;background:var(--slate)">طبيعي</div></div>
-    </div>
+    <div class="hbar"><div class="hbar-label"><span>كتلة عضلية</span><span style="color:var(--teal)" id="dSMMBar">41.3 كجم</span></div><div class="hbar-track"><div class="hbar-fill" style="width:78%;background:linear-gradient(90deg,var(--teal),#5ab0a8)">ممتازة</div></div></div>
+    <div class="hbar"><div class="hbar-label"><span>كتلة دهنية</span><span style="color:var(--over)" id="dFatBar">26.2 كجم</span></div><div class="hbar-track"><div class="hbar-fill" style="width:65%;background:linear-gradient(90deg,var(--amber),var(--over))">فوق</div></div></div>
+    <div class="hbar"><div class="hbar-label"><span>مياه الجسم</span><span style="color:var(--primary)" id="dWaterBar">52.7 لتر</span></div><div class="hbar-track"><div class="hbar-fill" style="width:72%;background:linear-gradient(90deg,var(--primary),var(--blue-deep))">طبيعي</div></div></div>
+    <div class="hbar" style="margin-bottom:0"><div class="hbar-label"><span>بروتين</span><span style="color:var(--purple)" id="dProtBar">14.3 كجم</span></div><div class="hbar-track"><div class="hbar-fill" style="width:70%;background:linear-gradient(90deg,var(--purple),#8b6cf5)">طبيعي</div></div></div>
   </div>
 
-  <!-- Critical Metrics -->
   <div class="card">
     <div class="card-title"><span class="ct-icon">⚠️</span> مؤشرات حرجة</div>
-    <div class="prog-wrap">
-      <div class="prog-header"><span class="prog-label">BMI</span><span class="prog-val" style="color:var(--over)">32.7 — سمنة درجة أولى</span></div>
-      <div class="prog-track"><div class="prog-fill" style="width:75%;background:var(--over)"></div></div>
-      <div style="display:flex;justify-content:space-between;font-size:8px;color:var(--text-3);margin-top:3px"><span>18.5</span><span>25</span><span>30</span><span>32.7</span><span>40</span></div>
-    </div>
-    <div class="prog-wrap">
-      <div class="prog-header"><span class="prog-label">دهون حشوية</span><span class="prog-val" style="color:var(--over)">11 (الطبيعي 1-9)</span></div>
-      <div class="prog-track"><div class="prog-fill" style="width:73%;background:var(--over)"></div></div>
-    </div>
-    <div class="prog-wrap">
-      <div class="prog-header"><span class="prog-label">نسبة الخصر للورك (WHR)</span><span class="prog-val" style="color:var(--amber)">0.97 (الهدف &lt; 0.90)</span></div>
-      <div class="prog-track"><div class="prog-fill" style="width:85%;background:var(--amber)"></div></div>
-    </div>
-    <div class="prog-wrap" style="margin-bottom:0">
-      <div class="prog-header"><span class="prog-label">درجة السمنة</span><span class="prog-val" style="color:var(--over)">149% (الطبيعي 90-110)</span></div>
-      <div class="prog-track"><div class="prog-fill" style="width:80%;background:var(--over)"></div></div>
-    </div>
+    <div class="prog-wrap"><div class="prog-header"><span class="prog-label">BMI</span><span class="prog-val" style="color:var(--over)" id="dBMI">32.7 — سمنة</span></div><div class="prog-track"><div class="prog-fill" style="width:75%;background:var(--over)"></div></div></div>
+    <div class="prog-wrap"><div class="prog-header"><span class="prog-label">دهون حشوية</span><span class="prog-val" style="color:var(--over)" id="dVisceral">11</span></div><div class="prog-track"><div class="prog-fill" style="width:73%;background:var(--over)"></div></div></div>
+    <div class="prog-wrap" style="margin-bottom:0"><div class="prog-header"><span class="prog-label">WHR</span><span class="prog-val" style="color:var(--amber)" id="dWHR">0.97</span></div><div class="prog-track"><div class="prog-fill" style="width:85%;background:var(--amber)"></div></div></div>
   </div>
 
-  <!-- Segmental Analysis -->
   <div class="card">
-    <div class="card-title"><span class="ct-icon">🗺️</span> تحليل قطاعي — توزيع العضل والدهون</div>
-    <div class="body-map">
-      <div class="body-side right">
-        <div class="body-part">
-          <div class="body-part-name">ذراع يمين — عضل</div>
-          <div class="body-part-val">4.51 كجم</div>
-          <div class="body-part-pct" style="color:var(--teal)">135.8% Over</div>
-        </div>
-        <div class="body-part">
-          <div class="body-part-name">ذراع يمين — دهون</div>
-          <div class="body-part-val">1.6 كجم</div>
-          <div class="body-part-pct" style="color:var(--over)">272.8% Over</div>
-        </div>
-        <div class="body-part">
-          <div class="body-part-name">رجل يمين — عضل</div>
-          <div class="body-part-val">10.40 كجم</div>
-          <div class="body-part-pct" style="color:var(--text-2)">101.4% Normal</div>
-        </div>
-        <div class="body-part">
-          <div class="body-part-name">رجل يمين — دهون</div>
-          <div class="body-part-val">3.3 كجم</div>
-          <div class="body-part-pct" style="color:var(--over)">194.6% Over</div>
-        </div>
-      </div>
-      <div class="body-figure">🧍</div>
-      <div class="body-side left">
-        <div class="body-part">
-          <div class="body-part-name">ذراع شمال — عضل</div>
-          <div class="body-part-val">4.51 كجم</div>
-          <div class="body-part-pct" style="color:var(--teal)">134.7% Over</div>
-        </div>
-        <div class="body-part">
-          <div class="body-part-name">ذراع شمال — دهون</div>
-          <div class="body-part-val">1.6 كجم</div>
-          <div class="body-part-pct" style="color:var(--over)">275.7% Over</div>
-        </div>
-        <div class="body-part">
-          <div class="body-part-name">رجل شمال — عضل</div>
-          <div class="body-part-val">10.21 كجم</div>
-          <div class="body-part-pct" style="color:var(--text-2)">100.1% Normal</div>
-        </div>
-        <div class="body-part">
-          <div class="body-part-name">رجل شمال — دهون</div>
-          <div class="body-part-val">3.3 كجم</div>
-          <div class="body-part-pct" style="color:var(--over)">191.5% Over</div>
-        </div>
-      </div>
-    </div>
-    <div class="stat-grid" style="margin-bottom:0">
-      <div class="stat-box">
-        <div class="stat-label">الجذع — عضل</div>
-        <div class="stat-val" style="color:var(--teal);font-size:18px">33.0 كجم</div>
-        <div class="stat-sub" style="color:var(--teal)">118.5% Over</div>
-      </div>
-      <div class="stat-box">
-        <div class="stat-label">الجذع — دهون</div>
-        <div class="stat-val" style="color:var(--over);font-size:18px">15.0 كجم</div>
-        <div class="stat-sub" style="color:var(--over)">359.5% Over</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- History Chart -->
-  <div class="card">
-    <div class="card-title"><span class="ct-icon">📈</span> تاريخ تكوين الجسم</div>
-    <div class="sec-title">الوزن (كجم)</div>
-    <div class="history-chart" id="weightChart"></div>
-    <div class="history-labels" id="weightLabels"></div>
+    <div class="card-title"><span class="ct-icon">📈</span> تاريخ القياسات</div>
+    <div class="sec-title">الوزن</div>
+    <div class="history-chart" id="weightChart"></div><div class="history-labels" id="weightLabels"></div>
     <div class="divider"></div>
-    <div class="sec-title">الكتلة العضلية (كجم)</div>
-    <div class="history-chart" id="smmChart"></div>
-    <div class="history-labels" id="smmLabels"></div>
+    <div class="sec-title">الكتلة العضلية</div>
+    <div class="history-chart" id="smmChart"></div><div class="history-labels" id="smmLabels"></div>
     <div class="divider"></div>
-    <div class="sec-title">نسبة الدهون (%)</div>
-    <div class="history-chart" id="pbfChart"></div>
-    <div class="history-labels" id="pbfLabels"></div>
-  </div>
-
-  <div class="alert info">
-    <span class="alert-icon">💡</span>
-    <div><strong>خلاصة:</strong> كتلتك العضلية ممتازة خصوصا الجزء العلوي. المشكلة محصورة في الدهون — أغلبها في الجذع (البطن). الأرجل عضلاتها عادية ومحتاجة شغل أكتر. الخطة هتركز على حرق دهون الجذع مع الحفاظ على العضل.</div>
+    <div class="sec-title">نسبة الدهون</div>
+    <div class="history-chart" id="pbfChart"></div><div class="history-labels" id="pbfLabels"></div>
   </div>
 </section>
 
-<!-- ==================== TAB 2: DIET ==================== -->
-<section id="sec-diet" class="section">
-
-  <!-- Calorie Target -->
+<!-- ======== TAB 2: FOOD TRACKER ======== -->
+<section id="sec-food" class="section">
+  <!-- Daily Progress -->
   <div class="card glow">
-    <div class="card-title"><span class="ct-icon">🔥</span> هدف السعرات اليومي</div>
+    <div class="card-title"><span class="ct-icon">🔥</span> تراكينج اليوم</div>
     <div style="display:flex;justify-content:space-between;align-items:flex-end;position:relative;z-index:1">
-      <div>
-        <div class="hero-num">1,600</div>
-        <div class="hero-suffix">سعر حراري / يوم</div>
-      </div>
-      <div style="text-align:left">
-        <div style="font-size:18px;font-family:'Fraunces',serif;color:var(--over);font-weight:500">-900</div>
-        <div style="font-size:10px;color:var(--text-3);font-weight:600">عجز يومي</div>
-      </div>
+      <div><div class="hero-num" id="todayCal">0</div><div class="hero-suffix">من <em id="targetCalDisplay">1,600</em> سعر</div></div>
+      <div style="text-align:left"><div style="font-family:'Fraunces',serif;font-size:18px;font-weight:500;color:var(--teal)" id="remainCal">1,600</div><div style="font-size:10px;color:var(--text-3)">متبقي</div></div>
     </div>
-    <div style="margin-top:14px;position:relative;z-index:1">
-      <div class="stat-grid tri" style="margin-bottom:0">
-        <div class="stat-box">
-          <div class="stat-label">BMR</div>
-          <div class="stat-val" style="font-size:18px">1,920</div>
-          <div class="stat-sub">حرق أساسي</div>
-        </div>
-        <div class="stat-box">
-          <div class="stat-label">TDEE</div>
-          <div class="stat-val" style="font-size:18px">~2,500</div>
-          <div class="stat-sub">إجمالي الحرق</div>
-        </div>
-        <div class="stat-box">
-          <div class="stat-label">معدل الفقد</div>
-          <div class="stat-val" style="font-size:18px;color:var(--teal)">~1</div>
-          <div class="stat-sub">كجم/أسبوع</div>
-        </div>
-      </div>
+    <div style="margin-top:12px;position:relative;z-index:1">
+      <div class="prog-track" style="height:10px"><div class="prog-fill" id="calFill" style="width:0%;background:linear-gradient(90deg,var(--teal),var(--primary))"></div></div>
+    </div>
+    <div class="macro-bars" id="macroBars">
+      <div class="macro-bar-item"><div class="macro-bar-label">بروتين</div><div class="macro-bar-track"><div class="macro-bar-fill" id="pFill" style="width:0%;background:var(--teal)"></div></div><div class="macro-bar-val" id="pVal">0g</div><div class="macro-bar-target" id="pTarget">/ 180g</div></div>
+      <div class="macro-bar-item"><div class="macro-bar-label">كاربز</div><div class="macro-bar-track"><div class="macro-bar-fill" id="cFill" style="width:0%;background:var(--primary)"></div></div><div class="macro-bar-val" id="cVal">0g</div><div class="macro-bar-target" id="cTarget">/ 108g</div></div>
+      <div class="macro-bar-item"><div class="macro-bar-label">دهون</div><div class="macro-bar-track"><div class="macro-bar-fill" id="fFill" style="width:0%;background:var(--slate)"></div></div><div class="macro-bar-val" id="fVal">0g</div><div class="macro-bar-target" id="fTarget">/ 50g</div></div>
+      <div class="macro-bar-item"><div class="macro-bar-label">سعرات</div><div class="macro-bar-track"><div class="macro-bar-fill" id="calFill2" style="width:0%;background:var(--amber)"></div></div><div class="macro-bar-val" id="calVal2">0</div><div class="macro-bar-target" id="calTarget2">/ 1600</div></div>
     </div>
   </div>
 
-  <!-- Macros -->
+  <!-- Search & Add -->
   <div class="card">
-    <div class="card-title"><span class="ct-icon">📊</span> الماكروز اليومية</div>
-    <div class="macro-row">
-      <div class="macro-item">
-        <div class="macro-ring">
-          <svg viewBox="0 0 36 36"><circle class="bg" cx="18" cy="18" r="15.5"/><circle class="fg" cx="18" cy="18" r="15.5" stroke="var(--teal)" stroke-dasharray="97.4" stroke-dashoffset="52.6"/></svg>
-          <div class="macro-center"><div class="macro-center-val">180g</div><div class="macro-center-unit">720 cal</div></div>
-        </div>
-        <div class="macro-name" style="color:var(--teal)">بروتين</div>
-      </div>
-      <div class="macro-item">
-        <div class="macro-ring">
-          <svg viewBox="0 0 36 36"><circle class="bg" cx="18" cy="18" r="15.5"/><circle class="fg" cx="18" cy="18" r="15.5" stroke="var(--primary)" stroke-dasharray="97.4" stroke-dashoffset="71.2"/></svg>
-          <div class="macro-center"><div class="macro-center-val">108g</div><div class="macro-center-unit">430 cal</div></div>
-        </div>
-        <div class="macro-name" style="color:var(--primary)">كاربز</div>
-      </div>
-      <div class="macro-item">
-        <div class="macro-ring">
-          <svg viewBox="0 0 36 36"><circle class="bg" cx="18" cy="18" r="15.5"/><circle class="fg" cx="18" cy="18" r="15.5" stroke="var(--slate)" stroke-dasharray="97.4" stroke-dashoffset="70"/></svg>
-          <div class="macro-center"><div class="macro-center-val">50g</div><div class="macro-center-unit">450 cal</div></div>
-        </div>
-        <div class="macro-name" style="color:var(--slate)">دهون</div>
-      </div>
-    </div>
-    <div class="alert info" style="margin-bottom:0">
-      <span class="alert-icon">💡</span>
-      <div>البروتين عالي (1.8g/كجم) عشان نحافظ على الـ 41.3 كجم عضلات. الكاربز منخفضة بس كفاية للطاقة والتمرين.</div>
-    </div>
+    <div class="card-title"><span class="ct-icon">🔍</span> أضف أكل</div>
+    <div class="search-wrap"><span class="search-icon">🔍</span><input type="text" class="search-input" id="foodSearch" placeholder="ابحث عن أكل... فراخ، أرز، فول..." /></div>
+    <div class="ftabs" id="catTabs"></div>
+    <div class="food-grid" id="foodGrid"></div>
   </div>
 
-  <!-- Meal Plans -->
-  <div class="card">
-    <div class="card-title"><span class="ct-icon">🍽️</span> وجبات يومية</div>
-    <div class="ftabs" id="mealTabs">
-      <button class="ftab active" data-meal="training">يوم تمرين</button>
-      <button class="ftab" data-meal="rest">يوم راحة</button>
-    </div>
-
-    <div id="meal-training">
-      <div class="meal-row"><div class="meal-info"><div class="meal-name">فطار — 8 ص</div><div class="meal-detail">4 بيضات (2 كاملة + 2 بياض) + 100g فول بالليمون + خيار</div></div><div class="meal-cal">380<span class="meal-cal-unit">KCAL</span></div></div>
-      <div class="meal-row"><div class="meal-info"><div class="meal-name">سناك — 11 ص</div><div class="meal-detail">سكوب واي بروتين + تفاحة صغيرة</div></div><div class="meal-cal">200<span class="meal-cal-unit">KCAL</span></div></div>
-      <div class="meal-row"><div class="meal-info"><div class="meal-name">غدا — 2 ظ</div><div class="meal-detail">200g صدور فراخ مشوية + 150g أرز مسلوق + سلطة خضراء كبيرة</div></div><div class="meal-cal">480<span class="meal-cal-unit">KCAL</span></div></div>
-      <div class="meal-row"><div class="meal-info"><div class="meal-name">بعد التمرين — 6 م</div><div class="meal-detail">سكوب واي بروتين + موزة صغيرة</div></div><div class="meal-cal">220<span class="meal-cal-unit">KCAL</span></div></div>
-      <div class="meal-row"><div class="meal-info"><div class="meal-name">عشا — 9 م</div><div class="meal-detail">150g سمك تيلابيا أو تونة مصفاة + سلطة + ملعقة زيت زيتون</div></div><div class="meal-cal">320<span class="meal-cal-unit">KCAL</span></div></div>
-      <div style="text-align:left;font-size:11px;color:var(--text-3);font-weight:700;margin-top:8px;direction:ltr">Total ≈ 1,600 kcal | P: ~180g | F: ~50g | C: ~108g</div>
-    </div>
-
-    <div id="meal-rest" style="display:none">
-      <div class="meal-row"><div class="meal-info"><div class="meal-name">فطار — 9 ص</div><div class="meal-detail">3 بيضات كاملة + خيار + طماطم</div></div><div class="meal-cal">300<span class="meal-cal-unit">KCAL</span></div></div>
-      <div class="meal-row"><div class="meal-info"><div class="meal-name">غدا — 1 ظ</div><div class="meal-detail">200g صدور فراخ أو لحمة + خضار سوتيه + 100g أرز</div></div><div class="meal-cal">450<span class="meal-cal-unit">KCAL</span></div></div>
-      <div class="meal-row"><div class="meal-info"><div class="meal-name">سناك — 5 م</div><div class="meal-detail">200g زبادي يوناني + 10 حبات لوز</div></div><div class="meal-cal">230<span class="meal-cal-unit">KCAL</span></div></div>
-      <div class="meal-row"><div class="meal-info"><div class="meal-name">عشا — 8 م</div><div class="meal-detail">سكوب واي + علبة تونة مصفاة + سلطة</div></div><div class="meal-cal">350<span class="meal-cal-unit">KCAL</span></div></div>
-      <div class="meal-row"><div class="meal-info"><div class="meal-name">قبل النوم</div><div class="meal-detail">200g جبنة قريش + خيار</div></div><div class="meal-cal">170<span class="meal-cal-unit">KCAL</span></div></div>
-      <div style="text-align:left;font-size:11px;color:var(--text-3);font-weight:700;margin-top:8px;direction:ltr">Total ≈ 1,500 kcal | P: ~175g | F: ~48g | C: ~85g</div>
+  <!-- Daily Log -->
+  <div class="daily-header">
+    <div class="daily-title">📋 سجل اليوم</div>
+    <div class="daily-actions">
+      <button class="daily-btn wa" id="waShare">📱 واتساب</button>
+      <button class="daily-btn danger" id="resetDay">🗑️ مسح</button>
     </div>
   </div>
-
-  <!-- Protein Sources -->
-  <div class="card">
-    <div class="card-title"><span class="ct-icon">🥩</span> مصادر البروتين المفضلة</div>
-    <div class="meal-row"><div class="meal-info"><div class="meal-name">صدور فراخ مشوية</div><div class="meal-detail">100g — أنظف مصدر بروتين</div></div><div class="meal-cal" style="font-size:14px">31g<span class="meal-cal-unit">بروتين</span></div></div>
-    <div class="meal-row"><div class="meal-info"><div class="meal-name">تونة معلبة (مصفاة)</div><div class="meal-detail">100g — بروتين عالي + دهون قليلة</div></div><div class="meal-cal" style="font-size:14px">28g<span class="meal-cal-unit">بروتين</span></div></div>
-    <div class="meal-row"><div class="meal-info"><div class="meal-name">بياض بيض</div><div class="meal-detail">بيضة — سعرات قليلة جدا</div></div><div class="meal-cal" style="font-size:14px">3.6g<span class="meal-cal-unit">بروتين</span></div></div>
-    <div class="meal-row"><div class="meal-info"><div class="meal-name">جبنة قريش</div><div class="meal-detail">100g — سناك مثالي</div></div><div class="meal-cal" style="font-size:14px">17g<span class="meal-cal-unit">بروتين</span></div></div>
-    <div class="meal-row"><div class="meal-info"><div class="meal-name">واي بروتين (سكوب)</div><div class="meal-detail">30g بودرة — أسرع امتصاص</div></div><div class="meal-cal" style="font-size:14px">25g<span class="meal-cal-unit">بروتين</span></div></div>
-  </div>
+  <div id="dailyLog"></div>
 </section>
 
-<!-- ==================== TAB 3: WORKOUT ==================== -->
+<!-- ======== TAB 3: WORKOUT ======== -->
 <section id="sec-workout" class="section">
-
   <div class="ftabs" id="phaseTabs">
     <button class="ftab active" data-phase="home">🏠 البيت (15 يوم)</button>
-    <button class="ftab" data-phase="gym">🏋️ الجيم (بعد كده)</button>
+    <button class="ftab" data-phase="gym">🏋️ الجيم</button>
   </div>
 
-  <!-- HOME PHASE -->
   <div id="phase-home">
-    <div class="alert info" style="margin-bottom:14px">
-      <span class="alert-icon">⚡</span>
-      <div><strong>النظام:</strong> Push/Pull/Legs × 2 + HIIT يومي. كل يوم 30-40 دقيقة مقاومة + 15-20 دقيقة HIIT. يوم 7 راحة.</div>
-    </div>
-
+    <div class="alert info"><span class="alert-icon">⚡</span><div><strong>3 أيام/أسبوع:</strong> Push / Pull / Legs + مشي 8000-10000 خطوة يوميا. راحة يوم بين كل تمرينة.</div></div>
     <div class="wday-tabs" id="homeDayTabs"></div>
     <div id="homeWorkoutContent"></div>
   </div>
 
-  <!-- GYM PHASE -->
   <div id="phase-gym" style="display:none">
-    <div class="alert success" style="margin-bottom:14px">
-      <span class="alert-icon">🏋️</span>
-      <div><strong>بلان الجيم:</strong> 4 أيام/أسبوع. Push/Pull/Legs + Full Body. كل يوم بيخلص بـ 20 دقيقة مشي سريع (incline 10, speed 6).</div>
-    </div>
-
+    <div class="alert success"><span class="alert-icon">🏋️</span><div><strong>3 أيام/أسبوع:</strong> Push / Pull / Legs + 20 دقيقة تريدميل (incline 10, speed 6) بعد كل يوم.</div></div>
     <div class="wday-tabs" id="gymDayTabs"></div>
     <div id="gymWorkoutContent"></div>
   </div>
 </section>
 
-<!-- ==================== TAB 4: TIMELINE ==================== -->
+<!-- ======== TAB 4: TIMELINE ======== -->
 <section id="sec-timeline" class="section">
-
   <div class="card glow">
-    <div class="card-title"><span class="ct-icon">🎯</span> رحلة التنشيف — التصور الكامل</div>
+    <div class="card-title"><span class="ct-icon">🎯</span> رحلة التنشيف</div>
     <div style="position:relative;z-index:1">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
-        <div>
-          <div style="font-size:11px;color:var(--text-3);font-weight:600">من</div>
-          <div style="font-family:'Fraunces',serif;font-size:28px;font-weight:500;color:var(--over)">98 <span style="font-size:13px;color:var(--text-3)">كجم</span></div>
-        </div>
+        <div><div style="font-size:11px;color:var(--text-3)">من</div><div style="font-family:'Fraunces',serif;font-size:28px;font-weight:500;color:var(--over)" id="tlFrom">98 <span style="font-size:13px;color:var(--text-3)">كجم</span></div></div>
         <div style="font-size:28px;color:var(--text-3)">→</div>
-        <div style="text-align:left">
-          <div style="font-size:11px;color:var(--text-3);font-weight:600">إلى</div>
-          <div style="font-family:'Fraunces',serif;font-size:28px;font-weight:500;color:var(--teal)">84 <span style="font-size:13px;color:var(--text-3)">كجم</span></div>
-        </div>
+        <div style="text-align:left"><div style="font-size:11px;color:var(--text-3)">إلى</div><div style="font-family:'Fraunces',serif;font-size:28px;font-weight:500;color:var(--teal)">84 <span style="font-size:13px;color:var(--text-3)">كجم</span></div></div>
       </div>
-      <div class="prog-track" style="height:12px">
-        <div class="prog-fill" style="width:8%;background:linear-gradient(90deg,var(--over),var(--amber),var(--teal))"></div>
-      </div>
-      <div style="display:flex;justify-content:space-between;margin-top:6px;font-size:10px;color:var(--text-3);font-weight:600">
-        <span>البداية</span><span>شهر 1</span><span>شهر 2</span><span>شهر 3</span><span>الهدف</span>
-      </div>
+      <div class="prog-track" style="height:12px"><div class="prog-fill" id="tlProgress" style="width:0%;background:linear-gradient(90deg,var(--over),var(--amber),var(--teal))"></div></div>
     </div>
   </div>
-
-  <div class="timeline">
-    <!-- NOW -->
-    <div class="tl-item">
-      <div class="tl-dot now"></div>
-      <div class="tl-time">الآن — أغسطس 2026</div>
-      <div class="tl-title">البداية (بلان البيت)</div>
-      <div class="tl-desc">بدأت الدايت + كرياتين + تمارين منزلية. أول أسبوعين هينزل وزن مياه سريع + بداية حرق دهون فعلي.</div>
-      <div class="tl-stats">
-        <div class="tl-stat">الوزن: <em>98 كجم</em></div>
-        <div class="tl-stat">الدهون: <em>26.8%</em></div>
-        <div class="tl-stat">العضل: <em>41.3 كجم</em></div>
-      </div>
-    </div>
-
-    <!-- 2 WEEKS -->
-    <div class="tl-item">
-      <div class="tl-dot future"></div>
-      <div class="tl-time">بعد أسبوعين</div>
-      <div class="tl-title">دخول الجيم + استمرار الدايت</div>
-      <div class="tl-desc">الكرياتين loading اكتمل. الجسم تأقلم على العجز. هتبدأ ترجع الجيم والقوة هتفضل ثابتة بسبب الكرياتين. فقدان 2-3 كجم (مياه + دهون).</div>
-      <div class="tl-stats">
-        <div class="tl-stat" style="color:var(--teal)">الوزن: <em>~95 كجم</em></div>
-        <div class="tl-stat">الدهون: <em>~25%</em></div>
-        <div class="tl-stat" style="color:var(--teal)">العضل: <em>41.3+ كجم</em></div>
-      </div>
-    </div>
-
-    <!-- 1 MONTH -->
-    <div class="tl-item">
-      <div class="tl-dot future"></div>
-      <div class="tl-time">بعد شهر — سبتمبر 2026</div>
-      <div class="tl-title">نتائج واضحة في المراية</div>
-      <div class="tl-desc">فقدان 3-4 كجم دهون فعلية. الوجه والذراعين هيبانوا أنحف. البطن هيبدأ يصغر بشكل ملحوظ. الكرياتين هيحافظ على امتلاء العضلات.</div>
-      <div class="tl-stats">
-        <div class="tl-stat" style="color:var(--teal)">الوزن: <em>~92 كجم</em></div>
-        <div class="tl-stat">الدهون: <em>~23%</em></div>
-        <div class="tl-stat" style="color:var(--teal)">العضل: <em>41+ كجم</em></div>
-      </div>
-    </div>
-
-    <!-- 2 MONTHS -->
-    <div class="tl-item">
-      <div class="tl-dot future"></div>
-      <div class="tl-time">بعد شهرين — أكتوبر 2026</div>
-      <div class="tl-title">تحول جذري في الشكل</div>
-      <div class="tl-desc">فقدان 7-8 كجم دهون إجمالي. خط الفك واضح. الكتف والصدر شكلهم أحسن. ال love handles بتختفي. BMI نزل تحت 30. الدهون الحشوية رجعت طبيعي.</div>
-      <div class="tl-stats">
-        <div class="tl-stat" style="color:var(--teal)">الوزن: <em>~88 كجم</em></div>
-        <div class="tl-stat" style="color:var(--teal)">الدهون: <em>~20%</em></div>
-        <div class="tl-stat" style="color:var(--teal)">العضل: <em>41+ كجم</em></div>
-        <div class="tl-stat" style="color:var(--teal)">BMI: <em>~29</em></div>
-      </div>
-    </div>
-
-    <!-- 3 MONTHS -->
-    <div class="tl-item">
-      <div class="tl-dot future"></div>
-      <div class="tl-time">بعد 3 شهور — نوفمبر 2026</div>
-      <div class="tl-title">الهدف النهائي</div>
-      <div class="tl-desc">وصلت الوزن المستهدف ~84 كجم. فقدان 14 كجم دهون مع الحفاظ على العضل. شكل athletic واضح. BMI طبيعي. الدهون الحشوية في المنطقة الآمنة. ممكن تبدأ lean bulk بعدها.</div>
-      <div class="tl-stats">
-        <div class="tl-stat" style="color:var(--teal)">الوزن: <em>~84 كجم</em></div>
-        <div class="tl-stat" style="color:var(--teal)">الدهون: <em>~16-17%</em></div>
-        <div class="tl-stat" style="color:var(--teal)">العضل: <em>41+ كجم</em></div>
-        <div class="tl-stat" style="color:var(--teal)">BMI: <em>~28</em></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Weight Projection Chart -->
-  <div class="card">
-    <div class="card-title"><span class="ct-icon">📉</span> منحنى الوزن المتوقع</div>
-    <div class="history-chart" id="projChart" style="height:140px"></div>
-    <div class="history-labels" id="projLabels"></div>
-    <div style="display:flex;gap:12px;margin-top:10px;font-size:10px">
-      <span style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:10px;border-radius:3px;background:var(--primary)"></span> الوزن المتوقع</span>
-      <span style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:10px;border-radius:3px;background:var(--teal)"></span> الهدف (84 كجم)</span>
-    </div>
-  </div>
-
-  <!-- Body Fat Projection -->
-  <div class="card">
-    <div class="card-title"><span class="ct-icon">📉</span> نسبة الدهون المتوقعة</div>
-    <div class="history-chart" id="bfChart" style="height:140px"></div>
-    <div class="history-labels" id="bfLabels"></div>
-  </div>
-
-  <div class="alert warn">
-    <span class="alert-icon">⚠️</span>
-    <div><strong>ملاحظة:</strong> الكرياتين ممكن يخلي الميزان يثبت أو ينزل أبطأ لأنه بيحبس مياه في العضل (وده شيء كويس). ركز على شكلك في المراية + القياسات + الصور أكتر من الميزان.</div>
-  </div>
+  <div class="timeline" id="tlTimeline"></div>
+  <div class="card"><div class="card-title"><span class="ct-icon">📉</span> منحنى الوزن المتوقع</div><div class="history-chart" id="projChart" style="height:140px"></div><div class="history-labels" id="projLabels"></div></div>
 </section>
 
-<!-- ==================== TAB 5: SUPPLEMENTS & RULES ==================== -->
+<!-- ======== TAB 5: SUPPLEMENTS ======== -->
 <section id="sec-supps" class="section">
-
   <div class="sec-title">المكملات اليومية</div>
-
-  <div class="supp-item">
-    <div class="supp-icon" style="background:var(--teal-soft)">💪</div>
-    <div class="supp-info">
-      <div class="supp-name">واي بروتين</div>
-      <div class="supp-dose">1-2 سكوب يوميا (~50g بروتين)</div>
-      <div class="supp-timing">بعد التمرين + سناك</div>
-    </div>
-  </div>
-
-  <div class="supp-item">
-    <div class="supp-icon" style="background:var(--primary-soft)">⚡</div>
-    <div class="supp-info">
-      <div class="supp-name">كرياتين مونوهيدرات</div>
-      <div class="supp-dose">5g يوميا — كل يوم بدون انقطاع</div>
-      <div class="supp-timing">أي وقت مع الأكل — متوقفوش أبدا</div>
-    </div>
-  </div>
-
-  <div class="supp-item">
-    <div class="supp-icon" style="background:var(--amber-soft)">🐟</div>
-    <div class="supp-info">
-      <div class="supp-name">أوميجا 3 (زيت سمك)</div>
-      <div class="supp-dose">1000-2000mg يوميا (EPA + DHA)</div>
-      <div class="supp-timing">مع الغدا — يساعد في حرق الدهون + صحة المفاصل</div>
-    </div>
-  </div>
-
-  <div class="supp-item">
-    <div class="supp-icon" style="background:var(--purple-soft)">💊</div>
-    <div class="supp-info">
-      <div class="supp-name">ملتي فيتامين</div>
-      <div class="supp-dose">حبة واحدة يوميا</div>
-      <div class="supp-timing">مع الفطار — يعوض أي نقص في الدايت المنخفض</div>
-    </div>
-  </div>
-
+  <div class="supp-item"><div class="supp-icon" style="background:var(--primary-soft)">⚡</div><div class="supp-info"><div class="supp-name">كرياتين مونوهيدرات</div><div class="supp-dose">5g يوميا — كل يوم بدون انقطاع</div><div class="supp-timing">أي وقت مع الأكل</div></div></div>
+  <div class="supp-item"><div class="supp-icon" style="background:var(--amber-soft)">🐟</div><div class="supp-info"><div class="supp-name">أوميجا 3 (زيت سمك)</div><div class="supp-dose">1000-2000mg يوميا</div><div class="supp-timing">مع الغدا — حرق دهون + مفاصل</div></div></div>
+  <div class="supp-item"><div class="supp-icon" style="background:var(--purple-soft)">💊</div><div class="supp-info"><div class="supp-name">ملتي فيتامين</div><div class="supp-dose">حبة واحدة يوميا</div><div class="supp-timing">مع الفطار — يعوض النقص</div></div></div>
   <div class="divider"></div>
-
-  <!-- Schedule -->
-  <div class="card">
-    <div class="card-title"><span class="ct-icon">⏰</span> جدول المكملات اليومي</div>
+  <div class="card"><div class="card-title"><span class="ct-icon">⏰</span> الجدول اليومي</div>
     <div class="meal-row"><div class="meal-info"><div class="meal-name">الصبح مع الفطار</div><div class="meal-detail">ملتي فيتامين</div></div><div style="font-size:20px">💊</div></div>
-    <div class="meal-row"><div class="meal-info"><div class="meal-name">مع الغدا</div><div class="meal-detail">أوميجا 3 (1-2 كبسولة)</div></div><div style="font-size:20px">🐟</div></div>
-    <div class="meal-row"><div class="meal-info"><div class="meal-name">أي وقت مع أكل</div><div class="meal-detail">كرياتين 5g (ملعقة صغيرة)</div></div><div style="font-size:20px">⚡</div></div>
-    <div class="meal-row"><div class="meal-info"><div class="meal-name">بعد التمرين / كسناك</div><div class="meal-detail">واي بروتين سكوب</div></div><div style="font-size:20px">💪</div></div>
+    <div class="meal-row"><div class="meal-info"><div class="meal-name">مع الغدا</div><div class="meal-detail">أوميجا 3</div></div><div style="font-size:20px">🐟</div></div>
+    <div class="meal-row"><div class="meal-info"><div class="meal-name">أي وقت مع أكل</div><div class="meal-detail">كرياتين 5g</div></div><div style="font-size:20px">⚡</div></div>
   </div>
-
   <div class="divider"></div>
-
   <div class="sec-title">قوانين الـ Aggressive Cut</div>
-
-  <div class="rule-item"><div class="rule-num">1</div><div class="rule-text"><strong>مياه 3-4 لتر يوميا</strong> كحد أدنى. كل ما تشرب أكتر، الجسم يحرق أحسن ويفضي سوائل.</div></div>
-  <div class="rule-item"><div class="rule-num">2</div><div class="rule-text"><strong>نوم 7-8 ساعات.</strong> النوم أهم عامل لحرق الدهون والحفاظ على العضل. من غيره الكورتيزول هيرتفع وهتحرق عضل.</div></div>
-  <div class="rule-item"><div class="rule-num">3</div><div class="rule-text"><strong>مشي يومي 8,000-10,000 خطوة.</strong> سعرات "مجانية" بتحرقها من غير ما تتعب عضلاتك. المشي أهم من الـ HIIT.</div></div>
-  <div class="rule-item"><div class="rule-num">4</div><div class="rule-text"><strong>التزام بالبروتين 180g.</strong> حتى لو يوم مش قادر تلتزم بالسعرات، التزم بالبروتين. ده اللي هيحافظلك على العضل.</div></div>
-  <div class="rule-item"><div class="rule-num">5</div><div class="rule-text"><strong>الكرياتين كل يوم.</strong> هيحافظلك على القوة والأداء حتى في deficit. متوقفوش.</div></div>
-  <div class="rule-item"><div class="rule-num">6</div><div class="rule-text"><strong>Tempo بطيء في المقاومة.</strong> نزل في 3 ثواني واطلع في ثانية. شغل أكتر = حرق أكتر + محافظة أكتر.</div></div>
-  <div class="rule-item"><div class="rule-num">7</div><div class="rule-text"><strong>صور نفسك كل أسبوع.</strong> نفس المكان، نفس الإضاءة، نفس الوقت. دي أدق من الميزان.</div></div>
-  <div class="rule-item"><div class="rule-num">8</div><div class="rule-text"><strong>ممنوع: سكريات، مقليات، مشروبات غازية، عصائر محلاة.</strong> Zero tolerance. لو عايز حلو — فاكهة بس.</div></div>
-
-  <div class="divider"></div>
-
-  <div class="alert success">
-    <span class="alert-icon">✅</span>
-    <div><strong>تذكر:</strong> انت عندك كتلة عضلية ممتازة (41.3 كجم). كل اللي محتاجه هو إزالة الدهون اللي فوقيها. مع البروتين العالي + الكرياتين + التمرين، العضل مش هيروح. الصبر والالتزام هما المفتاح.</div>
-  </div>
+  <div class="rule-item"><div class="rule-num">1</div><div class="rule-text"><strong>مياه 3-4 لتر يوميا.</strong></div></div>
+  <div class="rule-item"><div class="rule-num">2</div><div class="rule-text"><strong>نوم 7-8 ساعات.</strong> الكورتيزول هيرتفع من غيره.</div></div>
+  <div class="rule-item"><div class="rule-num">3</div><div class="rule-text"><strong>مشي 8000-10000 خطوة يوميا.</strong></div></div>
+  <div class="rule-item"><div class="rule-num">4</div><div class="rule-text"><strong>التزم بالبروتين.</strong> حتى لو يوم مش ملتزم بالسعرات.</div></div>
+  <div class="rule-item"><div class="rule-num">5</div><div class="rule-text"><strong>كرياتين كل يوم.</strong> متوقفوش.</div></div>
+  <div class="rule-item"><div class="rule-num">6</div><div class="rule-text"><strong>صور نفسك كل أسبوع.</strong> أدق من الميزان.</div></div>
+  <div class="rule-item"><div class="rule-num">7</div><div class="rule-text"><strong>ممنوع:</strong> سكريات، مقليات، غازيات، عصائر محلاة.</div></div>
 </section>
 
 </div><!-- /content -->
 
-<!-- InBody Data Modal -->
+<!-- ======== INBODY MODAL ======== -->
 <div class="modal-overlay" id="inbodyModal">
   <div class="modal">
     <div class="modal-handle"></div>
-    <div class="modal-header">
-      <div class="modal-title">تحديث بيانات InBody</div>
-      <button class="modal-close" id="closeModal">✕</button>
-    </div>
+    <div class="modal-header"><div class="modal-title">تحديث InBody</div><button class="modal-close" id="closeIBModal">✕</button></div>
     <div class="modal-body">
-
-      <div class="form-section">
-        <div class="form-section-title">📅 تاريخ القياس</div>
-        <div class="form-row" style="grid-template-columns:1fr">
-          <div class="form-group">
-            <label class="form-label">التاريخ</label>
-            <input type="date" class="form-input" id="ib_date" style="font-family:Tajawal,sans-serif;font-size:13px" />
-          </div>
-        </div>
+      <div class="form-section"><div class="form-section-title">📅 التاريخ</div><div class="form-row" style="grid-template-columns:1fr"><div class="form-group"><input type="date" class="form-input" id="ib_date" style="font-family:Tajawal;font-size:13px"/></div></div></div>
+      <div class="form-section"><div class="form-section-title">⚖️ الأساسيات</div>
+        <div class="form-row"><div class="form-group"><label class="form-label">الوزن</label><input type="number" step="0.1" class="form-input" id="ib_weight" placeholder="98.0"/><span class="form-unit">كجم</span></div><div class="form-group"><label class="form-label">Score</label><input type="number" class="form-input" id="ib_score" placeholder="82"/><span class="form-unit">/100</span></div></div>
+        <div class="form-row tri"><div class="form-group"><label class="form-label">SMM</label><input type="number" step="0.1" class="form-input" id="ib_smm" placeholder="41.3"/></div><div class="form-group"><label class="form-label">كتلة دهنية</label><input type="number" step="0.1" class="form-input" id="ib_fat" placeholder="26.2"/></div><div class="form-group"><label class="form-label">PBF %</label><input type="number" step="0.1" class="form-input" id="ib_pbf" placeholder="26.8"/></div></div>
       </div>
-
-      <div class="form-section">
-        <div class="form-section-title">⚖️ القياسات الأساسية</div>
-        <div class="form-row">
-          <div class="form-group">
-            <label class="form-label">الوزن</label>
-            <input type="number" step="0.1" class="form-input" id="ib_weight" placeholder="98.0" />
-            <span class="form-unit">كجم</span>
-          </div>
-          <div class="form-group">
-            <label class="form-label">InBody Score</label>
-            <input type="number" class="form-input" id="ib_score" placeholder="82" />
-            <span class="form-unit">/ 100</span>
-          </div>
-        </div>
-        <div class="form-row tri">
-          <div class="form-group">
-            <label class="form-label">كتلة عضلية (SMM)</label>
-            <input type="number" step="0.1" class="form-input" id="ib_smm" placeholder="41.3" />
-            <span class="form-unit">كجم</span>
-          </div>
-          <div class="form-group">
-            <label class="form-label">كتلة دهنية</label>
-            <input type="number" step="0.1" class="form-input" id="ib_fat_mass" placeholder="26.2" />
-            <span class="form-unit">كجم</span>
-          </div>
-          <div class="form-group">
-            <label class="form-label">نسبة الدهون (PBF)</label>
-            <input type="number" step="0.1" class="form-input" id="ib_pbf" placeholder="26.8" />
-            <span class="form-unit">%</span>
-          </div>
-        </div>
+      <div class="form-section"><div class="form-section-title">🧬 تكوين</div>
+        <div class="form-row"><div class="form-group"><label class="form-label">مياه</label><input type="number" step="0.1" class="form-input" id="ib_water" placeholder="52.7"/></div><div class="form-group"><label class="form-label">بروتين</label><input type="number" step="0.1" class="form-input" id="ib_protein" placeholder="14.3"/></div></div>
       </div>
-
-      <div class="form-section">
-        <div class="form-section-title">🧬 تكوين الجسم</div>
-        <div class="form-row tri">
-          <div class="form-group">
-            <label class="form-label">مياه الجسم</label>
-            <input type="number" step="0.1" class="form-input" id="ib_water" placeholder="52.7" />
-            <span class="form-unit">لتر</span>
-          </div>
-          <div class="form-group">
-            <label class="form-label">بروتين</label>
-            <input type="number" step="0.1" class="form-input" id="ib_protein" placeholder="14.3" />
-            <span class="form-unit">كجم</span>
-          </div>
-          <div class="form-group">
-            <label class="form-label">معادن</label>
-            <input type="number" step="0.01" class="form-input" id="ib_minerals" placeholder="4.74" />
-            <span class="form-unit">كجم</span>
-          </div>
-        </div>
+      <div class="form-section"><div class="form-section-title">⚠️ مؤشرات</div>
+        <div class="form-row tri"><div class="form-group"><label class="form-label">BMI</label><input type="number" step="0.1" class="form-input" id="ib_bmi" placeholder="32.7"/></div><div class="form-group"><label class="form-label">Visceral</label><input type="number" class="form-input" id="ib_visc" placeholder="11"/></div><div class="form-group"><label class="form-label">WHR</label><input type="number" step="0.01" class="form-input" id="ib_whr" placeholder="0.97"/></div></div>
       </div>
-
-      <div class="form-section">
-        <div class="form-section-title">⚠️ المؤشرات الحرجة</div>
-        <div class="form-row">
-          <div class="form-group">
-            <label class="form-label">BMI</label>
-            <input type="number" step="0.1" class="form-input" id="ib_bmi" placeholder="32.7" />
-          </div>
-          <div class="form-group">
-            <label class="form-label">دهون حشوية (Visceral)</label>
-            <input type="number" class="form-input" id="ib_visceral" placeholder="11" />
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label class="form-label">WHR (خصر/ورك)</label>
-            <input type="number" step="0.01" class="form-input" id="ib_whr" placeholder="0.97" />
-          </div>
-          <div class="form-group">
-            <label class="form-label">درجة السمنة %</label>
-            <input type="number" class="form-input" id="ib_obesity" placeholder="149" />
-            <span class="form-unit">%</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="form-section">
-        <div class="form-section-title">🗺️ تحليل قطاعي — ذراع يمين</div>
-        <div class="form-row">
-          <div class="form-group">
-            <label class="form-label">عضل (كجم)</label>
-            <input type="number" step="0.01" class="form-input" id="ib_ra_muscle" placeholder="4.51" />
-          </div>
-          <div class="form-group">
-            <label class="form-label">دهون (كجم)</label>
-            <input type="number" step="0.1" class="form-input" id="ib_ra_fat" placeholder="1.6" />
-          </div>
-        </div>
-      </div>
-      <div class="form-section">
-        <div class="form-section-title">🗺️ ذراع شمال</div>
-        <div class="form-row">
-          <div class="form-group">
-            <label class="form-label">عضل (كجم)</label>
-            <input type="number" step="0.01" class="form-input" id="ib_la_muscle" placeholder="4.51" />
-          </div>
-          <div class="form-group">
-            <label class="form-label">دهون (كجم)</label>
-            <input type="number" step="0.1" class="form-input" id="ib_la_fat" placeholder="1.6" />
-          </div>
-        </div>
-      </div>
-      <div class="form-section">
-        <div class="form-section-title">🗺️ رجل يمين</div>
-        <div class="form-row">
-          <div class="form-group">
-            <label class="form-label">عضل (كجم)</label>
-            <input type="number" step="0.01" class="form-input" id="ib_rl_muscle" placeholder="10.40" />
-          </div>
-          <div class="form-group">
-            <label class="form-label">دهون (كجم)</label>
-            <input type="number" step="0.1" class="form-input" id="ib_rl_fat" placeholder="3.3" />
-          </div>
-        </div>
-      </div>
-      <div class="form-section">
-        <div class="form-section-title">🗺️ رجل شمال</div>
-        <div class="form-row">
-          <div class="form-group">
-            <label class="form-label">عضل (كجم)</label>
-            <input type="number" step="0.01" class="form-input" id="ib_ll_muscle" placeholder="10.21" />
-          </div>
-          <div class="form-group">
-            <label class="form-label">دهون (كجم)</label>
-            <input type="number" step="0.1" class="form-input" id="ib_ll_fat" placeholder="3.3" />
-          </div>
-        </div>
-      </div>
-      <div class="form-section">
-        <div class="form-section-title">🗺️ الجذع</div>
-        <div class="form-row">
-          <div class="form-group">
-            <label class="form-label">عضل (كجم)</label>
-            <input type="number" step="0.1" class="form-input" id="ib_trunk_muscle" placeholder="33.0" />
-          </div>
-          <div class="form-group">
-            <label class="form-label">دهون (كجم)</label>
-            <input type="number" step="0.1" class="form-input" id="ib_trunk_fat" placeholder="15.0" />
-          </div>
-        </div>
-      </div>
-
     </div>
-    <div class="form-actions">
-      <button class="form-btn secondary" id="cancelModal">إلغاء</button>
-      <button class="form-btn primary" id="saveInbody">💾 حفظ وتحديث</button>
-    </div>
+    <div class="form-actions"><button class="form-btn secondary" id="cancelIBModal">إلغاء</button><button class="form-btn primary" id="saveIB">💾 حفظ وتحديث</button></div>
+  </div>
+</div>
+
+<!-- ======== FOOD QTY MODAL ======== -->
+<div class="qty-modal" id="qtyModal">
+  <div class="qty-box">
+    <div class="qty-title" id="qtyFoodName"></div>
+    <div class="qty-sub" id="qtyFoodMeta"></div>
+    <div class="qty-input-wrap"><input type="number" class="qty-input" id="qtyInput" value="1"/><span class="qty-unit" id="qtyUnit"></span></div>
+    <div class="qty-preview"><div class="qty-preview-item"><div class="qty-preview-label">سعرات</div><div class="qty-preview-val" id="qpCal">0</div></div><div class="qty-preview-item"><div class="qty-preview-label">بروتين</div><div class="qty-preview-val" id="qpP">0g</div></div><div class="qty-preview-item"><div class="qty-preview-label">كاربز</div><div class="qty-preview-val" id="qpC">0g</div></div><div class="qty-preview-item"><div class="qty-preview-label">دهون</div><div class="qty-preview-val" id="qpF">0g</div></div></div>
+    <div class="qty-btns"><button class="form-btn secondary" id="cancelQty">إلغاء</button><button class="form-btn primary" id="addQty">➕ أضف</button></div>
   </div>
 </div>
 
 </div><!-- /app -->
-
 <script>
 (function(){
-  // ========== INBODY DATA STORE ==========
-  var inbodyHistory = [
-    {date:'2025-12-20',weight:99.7,smm:39.2,pbf:31.2,fatMass:null,water:null,protein:null,minerals:null,bmi:null,visceral:null,whr:null,obesity:null,score:null,ra_m:null,ra_f:null,la_m:null,la_f:null,rl_m:null,rl_f:null,ll_m:null,ll_f:null,trunk_m:null,trunk_f:null},
-    {date:'2026-02-16',weight:101.5,smm:40.5,pbf:30.5,fatMass:null,water:null,protein:null,minerals:null,bmi:null,visceral:null,whr:null,obesity:null,score:null,ra_m:null,ra_f:null,la_m:null,la_f:null,rl_m:null,rl_f:null,ll_m:null,ll_f:null,trunk_m:null,trunk_f:null},
-    {date:'2026-02-28',weight:102.8,smm:41.1,pbf:30.4,fatMass:null,water:null,protein:null,minerals:null,bmi:null,visceral:null,whr:null,obesity:null,score:null,ra_m:null,ra_f:null,la_m:null,la_f:null,rl_m:null,rl_f:null,ll_m:null,ll_f:null,trunk_m:null,trunk_f:null},
-    {date:'2026-04-03',weight:101.2,smm:40.6,pbf:30.3,fatMass:null,water:null,protein:null,minerals:null,bmi:null,visceral:null,whr:null,obesity:null,score:null,ra_m:null,ra_f:null,la_m:null,la_f:null,rl_m:null,rl_f:null,ll_m:null,ll_f:null,trunk_m:null,trunk_f:null},
-    {date:'2026-05-04',weight:101.4,smm:41.7,pbf:28.6,fatMass:null,water:null,protein:null,minerals:null,bmi:null,visceral:null,whr:null,obesity:null,score:null,ra_m:null,ra_f:null,la_m:null,la_f:null,rl_m:null,rl_f:null,ll_m:null,ll_f:null,trunk_m:null,trunk_f:null},
-    {date:'2026-05-14',weight:99.3,smm:41.2,pbf:27.9,fatMass:null,water:null,protein:null,minerals:null,bmi:null,visceral:null,whr:null,obesity:null,score:null,ra_m:null,ra_f:null,la_m:null,la_f:null,rl_m:null,rl_f:null,ll_m:null,ll_f:null,trunk_m:null,trunk_f:null},
-    {date:'2026-05-22',weight:98.4,smm:41.5,pbf:26.8,fatMass:null,water:null,protein:null,minerals:null,bmi:null,visceral:null,whr:null,obesity:null,score:null,ra_m:null,ra_f:null,la_m:null,la_f:null,rl_m:null,rl_f:null,ll_m:null,ll_f:null,trunk_m:null,trunk_f:null},
-    {date:'2026-05-26',weight:98.0,smm:41.3,pbf:26.8,fatMass:26.2,water:52.7,protein:14.3,minerals:4.74,bmi:32.7,visceral:11,whr:0.97,obesity:149,score:82,ra_m:4.51,ra_f:1.6,la_m:4.51,la_f:1.6,rl_m:10.40,rl_f:3.3,ll_m:10.21,ll_f:3.3,trunk_m:33.0,trunk_f:15.0}
-  ];
+const FOOD_DB=[
+  {id:1,n:"فول مدمس",cal:110,p:8,c:15,f:2,srv:150,u:"جم",cat:"بقوليات"},
+  {id:2,n:"طعمية (قطعة)",cal:333,p:13,c:32,f:18,srv:40,u:"قطعة",cat:"بقوليات"},
+  {id:3,n:"عدس مطبوخ",cal:116,p:9,c:20,f:0.4,srv:200,u:"جم",cat:"بقوليات"},
+  {id:4,n:"حمص مسلوق",cal:164,p:9,c:27,f:2.6,srv:100,u:"جم",cat:"بقوليات"},
+  {id:5,n:"صدور فراخ مشوية",cal:165,p:31,c:0,f:3.6,srv:150,u:"جم",cat:"لحوم"},
+  {id:6,n:"فراخ (ورك) مشوية",cal:209,p:26,c:0,f:10.9,srv:150,u:"جم",cat:"لحوم"},
+  {id:7,n:"لحمة مفرومة (قليل دهن)",cal:250,p:26,c:0,f:15,srv:100,u:"جم",cat:"لحوم"},
+  {id:8,n:"لحمة مشوية (ستيك)",cal:271,p:26,c:0,f:18,srv:100,u:"جم",cat:"لحوم"},
+  {id:9,n:"كبدة بقري",cal:135,p:21,c:4,f:4,srv:100,u:"جم",cat:"لحوم"},
+  {id:10,n:"تونة معلبة (مصفاة)",cal:116,p:26,c:0,f:1,srv:170,u:"علبة",cat:"لحوم"},
+  {id:11,n:"سمك تيلابيا مشوي",cal:96,p:20,c:0,f:1.7,srv:150,u:"جم",cat:"لحوم"},
+  {id:12,n:"سمك سلمون",cal:208,p:20,c:0,f:13,srv:150,u:"جم",cat:"لحوم"},
+  {id:13,n:"جمبري مسلوق",cal:99,p:24,c:0.2,f:0.3,srv:100,u:"جم",cat:"لحوم"},
+  {id:14,n:"بيض مسلوق (بيضة)",cal:155,p:13,c:1,f:11,srv:50,u:"بيضة",cat:"ألبان"},
+  {id:15,n:"بياض بيض (بيضة)",cal:52,p:11,c:0.7,f:0.2,srv:33,u:"بيضة",cat:"ألبان"},
+  {id:16,n:"جبنة قريش",cal:98,p:17,c:4,f:1,srv:100,u:"جم",cat:"ألبان"},
+  {id:17,n:"جبنة بيضة قليل الدسم",cal:200,p:14,c:2,f:15,srv:30,u:"قطعة",cat:"ألبان"},
+  {id:18,n:"زبادي يوناني (قليل الدسم)",cal:59,p:10,c:4,f:0.7,srv:170,u:"علبة",cat:"ألبان"},
+  {id:19,n:"زبادي عادي",cal:61,p:3.5,c:4.7,f:3.3,srv:170,u:"علبة",cat:"ألبان"},
+  {id:20,n:"لبن كامل الدسم",cal:61,p:3.2,c:4.8,f:3.3,srv:250,u:"كوب",cat:"ألبان"},
+  {id:21,n:"لبن خالي الدسم",cal:34,p:3.4,c:5,f:0.1,srv:250,u:"كوب",cat:"ألبان"},
+  {id:22,n:"أرز مسلوق",cal:130,p:2.7,c:28,f:0.3,srv:150,u:"جم",cat:"نشويات"},
+  {id:23,n:"مكرونة مسلوقة",cal:131,p:5,c:25,f:1.1,srv:150,u:"جم",cat:"نشويات"},
+  {id:24,n:"عيش بلدي (رغيف)",cal:275,p:9,c:55,f:1.2,srv:80,u:"رغيف",cat:"نشويات"},
+  {id:25,n:"عيش سن (شريحة)",cal:247,p:13,c:41,f:3.4,srv:40,u:"شريحة",cat:"نشويات"},
+  {id:26,n:"بطاطس مسلوقة",cal:77,p:2,c:17,f:0.1,srv:150,u:"جم",cat:"نشويات"},
+  {id:27,n:"بطاطا حلوة",cal:86,p:1.6,c:20,f:0.1,srv:150,u:"جم",cat:"نشويات"},
+  {id:28,n:"شوفان",cal:389,p:17,c:66,f:7,srv:40,u:"جم",cat:"نشويات"},
+  {id:29,n:"كشري (طبق)",cal:160,p:5,c:28,f:3,srv:300,u:"طبق",cat:"نشويات"},
+  {id:30,n:"خيار",cal:15,p:0.7,c:3.6,f:0.1,srv:100,u:"جم",cat:"خضار"},
+  {id:31,n:"طماطم",cal:18,p:0.9,c:3.9,f:0.2,srv:100,u:"جم",cat:"خضار"},
+  {id:32,n:"سلطة خضراء",cal:20,p:1,c:4,f:0.2,srv:150,u:"طبق",cat:"خضار"},
+  {id:33,n:"خضار سوتيه",cal:50,p:2,c:8,f:1.5,srv:200,u:"جم",cat:"خضار"},
+  {id:34,n:"ملوخية",cal:30,p:3,c:4,f:0.5,srv:200,u:"جم",cat:"خضار"},
+  {id:35,n:"بامية",cal:33,p:1.9,c:7,f:0.2,srv:150,u:"جم",cat:"خضار"},
+  {id:36,n:"سبانخ",cal:23,p:2.9,c:3.6,f:0.4,srv:100,u:"جم",cat:"خضار"},
+  {id:37,n:"بروكلي",cal:34,p:2.8,c:7,f:0.4,srv:100,u:"جم",cat:"خضار"},
+  {id:38,n:"موز (موزة)",cal:89,p:1.1,c:23,f:0.3,srv:120,u:"موزة",cat:"فواكه"},
+  {id:39,n:"تفاح (تفاحة)",cal:52,p:0.3,c:14,f:0.2,srv:150,u:"تفاحة",cat:"فواكه"},
+  {id:40,n:"برتقال (برتقالة)",cal:47,p:0.9,c:12,f:0.1,srv:150,u:"برتقالة",cat:"فواكه"},
+  {id:41,n:"بطيخ",cal:30,p:0.6,c:8,f:0.2,srv:200,u:"جم",cat:"فواكه"},
+  {id:42,n:"تمر (2 تمرات)",cal:277,p:2,c:75,f:0.2,srv:30,u:"تمرات",cat:"فواكه"},
+  {id:43,n:"فراولة",cal:32,p:0.7,c:8,f:0.3,srv:150,u:"جم",cat:"فواكه"},
+  {id:44,n:"لوز (10 حبات)",cal:579,p:21,c:22,f:50,srv:28,u:"حبات",cat:"مكسرات"},
+  {id:45,n:"فول سوداني",cal:567,p:26,c:16,f:49,srv:30,u:"جم",cat:"مكسرات"},
+  {id:46,n:"زيت زيتون (ملعقة)",cal:884,p:0,c:0,f:100,srv:15,u:"ملعقة",cat:"زيوت"},
+  {id:47,n:"عسل أبيض (ملعقة)",cal:304,p:0.3,c:82,f:0,srv:15,u:"ملعقة",cat:"أخرى"},
+  {id:48,n:"زبدة فول سوداني",cal:588,p:25,c:20,f:50,srv:20,u:"ملعقة",cat:"أخرى"},
+];
 
-  function latest(){ return inbodyHistory[inbodyHistory.length - 1]; }
+const EX_POSES={
+  pushup:'<svg viewBox="0 0 120 60"><circle cx="18" cy="18" r="7" fill="var(--primary)"/><line x1="25" y1="20" x2="75" y2="32" stroke="var(--primary)" stroke-width="4" stroke-linecap="round"/><line x1="30" y1="22" x2="25" y2="45" stroke="var(--teal)" stroke-width="3" stroke-linecap="round"/><line x1="25" y1="45" x2="22" y2="52" stroke="var(--teal)" stroke-width="2.5"/><line x1="75" y1="32" x2="100" y2="40" stroke="var(--teal)" stroke-width="3" stroke-linecap="round"/><line x1="100" y1="40" x2="105" y2="52" stroke="var(--teal)" stroke-width="2.5"/><rect x="20" y="52" width="90" height="3" rx="1.5" fill="var(--text-3)" opacity=".3"/></svg>',
+  pike:'<svg viewBox="0 0 120 60"><circle cx="50" cy="8" r="7" fill="var(--primary)"/><line x1="50" y1="15" x2="60" y2="45" stroke="var(--primary)" stroke-width="4" stroke-linecap="round"/><line x1="50" y1="15" x2="40" y2="50" stroke="var(--teal)" stroke-width="3" stroke-linecap="round"/><line x1="60" y1="45" x2="85" y2="52" stroke="var(--teal)" stroke-width="3" stroke-linecap="round"/><line x1="60" y1="45" x2="45" y2="52" stroke="var(--teal)" stroke-width="3" stroke-linecap="round"/><rect x="20" y="52" width="90" height="3" rx="1.5" fill="var(--text-3)" opacity=".3"/></svg>',
+  dip:'<svg viewBox="0 0 120 60"><circle cx="60" cy="8" r="7" fill="var(--primary)"/><line x1="60" y1="15" x2="60" y2="38" stroke="var(--primary)" stroke-width="4" stroke-linecap="round"/><line x1="60" y1="18" x2="40" y2="28" stroke="var(--teal)" stroke-width="3" stroke-linecap="round"/><line x1="40" y1="28" x2="35" y2="15" stroke="var(--teal)" stroke-width="2.5"/><line x1="60" y1="18" x2="80" y2="28" stroke="var(--teal)" stroke-width="3" stroke-linecap="round"/><line x1="80" y1="28" x2="85" y2="15" stroke="var(--teal)" stroke-width="2.5"/><line x1="60" y1="38" x2="50" y2="52" stroke="var(--teal)" stroke-width="3" stroke-linecap="round"/><line x1="60" y1="38" x2="70" y2="52" stroke="var(--teal)" stroke-width="3" stroke-linecap="round"/><rect x="25" y="12" width="15" height="4" rx="2" fill="var(--text-3)" opacity=".4"/><rect x="80" y="12" width="15" height="4" rx="2" fill="var(--text-3)" opacity=".4"/></svg>',
+  decline:'<svg viewBox="0 0 120 60"><circle cx="22" cy="12" r="7" fill="var(--primary)"/><line x1="28" y1="15" x2="70" y2="35" stroke="var(--primary)" stroke-width="4" stroke-linecap="round"/><line x1="30" y1="18" x2="25" y2="42" stroke="var(--teal)" stroke-width="3" stroke-linecap="round"/><line x1="70" y1="35" x2="85" y2="22" stroke="var(--teal)" stroke-width="3" stroke-linecap="round"/><rect x="82" y="18" width="20" height="35" rx="3" fill="var(--text-3)" opacity=".2"/><rect x="20" y="45" width="65" height="3" rx="1.5" fill="var(--text-3)" opacity=".3"/></svg>',
+  plank:'<svg viewBox="0 0 120 60"><circle cx="22" cy="22" r="7" fill="var(--primary)"/><line x1="28" y1="24" x2="90" y2="30" stroke="var(--primary)" stroke-width="4" stroke-linecap="round"/><line x1="30" y1="26" x2="28" y2="45" stroke="var(--teal)" stroke-width="3" stroke-linecap="round"/><line x1="90" y1="30" x2="95" y2="50" stroke="var(--teal)" stroke-width="3" stroke-linecap="round"/><rect x="20" y="50" width="80" height="3" rx="1.5" fill="var(--text-3)" opacity=".3"/></svg>',
+  row:'<svg viewBox="0 0 120 60"><circle cx="40" cy="15" r="7" fill="var(--primary)"/><line x1="40" y1="22" x2="50" y2="45" stroke="var(--primary)" stroke-width="4" stroke-linecap="round"/><line x1="42" y1="28" x2="30" y2="22" stroke="var(--teal)" stroke-width="3" stroke-linecap="round"/><line x1="30" y1="22" x2="20" y2="28" stroke="var(--teal)" stroke-width="2.5"/><line x1="50" y1="45" x2="40" y2="52" stroke="var(--teal)" stroke-width="3" stroke-linecap="round"/><line x1="50" y1="45" x2="60" y2="52" stroke="var(--teal)" stroke-width="3" stroke-linecap="round"/><rect x="10" y="10" width="4" height="45" rx="2" fill="var(--text-3)" opacity=".3"/></svg>',
+  superman:'<svg viewBox="0 0 120 60"><circle cx="20" cy="35" r="7" fill="var(--primary)"/><line x1="27" y1="35" x2="80" y2="35" stroke="var(--primary)" stroke-width="4" stroke-linecap="round"/><line x1="22" y1="30" x2="8" y2="20" stroke="var(--teal)" stroke-width="3" stroke-linecap="round"/><line x1="80" y1="35" x2="100" y2="22" stroke="var(--teal)" stroke-width="3" stroke-linecap="round"/><rect x="5" y="40" width="110" height="3" rx="1.5" fill="var(--text-3)" opacity=".3"/></svg>',
+  curl:'<svg viewBox="0 0 120 60"><circle cx="60" cy="8" r="7" fill="var(--primary)"/><line x1="60" y1="15" x2="60" y2="38" stroke="var(--primary)" stroke-width="4" stroke-linecap="round"/><line x1="60" y1="20" x2="50" y2="30" stroke="var(--teal)" stroke-width="3" stroke-linecap="round"/><line x1="50" y1="30" x2="52" y2="20" stroke="var(--teal)" stroke-width="3" stroke-linecap="round"/><line x1="60" y1="20" x2="70" y2="35" stroke="var(--teal)" stroke-width="3" stroke-linecap="round"/><line x1="60" y1="38" x2="50" y2="52" stroke="var(--teal)" stroke-width="3" stroke-linecap="round"/><line x1="60" y1="38" x2="70" y2="52" stroke="var(--teal)" stroke-width="3" stroke-linecap="round"/></svg>',
+  squat:'<svg viewBox="0 0 120 60"><circle cx="55" cy="8" r="7" fill="var(--primary)"/><line x1="55" y1="15" x2="55" y2="32" stroke="var(--primary)" stroke-width="4" stroke-linecap="round"/><line x1="55" y1="20" x2="40" y2="30" stroke="var(--teal)" stroke-width="3" stroke-linecap="round"/><line x1="55" y1="20" x2="70" y2="30" stroke="var(--teal)" stroke-width="3" stroke-linecap="round"/><line x1="55" y1="32" x2="42" y2="45" stroke="var(--teal)" stroke-width="3" stroke-linecap="round"/><line x1="42" y1="45" x2="38" y2="52" stroke="var(--teal)" stroke-width="2.5"/><line x1="55" y1="32" x2="68" y2="45" stroke="var(--teal)" stroke-width="3" stroke-linecap="round"/><line x1="68" y1="45" x2="72" y2="52" stroke="var(--teal)" stroke-width="2.5"/><rect x="30" y="52" width="55" height="3" rx="1.5" fill="var(--text-3)" opacity=".3"/></svg>',
+  lunge:'<svg viewBox="0 0 120 60"><circle cx="50" cy="8" r="7" fill="var(--primary)"/><line x1="50" y1="15" x2="50" y2="32" stroke="var(--primary)" stroke-width="4" stroke-linecap="round"/><line x1="50" y1="32" x2="30" y2="45" stroke="var(--teal)" stroke-width="3" stroke-linecap="round"/><line x1="30" y1="45" x2="25" y2="52" stroke="var(--teal)" stroke-width="2.5"/><line x1="50" y1="32" x2="75" y2="42" stroke="var(--teal)" stroke-width="3" stroke-linecap="round"/><line x1="75" y1="42" x2="80" y2="52" stroke="var(--teal)" stroke-width="2.5"/><rect x="75" y="22" width="18" height="32" rx="3" fill="var(--text-3)" opacity=".2"/></svg>',
+  bridge:'<svg viewBox="0 0 120 60"><circle cx="25" cy="35" r="7" fill="var(--primary)"/><line x1="32" y1="35" x2="60" y2="20" stroke="var(--primary)" stroke-width="4" stroke-linecap="round"/><line x1="60" y1="20" x2="80" y2="35" stroke="var(--teal)" stroke-width="3" stroke-linecap="round"/><line x1="80" y1="35" x2="80" y2="50" stroke="var(--teal)" stroke-width="2.5"/><line x1="25" y1="42" x2="20" y2="50" stroke="var(--teal)" stroke-width="3" stroke-linecap="round"/><rect x="10" y="50" width="80" height="3" rx="1.5" fill="var(--text-3)" opacity=".3"/></svg>',
+  wallsit:'<svg viewBox="0 0 120 60"><circle cx="50" cy="10" r="7" fill="var(--primary)"/><line x1="50" y1="17" x2="50" y2="35" stroke="var(--primary)" stroke-width="4" stroke-linecap="round"/><line x1="50" y1="35" x2="70" y2="35" stroke="var(--teal)" stroke-width="3" stroke-linecap="round"/><line x1="70" y1="35" x2="70" y2="52" stroke="var(--teal)" stroke-width="2.5"/><rect x="45" y="5" width="4" height="50" rx="2" fill="var(--text-3)" opacity=".3"/><rect x="60" y="52" width="20" height="3" rx="1.5" fill="var(--text-3)" opacity=".3"/></svg>',
+  calfraise:'<svg viewBox="0 0 120 60"><circle cx="60" cy="5" r="7" fill="var(--primary)"/><line x1="60" y1="12" x2="60" y2="35" stroke="var(--primary)" stroke-width="4" stroke-linecap="round"/><line x1="60" y1="35" x2="55" y2="48" stroke="var(--teal)" stroke-width="3" stroke-linecap="round"/><line x1="60" y1="35" x2="65" y2="48" stroke="var(--teal)" stroke-width="3" stroke-linecap="round"/><ellipse cx="60" cy="48" rx="10" ry="4" fill="var(--teal)" opacity=".4"/><line x1="55" y1="48" x2="55" y2="52" stroke="var(--teal)" stroke-width="2"/><line x1="65" y1="48" x2="65" y2="52" stroke="var(--teal)" stroke-width="2"/></svg>',
+  bench:'<svg viewBox="0 0 120 60"><rect x="20" y="28" width="80" height="6" rx="3" fill="var(--text-3)" opacity=".3"/><rect x="15" y="34" width="4" height="20" rx="2" fill="var(--text-3)" opacity=".3"/><rect x="101" y="34" width="4" height="20" rx="2" fill="var(--text-3)" opacity=".3"/><circle cx="60" cy="22" r="7" fill="var(--primary)"/><line x1="60" y1="25" x2="60" y2="28" stroke="var(--primary)" stroke-width="4"/><line x1="55" y1="22" x2="40" y2="10" stroke="var(--teal)" stroke-width="3" stroke-linecap="round"/><line x1="65" y1="22" x2="80" y2="10" stroke="var(--teal)" stroke-width="3" stroke-linecap="round"/><line x1="40" y1="10" x2="38" y2="5" stroke="var(--slate)" stroke-width="5" stroke-linecap="round"/><line x1="80" y1="10" x2="82" y2="5" stroke="var(--slate)" stroke-width="5" stroke-linecap="round"/></svg>',
+  pulldown:'<svg viewBox="0 0 120 60"><circle cx="60" cy="18" r="7" fill="var(--primary)"/><line x1="60" y1="25" x2="60" y2="45" stroke="var(--primary)" stroke-width="4" stroke-linecap="round"/><line x1="60" y1="28" x2="40" y2="15" stroke="var(--teal)" stroke-width="3" stroke-linecap="round"/><line x1="40" y1="15" x2="35" y2="8" stroke="var(--teal)" stroke-width="2.5"/><line x1="60" y1="28" x2="80" y2="15" stroke="var(--teal)" stroke-width="3" stroke-linecap="round"/><line x1="80" y1="15" x2="85" y2="8" stroke="var(--teal)" stroke-width="2.5"/><line x1="30" y1="5" x2="90" y2="5" stroke="var(--slate)" stroke-width="3" stroke-linecap="round"/><rect x="55" y="45" width="10" height="10" rx="2" fill="var(--text-3)" opacity=".3"/></svg>',
+  raise:'<svg viewBox="0 0 120 60"><circle cx="60" cy="8" r="7" fill="var(--primary)"/><line x1="60" y1="15" x2="60" y2="38" stroke="var(--primary)" stroke-width="4" stroke-linecap="round"/><line x1="60" y1="22" x2="35" y2="15" stroke="var(--teal)" stroke-width="3" stroke-linecap="round"/><line x1="60" y1="22" x2="85" y2="15" stroke="var(--teal)" stroke-width="3" stroke-linecap="round"/><circle cx="32" cy="14" r="4" fill="var(--slate)" opacity=".4"/><circle cx="88" cy="14" r="4" fill="var(--slate)" opacity=".4"/><line x1="60" y1="38" x2="50" y2="52" stroke="var(--teal)" stroke-width="3" stroke-linecap="round"/><line x1="60" y1="38" x2="70" y2="52" stroke="var(--teal)" stroke-width="3" stroke-linecap="round"/></svg>',
+  cable:'<svg viewBox="0 0 120 60"><circle cx="60" cy="12" r="7" fill="var(--primary)"/><line x1="60" y1="19" x2="60" y2="38" stroke="var(--primary)" stroke-width="4" stroke-linecap="round"/><line x1="60" y1="24" x2="50" y2="35" stroke="var(--teal)" stroke-width="3" stroke-linecap="round"/><line x1="50" y1="35" x2="48" y2="42" stroke="var(--teal)" stroke-width="2.5"/><line x1="60" y1="24" x2="70" y2="35" stroke="var(--teal)" stroke-width="3" stroke-linecap="round"/><line x1="70" y1="35" x2="72" y2="42" stroke="var(--teal)" stroke-width="2.5"/><line x1="48" y1="42" x2="55" y2="5" stroke="var(--slate)" stroke-width="1.5" opacity=".5"/><line x1="72" y1="42" x2="65" y2="5" stroke="var(--slate)" stroke-width="1.5" opacity=".5"/><line x1="60" y1="38" x2="50" y2="52" stroke="var(--teal)" stroke-width="3" stroke-linecap="round"/><line x1="60" y1="38" x2="70" y2="52" stroke="var(--teal)" stroke-width="3" stroke-linecap="round"/></svg>',
+  machine:'<svg viewBox="0 0 120 60"><rect x="30" y="5" width="60" height="50" rx="6" fill="var(--text-3)" opacity=".15"/><circle cx="60" cy="22" r="7" fill="var(--primary)"/><line x1="60" y1="29" x2="60" y2="42" stroke="var(--primary)" stroke-width="4" stroke-linecap="round"/><line x1="60" y1="33" x2="45" y2="28" stroke="var(--teal)" stroke-width="3" stroke-linecap="round"/><line x1="60" y1="33" x2="75" y2="28" stroke="var(--teal)" stroke-width="3" stroke-linecap="round"/><line x1="60" y1="42" x2="52" y2="52" stroke="var(--teal)" stroke-width="3" stroke-linecap="round"/><line x1="60" y1="42" x2="68" y2="52" stroke="var(--teal)" stroke-width="3" stroke-linecap="round"/></svg>',
+  legpress:'<svg viewBox="0 0 120 60"><rect x="65" y="10" width="45" height="40" rx="5" fill="var(--text-3)" opacity=".15"/><circle cx="40" cy="25" r="7" fill="var(--primary)"/><line x1="40" y1="32" x2="45" y2="45" stroke="var(--primary)" stroke-width="4" stroke-linecap="round"/><line x1="45" y1="45" x2="65" y2="35" stroke="var(--teal)" stroke-width="3" stroke-linecap="round"/><line x1="65" y1="35" x2="70" y2="25" stroke="var(--teal)" stroke-width="2.5"/></svg>'
+};
+const homeDays=[
+  {id:'h1',label:'Push',sub:'صدر + كتف + تراي',exercises:[
+    {na:'بوش أبس (قبضة واسعة)',ne:'Wide Push-ups',sets:4,reps:'max',note:'صدر كامل',muscle:'صدر',pose:'pushup'},
+    {na:'دايموند بوش أبس',ne:'Diamond Push-ups',sets:3,reps:'max',note:'تراي + صدر داخلي',muscle:'تراي',pose:'pushup'},
+    {na:'بايك بوش أبس',ne:'Pike Push-ups',sets:4,reps:'8-12',note:'كتف أمامي',muscle:'كتف',pose:'pike'},
+    {na:'ديبس على كرسي',ne:'Chair Dips',sets:3,reps:'max',note:'تراي + صدر سفلي',muscle:'تراي',pose:'dip'},
+    {na:'ديكلاين بوش أبس',ne:'Decline Push-ups',sets:3,reps:'max',note:'رجلك على كرسي — صدر علوي',muscle:'صدر',pose:'decline'},
+    {na:'بلانك شولدر تابس',ne:'Plank Shoulder Taps',sets:3,reps:'20',note:'core + كتف',muscle:'core',pose:'plank'},
+  ]},
+  {id:'h2',label:'Pull',sub:'ضهر + باي',exercises:[
+    {na:'صفوف على باب/فوطة',ne:'Doorframe Rows',sets:4,reps:'max',note:'ضهر كامل',muscle:'ضهر',pose:'row'},
+    {na:'سوبرمان هولد',ne:'Superman Holds',sets:4,reps:'20 ثانية',note:'ضهر سفلي',muscle:'ضهر',pose:'superman'},
+    {na:'ريفيرس سنو أنجلز',ne:'Reverse Snow Angels',sets:3,reps:'15',note:'ضهر علوي',muscle:'ضهر',pose:'superman'},
+    {na:'بايسبس بفوطة',ne:'Towel Bicep Curls',sets:4,reps:'12-15',note:'بفوطة تحت رجلك',muscle:'باي',pose:'curl'},
+    {na:'إنفيرتد روز (تحت ترابيزة)',ne:'Inverted Rows',sets:4,reps:'max',note:'ضهر + باي',muscle:'ضهر',pose:'row'},
+  ]},
+  {id:'h3',label:'Legs',sub:'رجل + بطن',exercises:[
+    {na:'سكوات بوزن الجسم',ne:'Bodyweight Squats',sets:4,reps:'20',note:'نزول 3 ثواني',muscle:'رجل',pose:'squat'},
+    {na:'بلغاري سبليت سكوات',ne:'Bulgarian Split Squats',sets:3,reps:'12/رجل',note:'رجلك على كرسي',muscle:'رجل',pose:'lunge'},
+    {na:'جلوت بريدج',ne:'Glute Bridges',sets:4,reps:'20',note:'ضغط في الأعلى ثانيتين',muscle:'رجل',pose:'bridge'},
+    {na:'وول ست',ne:'Wall Sit',sets:3,reps:'45-60 ث',note:'ضهرك على الحيطة',muscle:'رجل',pose:'wallsit'},
+    {na:'كاف ريز (على سلم)',ne:'Calf Raises',sets:4,reps:'25',note:'نزول بطيء',muscle:'سمانة',pose:'calfraise'},
+    {na:'ليج ريز + بلانك',ne:'Leg Raises + Plank',sets:3,reps:'15+30ث',note:'بطن سفلي + core',muscle:'بطن',pose:'plank'},
+  ]},
+];
+const gymDays=[
+  {id:'g1',label:'Push',sub:'صدر + كتف + تراي',exercises:[
+    {na:'بنش بريس (سميث)',ne:'Smith Machine Bench Press',sets:2,reps:'6-12',note:'RPE 9',muscle:'صدر',pose:'bench'},
+    {na:'بنش عالي (هامر)',ne:'Hammer Strength Incline',sets:2,reps:'6-12',note:'RPE 9',muscle:'صدر',pose:'bench'},
+    {na:'رفرفة جانبي (ماشين)',ne:'Machine Lateral Raise',sets:3,reps:'6-12',note:'RPE 9',muscle:'كتف',pose:'raise'},
+    {na:'ترايسبس كابل',ne:'Cable Tricep Pushdown',sets:3,reps:'6-12',note:'RPE 9',muscle:'تراي',pose:'cable'},
+    {na:'تفتيح صدر (ماشين)',ne:'Chest Fly Machine',sets:2,reps:'6-12',note:'RPE 9',muscle:'صدر',pose:'machine'},
+  ]},
+  {id:'g2',label:'Pull',sub:'ضهر + باي',exercises:[
+    {na:'سحب عالي (واسع)',ne:'Wide Grip Lat Pulldown',sets:3,reps:'6-12',note:'RPE 9',muscle:'ضهر',pose:'pulldown'},
+    {na:'تي بار رو',ne:'T-Bar Row',sets:2,reps:'6-12',note:'RPE 9',muscle:'ضهر',pose:'row'},
+    {na:'سحب أرضي (إيد واحدة)',ne:'Seated Cable Row',sets:2,reps:'6-12',note:'RPE 9',muscle:'ضهر',pose:'cable'},
+    {na:'باي دمبل (بنش مايل)',ne:'Incline Dumbbell Curl',sets:3,reps:'6-12',note:'RPE 9',muscle:'باي',pose:'curl'},
+    {na:'كتف خلفي (ماشين)',ne:'Machine Rear Delt Fly',sets:2,reps:'6-12',note:'RPE 9',muscle:'كتف',pose:'machine'},
+  ]},
+  {id:'g3',label:'Legs',sub:'رجل + بطن',exercises:[
+    {na:'ليج بريس',ne:'Leg Press',sets:2,reps:'6-12',note:'RPE 9',muscle:'رجل',pose:'legpress'},
+    {na:'ليج إكستنشن',ne:'Leg Extension',sets:3,reps:'6-12',note:'RPE 9',muscle:'رجل',pose:'machine'},
+    {na:'ليج كيرل',ne:'Seated Leg Curl',sets:3,reps:'6-12',note:'RPE 9',muscle:'رجل',pose:'machine'},
+    {na:'سمانة (ماشين)',ne:'Calf Press',sets:3,reps:'6-12',note:'RPE 9',muscle:'سمانة',pose:'machine'},
+    {na:'بطن (ماشين)',ne:'Ab Crunch Machine',sets:3,reps:'12-15',note:'RPE 9',muscle:'بطن',pose:'machine'},
+    {na:'هايبر (ضهر سفلي)',ne:'Hyperextension',sets:4,reps:'12',note:'RPE 9',muscle:'ضهر',pose:'superman'},
+  ]},
+];
 
-  function formatDate(d){
-    var p = d.split('-'); return p[0].slice(2)+'/'+p[1]+'/'+p[2];
-  }
-  function formatDateAr(d){
-    var months=['يناير','فبراير','مارس','أبريل','مايو','يونيو','يوليو','أغسطس','سبتمبر','أكتوبر','نوفمبر','ديسمبر'];
-    var p=d.split('-'); return parseInt(p[2])+' '+months[parseInt(p[1])-1]+' '+p[0];
-  }
 
-  // ========== REFRESH DASHBOARD WITH LATEST DATA ==========
-  function refreshDashboard(){
-    var d = latest();
-    // Score
-    var scoreEl = document.querySelector('#sec-dashboard .hero-num');
-    if(scoreEl) scoreEl.textContent = d.score || 82;
-    var scoreFill = document.querySelector('#sec-dashboard .prog-fill');
-    if(scoreFill) scoreFill.style.width = (d.score||82)+'%';
-    // Date
-    var dateEl = document.querySelector('#sec-dashboard .card.glow div[style*="text-align:left"] div:first-child');
-    if(dateEl) dateEl.textContent = formatDateAr(d.date);
+// ===== STATE =====
+var inbodyHistory = [
+  {date:'2025-12-20',weight:99.7,smm:39.2,pbf:31.2,fatMass:null,water:null,protein:null,bmi:null,visceral:null,whr:null,score:null},
+  {date:'2026-02-16',weight:101.5,smm:40.5,pbf:30.5,fatMass:null,water:null,protein:null,bmi:null,visceral:null,whr:null,score:null},
+  {date:'2026-02-28',weight:102.8,smm:41.1,pbf:30.4,fatMass:null,water:null,protein:null,bmi:null,visceral:null,whr:null,score:null},
+  {date:'2026-04-03',weight:101.2,smm:40.6,pbf:30.3,fatMass:null,water:null,protein:null,bmi:null,visceral:null,whr:null,score:null},
+  {date:'2026-05-04',weight:101.4,smm:41.7,pbf:28.6,fatMass:null,water:null,protein:null,bmi:null,visceral:null,whr:null,score:null},
+  {date:'2026-05-14',weight:99.3,smm:41.2,pbf:27.9,fatMass:null,water:null,protein:null,bmi:null,visceral:null,whr:null,score:null},
+  {date:'2026-05-22',weight:98.4,smm:41.5,pbf:26.8,fatMass:null,water:null,protein:null,bmi:null,visceral:null,whr:null,score:null},
+  {date:'2026-05-26',weight:98.0,smm:41.3,pbf:26.8,fatMass:26.2,water:52.7,protein:14.3,bmi:32.7,visceral:11,whr:0.97,score:82}
+];
+var dailyLog = [];
+var selectedFood = null;
 
-    // Key stats
-    var statVals = document.querySelectorAll('#sec-dashboard .stat-grid:first-of-type .stat-val');
-    if(statVals.length>=4){
-      statVals[0].textContent = d.weight.toFixed(1);
-      // Target stays 84.4
-      statVals[2].textContent = (d.pbf).toFixed(1)+'%';
-      statVals[3].textContent = (d.smm).toFixed(1);
-    }
+function latest(){ return inbodyHistory[inbodyHistory.length-1]; }
+function fmt(d){var p=d.split('-');return p[0].slice(2)+'/'+p[1]+'/'+p[2]}
+function fmtAr(d){var m=['يناير','فبراير','مارس','أبريل','مايو','يونيو','يوليو','أغسطس','سبتمبر','أكتوبر','نوفمبر','ديسمبر'];var p=d.split('-');return parseInt(p[2])+' '+m[parseInt(p[1])-1]+' '+p[0]}
 
-    // Body composition bars
-    var hbarVals = document.querySelectorAll('#sec-dashboard .hbar .hbar-label span:last-child');
-    if(hbarVals.length>=5){
-      hbarVals[0].textContent = (d.smm).toFixed(1)+' كجم';
-      if(d.fatMass) hbarVals[1].textContent = d.fatMass.toFixed(1)+' كجم';
-      if(d.water) hbarVals[2].textContent = d.water.toFixed(1)+' لتر';
-      if(d.protein) hbarVals[3].textContent = d.protein.toFixed(1)+' كجم';
-      if(d.minerals) hbarVals[4].textContent = d.minerals.toFixed(2)+' كجم';
-    }
+// ===== DYNAMIC TARGETS =====
+function calcTargets(w){
+  var bmr=Math.round(10*w+6.25*173-5*24+5);
+  var tdee=Math.round(bmr*1.375);
+  var target=tdee-900;
+  var protein=Math.round(w*1.8);
+  var fat=50;
+  var carbs=Math.round((target-protein*4-fat*9)/4);
+  if(carbs<50) carbs=50;
+  return {bmr:bmr,tdee:tdee,cal:Math.max(target,1200),p:protein,c:carbs,f:fat};
+}
 
-    // Critical metrics
-    var critVals = document.querySelectorAll('#sec-dashboard .prog-wrap .prog-val');
-    if(critVals.length>=4){
-      if(d.bmi){
-        var bmiLabel = d.bmi>=30?'سمنة درجة أولى':(d.bmi>=25?'وزن زائد':'طبيعي');
-        critVals[0].textContent = d.bmi.toFixed(1)+' — '+bmiLabel;
-      }
-      if(d.visceral) critVals[1].textContent = d.visceral+' (الطبيعي 1-9)';
-      if(d.whr) critVals[2].textContent = d.whr.toFixed(2)+' (الهدف < 0.90)';
-      if(d.obesity) critVals[3].textContent = d.obesity+'% (الطبيعي 90-110)';
-    }
+var targets = calcTargets(latest().weight);
 
-    // Segmental - right arm
-    var bodyParts = document.querySelectorAll('#sec-dashboard .body-part-val');
-    if(bodyParts.length>=8 && d.ra_m){
-      bodyParts[0].textContent = d.ra_m.toFixed(2)+' كجم';
-      bodyParts[1].textContent = d.ra_f.toFixed(1)+' كجم';
-      bodyParts[2].textContent = d.rl_m.toFixed(2)+' كجم';
-      bodyParts[3].textContent = d.rl_f.toFixed(1)+' كجم';
-      bodyParts[4].textContent = d.la_m.toFixed(2)+' كجم';
-      bodyParts[5].textContent = d.la_f.toFixed(1)+' كجم';
-      bodyParts[6].textContent = d.ll_m.toFixed(2)+' كجم';
-      bodyParts[7].textContent = d.ll_f.toFixed(1)+' كجم';
-    }
-    // Trunk
-    var trunkVals = document.querySelectorAll('#sec-dashboard .body-map + .stat-grid .stat-val');
-    if(trunkVals.length>=2 && d.trunk_m){
-      trunkVals[0].textContent = d.trunk_m.toFixed(1)+' كجم';
-      trunkVals[1].textContent = d.trunk_f.toFixed(1)+' كجم';
-    }
+// ===== REFRESH ALL TABS =====
+function refreshAll(){
+  var d=latest();
+  targets=calcTargets(d.weight);
 
-    // Re-render history charts
-    renderHistoryCharts();
-  }
-
-  // ========== MODAL LOGIC ==========
-  var modal = document.getElementById('inbodyModal');
-  document.getElementById('openInbodyModal').addEventListener('click', function(){
-    // Pre-fill with latest values
-    var d = latest();
-    document.getElementById('ib_date').value = '';
-    document.getElementById('ib_weight').value = '';
-    document.getElementById('ib_score').value = '';
-    document.getElementById('ib_smm').value = '';
-    document.getElementById('ib_fat_mass').value = '';
-    document.getElementById('ib_pbf').value = '';
-    document.getElementById('ib_water').value = '';
-    document.getElementById('ib_protein').value = '';
-    document.getElementById('ib_minerals').value = '';
-    document.getElementById('ib_bmi').value = '';
-    document.getElementById('ib_visceral').value = '';
-    document.getElementById('ib_whr').value = '';
-    document.getElementById('ib_obesity').value = '';
-    document.getElementById('ib_ra_muscle').value = '';
-    document.getElementById('ib_ra_fat').value = '';
-    document.getElementById('ib_la_muscle').value = '';
-    document.getElementById('ib_la_fat').value = '';
-    document.getElementById('ib_rl_muscle').value = '';
-    document.getElementById('ib_rl_fat').value = '';
-    document.getElementById('ib_ll_muscle').value = '';
-    document.getElementById('ib_ll_fat').value = '';
-    document.getElementById('ib_trunk_muscle').value = '';
-    document.getElementById('ib_trunk_fat').value = '';
-    modal.classList.add('open');
-  });
-
-  function closeModal(){ modal.classList.remove('open'); }
-  document.getElementById('closeModal').addEventListener('click', closeModal);
-  document.getElementById('cancelModal').addEventListener('click', closeModal);
-  modal.addEventListener('click', function(e){ if(e.target===modal) closeModal(); });
-
-  document.getElementById('saveInbody').addEventListener('click', function(){
-    var dateVal = document.getElementById('ib_date').value;
-    var weightVal = parseFloat(document.getElementById('ib_weight').value);
-    if(!dateVal || isNaN(weightVal)){
-      showToast('❌ لازم تملا التاريخ والوزن على الأقل');
-      return;
-    }
-    var entry = {
-      date: dateVal,
-      weight: weightVal,
-      score: parseFloat(document.getElementById('ib_score').value) || null,
-      smm: parseFloat(document.getElementById('ib_smm').value) || null,
-      fatMass: parseFloat(document.getElementById('ib_fat_mass').value) || null,
-      pbf: parseFloat(document.getElementById('ib_pbf').value) || null,
-      water: parseFloat(document.getElementById('ib_water').value) || null,
-      protein: parseFloat(document.getElementById('ib_protein').value) || null,
-      minerals: parseFloat(document.getElementById('ib_minerals').value) || null,
-      bmi: parseFloat(document.getElementById('ib_bmi').value) || null,
-      visceral: parseFloat(document.getElementById('ib_visceral').value) || null,
-      whr: parseFloat(document.getElementById('ib_whr').value) || null,
-      obesity: parseFloat(document.getElementById('ib_obesity').value) || null,
-      ra_m: parseFloat(document.getElementById('ib_ra_muscle').value) || null,
-      ra_f: parseFloat(document.getElementById('ib_ra_fat').value) || null,
-      la_m: parseFloat(document.getElementById('ib_la_muscle').value) || null,
-      la_f: parseFloat(document.getElementById('ib_la_fat').value) || null,
-      rl_m: parseFloat(document.getElementById('ib_rl_muscle').value) || null,
-      rl_f: parseFloat(document.getElementById('ib_rl_fat').value) || null,
-      ll_m: parseFloat(document.getElementById('ib_ll_muscle').value) || null,
-      ll_f: parseFloat(document.getElementById('ib_ll_fat').value) || null,
-      trunk_m: parseFloat(document.getElementById('ib_trunk_muscle').value) || null,
-      trunk_f: parseFloat(document.getElementById('ib_trunk_fat').value) || null,
-    };
-    // Fill nulls from latest if available
-    var prev = latest();
-    var keys = Object.keys(entry);
-    for(var k=0;k<keys.length;k++){
-      if(keys[k]!=='date' && entry[keys[k]]===null && prev[keys[k]]!==null){
-        entry[keys[k]] = prev[keys[k]];
-      }
-    }
-    // Insert sorted by date
-    inbodyHistory.push(entry);
-    inbodyHistory.sort(function(a,b){ return a.date < b.date ? -1 : 1; });
-
-    refreshDashboard();
-    closeModal();
-    showToast('✅ تم تحديث بيانات InBody بنجاح!');
-  });
-
-  // ========== EXPORT / IMPORT ==========
-  document.getElementById('exportBtn').addEventListener('click', function(){
-    var json = JSON.stringify(inbodyHistory, null, 2);
-    var blob = new Blob([json], {type:'application/json'});
-    var url = URL.createObjectURL(blob);
-    var a = document.createElement('a');
-    a.href = url; a.download = 'inbody-data.json'; a.click();
-    URL.revokeObjectURL(url);
-    showToast('📤 تم تصدير الداتا كـ JSON');
-  });
-
-  document.getElementById('importBtn').addEventListener('click', function(){
-    document.getElementById('importFile').click();
-  });
-
-  document.getElementById('importFile').addEventListener('change', function(e){
-    var file = e.target.files[0];
-    if(!file) return;
-    var reader = new FileReader();
-    reader.onload = function(ev){
-      try {
-        var data = JSON.parse(ev.target.result);
-        if(Array.isArray(data) && data.length > 0 && data[0].date && data[0].weight){
-          inbodyHistory = data;
-          inbodyHistory.sort(function(a,b){ return a.date < b.date ? -1 : 1; });
-          refreshDashboard();
-          showToast('✅ تم استيراد '+data.length+' قياس بنجاح!');
-        } else {
-          showToast('❌ الملف مش بالشكل الصحيح');
-        }
-      } catch(err){
-        showToast('❌ خطأ في قراءة الملف');
-      }
-    };
-    reader.readAsText(file);
-    e.target.value = '';
-  });
-
-  function showToast(msg){
-    var old = document.querySelector('.toast');
-    if(old) old.remove();
-    var t = document.createElement('div');
-    t.className = 'toast';
-    t.textContent = msg;
-    document.body.appendChild(t);
-    setTimeout(function(){ if(t.parentNode) t.remove(); }, 2500);
-  }
-
-  // Theme
-  var theme = 'dark';
-  document.getElementById('themeToggle').addEventListener('click', function(){
-    theme = theme === 'dark' ? 'light' : 'dark';
-    document.documentElement.setAttribute('data-theme', theme);
-    document.getElementById('themeToggle').textContent = theme === 'dark' ? '☀️' : '🌙';
-  });
-
-  // Tabs
-  document.querySelectorAll('.tab').forEach(function(btn){
-    btn.addEventListener('click', function(){
-      document.querySelectorAll('.tab').forEach(function(b){ b.classList.remove('active'); });
-      document.querySelectorAll('.section').forEach(function(s){ s.classList.remove('active'); });
-      btn.classList.add('active');
-      document.getElementById('sec-' + btn.dataset.tab).classList.add('active');
-    });
-  });
-
-  // Meal plan tabs
-  document.querySelectorAll('#mealTabs .ftab').forEach(function(btn){
-    btn.addEventListener('click', function(){
-      document.querySelectorAll('#mealTabs .ftab').forEach(function(b){ b.classList.remove('active'); });
-      btn.classList.add('active');
-      document.getElementById('meal-training').style.display = btn.dataset.meal === 'training' ? 'block' : 'none';
-      document.getElementById('meal-rest').style.display = btn.dataset.meal === 'rest' ? 'block' : 'none';
-    });
-  });
-
-  // Phase tabs
-  document.querySelectorAll('#phaseTabs .ftab').forEach(function(btn){
-    btn.addEventListener('click', function(){
-      document.querySelectorAll('#phaseTabs .ftab').forEach(function(b){ b.classList.remove('active'); });
-      btn.classList.add('active');
-      document.getElementById('phase-home').style.display = btn.dataset.phase === 'home' ? 'block' : 'none';
-      document.getElementById('phase-gym').style.display = btn.dataset.phase === 'gym' ? 'block' : 'none';
-    });
-  });
-
-  // ========== HISTORY CHARTS ==========
-  function renderHistoryCharts(){
-    var dates = inbodyHistory.map(function(e){ return formatDate(e.date); });
-    var weights = inbodyHistory.map(function(e){ return e.weight; });
-    var smms = inbodyHistory.map(function(e){ return e.smm || 0; });
-    var pbfs = inbodyHistory.map(function(e){ return e.pbf || 0; });
-
-    renderBarChart('weightChart','weightLabels', weights, dates, Math.min.apply(null,weights)-3, Math.max.apply(null,weights)+2, 'var(--primary)', 'كجم');
-    renderBarChart('smmChart','smmLabels', smms, dates, Math.min.apply(null,smms.filter(function(v){return v>0;}))-2, Math.max.apply(null,smms)+2, 'var(--teal)', 'كجم');
-    renderBarChart('pbfChart','pbfLabels', pbfs, dates, Math.min.apply(null,pbfs.filter(function(v){return v>0;}))-2, Math.max.apply(null,pbfs)+2, 'var(--amber)', '%');
-  }
-
-  function renderBarChart(containerId, labelId, data, dates, minVal, maxVal, color, unit) {
-    var container = document.getElementById(containerId);
-    var labels = document.getElementById(labelId);
-    var range = maxVal - minVal || 1;
-    container.innerHTML = data.map(function(v, i) {
-      var h = Math.max(5, ((v - minVal) / range) * 100);
-      return '<div style="height:'+h+'%;background:'+color+';opacity:'+(0.5 + (i/data.length)*0.5)+'"><span class="hc-tip">'+v+' '+unit+'</span></div>';
-    }).join('');
-    labels.innerHTML = dates.map(function(d){ return '<span>'+d+'</span>'; }).join('');
-  }
+  // Dashboard
+  var el=document.getElementById;
+  document.getElementById('dScore').textContent=d.score||82;
+  document.getElementById('dScoreFill').style.width=(d.score||82)+'%';
+  document.getElementById('dDate').textContent=fmtAr(d.date);
+  document.getElementById('dWeight').textContent=d.weight.toFixed(1);
+  document.getElementById('dPBF').textContent=(d.pbf||0).toFixed(1)+'%';
+  document.getElementById('dSMM').textContent=(d.smm||0).toFixed(1);
+  document.getElementById('dSMMBar').textContent=(d.smm||0).toFixed(1)+' كجم';
+  if(d.fatMass) document.getElementById('dFatBar').textContent=d.fatMass.toFixed(1)+' كجم';
+  if(d.water) document.getElementById('dWaterBar').textContent=d.water.toFixed(1)+' لتر';
+  if(d.protein) document.getElementById('dProtBar').textContent=d.protein.toFixed(1)+' كجم';
+  if(d.bmi) document.getElementById('dBMI').textContent=d.bmi.toFixed(1)+(d.bmi>=30?' — سمنة':d.bmi>=25?' — وزن زائد':' — طبيعي');
+  if(d.visceral) document.getElementById('dVisceral').textContent=d.visceral+' (طبيعي 1-9)';
+  if(d.whr) document.getElementById('dWHR').textContent=d.whr.toFixed(2)+' (الهدف < 0.90)';
 
   renderHistoryCharts();
 
-  // ========== PROJECTION CHARTS ==========
-  const projData = [98, 95, 92, 90, 88, 86, 84];
-  const projMonths = ['الآن','أسبوعين','شهر','6 أسابيع','شهرين','10 أسابيع','3 شهور'];
-  const projContainer = document.getElementById('projChart');
-  const projLabelsEl = document.getElementById('projLabels');
-  projContainer.innerHTML = projData.map((v, i) => {
-    const h = Math.max(10, ((v - 80) / 20) * 100);
-    const c = v <= 84 ? 'var(--teal)' : (v <= 90 ? 'var(--amber)' : 'var(--primary)');
-    return '<div style="height:'+h+'%;background:'+c+'"><span class="hc-tip">'+v+' كجم</span></div>';
-  }).join('');
-  projLabelsEl.innerHTML = projMonths.map(m => '<span>'+m+'</span>').join('');
+  // Food tracker targets
+  document.getElementById('targetCalDisplay').textContent=targets.cal.toLocaleString();
+  document.getElementById('pTarget').textContent='/ '+targets.p+'g';
+  document.getElementById('cTarget').textContent='/ '+targets.c+'g';
+  document.getElementById('fTarget').textContent='/ '+targets.f+'g';
+  document.getElementById('calTarget2').textContent='/ '+targets.cal;
+  updateDailyTotals();
 
-  const bfData = [26.8, 25, 23, 21.5, 20, 18, 16.5];
-  const bfContainer = document.getElementById('bfChart');
-  const bfLabelsEl = document.getElementById('bfLabels');
-  bfContainer.innerHTML = bfData.map((v, i) => {
-    const h = Math.max(10, ((v - 14) / 14) * 100);
-    const c = v <= 18 ? 'var(--teal)' : (v <= 22 ? 'var(--amber)' : 'var(--over)');
-    return '<div style="height:'+h+'%;background:'+c+'"><span class="hc-tip">'+v+'%</span></div>';
-  }).join('');
-  bfLabelsEl.innerHTML = projMonths.map(m => '<span>'+m+'</span>').join('');
+  // Timeline
+  document.getElementById('tlFrom').innerHTML=d.weight.toFixed(0)+' <span style="font-size:13px;color:var(--text-3)">كجم</span>';
+  var progress=Math.min(100,Math.max(0,((d.weight-84)/(98-84))*100));
+  progress=100-progress;
+  document.getElementById('tlProgress').style.width=progress+'%';
+  renderTimeline(d);
+  renderProjChart(d);
+}
 
-  // ========== HOME WORKOUT ==========
-  const homeDays = [
-    {
-      id:'h1', label:'Push A', sub:'صدر+كتف+تراي',
-      exercises: [
-        {name:'Push-ups (wide grip)',sets:4,reps:'max',note:'قبضة واسعة'},
-        {name:'Diamond Push-ups',sets:3,reps:'max',note:'تراي + صدر داخلي'},
-        {name:'Decline Push-ups',sets:3,reps:'max',note:'رجلك على كرسي'},
-        {name:'Pike Push-ups',sets:4,reps:'8-12',note:'كتف أمامي'},
-        {name:'Tricep Dips',sets:3,reps:'max',note:'على كرسي'},
-        {name:'Pseudo Planche Push-ups',sets:3,reps:'6-10',note:'إيدك للخلف'}
-      ],
-      hiit:[
-        {ex:'Burpees',time:'30/30'},
-        {ex:'Mountain Climbers',time:'30/30'},
-        {ex:'Jump Squats',time:'30/30'},
-        {ex:'High Knees',time:'30/30'},
-      ],
-      hiitNote:'كرر 3-4 مرات = 15 دقيقة'
-    },
-    {
-      id:'h2', label:'Pull A', sub:'ضهر+باي',
-      exercises: [
-        {name:'Doorframe Rows',sets:4,reps:'max',note:'أو بفوطة على باب'},
-        {name:'Superman Holds',sets:4,reps:'20 ثانية',note:'ضهر سفلي'},
-        {name:'Reverse Snow Angels',sets:3,reps:'15',note:'ضهر علوي'},
-        {name:'Y-T-W Raises',sets:3,reps:'10 لكل',note:'على البطن'},
-        {name:'Towel Bicep Curls',sets:4,reps:'12-15',note:'بفوطة تحت رجلك'},
-        {name:'Back Widows',sets:3,reps:'12',note:'على الأرض'}
-      ],
-      hiit:[
-        {ex:'Jumping Jacks',time:'45/15'},
-        {ex:'Plank to Push-up',time:'45/15'},
-        {ex:'Star Jumps',time:'45/15'},
-        {ex:'Bicycle Crunches',time:'45/15'},
-      ],
-      hiitNote:'كرر 4-5 مرات = 20 دقيقة'
-    },
-    {
-      id:'h3', label:'Legs A', sub:'رجل+بطن',
-      exercises: [
-        {name:'Bodyweight Squats (بطيء)',sets:4,reps:'20',note:'3 ثواني نزول'},
-        {name:'Bulgarian Split Squats',sets:3,reps:'12 لكل رجل',note:'رجلك على كرسي'},
-        {name:'Pistol Squat Progressions',sets:3,reps:'6-8 لكل',note:'ماسك في حاجة'},
-        {name:'Glute Bridges',sets:4,reps:'20',note:'ضغط في الأعلى'},
-        {name:'Wall Sit',sets:3,reps:'45-60 ثانية',note:'ضهرك على الحيطة'},
-        {name:'Calf Raises',sets:4,reps:'25',note:'على درجة سلم'},
-        {name:'Leg Raises',sets:3,reps:'15',note:'بطن سفلي'}
-      ],
-      hiit:[
-        {ex:'Squat Jumps',time:'20/10 Tabata'},
-        {ex:'Burpees',time:'20/10 Tabata'},
-        {ex:'Lunge Jumps',time:'20/10 Tabata'},
-        {ex:'Tuck Jumps',time:'20/10 Tabata'},
-      ],
-      hiitNote:'كرر 4 مرات = 15 دقيقة Tabata'
-    },
-    {
-      id:'h4', label:'Push B', sub:'صدر+كتف+تراي',
-      exercises: [
-        {name:'Archer Push-ups',sets:4,reps:'6-8 لكل',note:'جانب واحد في كل عدة'},
-        {name:'Explosive Clap Push-ups',sets:3,reps:'8-10',note:'قوة انفجارية'},
-        {name:'Hindu Push-ups',sets:3,reps:'12',note:'صدر + كتف + مرونة'},
-        {name:'Handstand Push-up Negatives',sets:3,reps:'5-8',note:'على الحيطة'},
-        {name:'Skull Crushers (كرسي)',sets:3,reps:'10-12',note:'تراي'},
-        {name:'Plank Shoulder Taps',sets:3,reps:'20',note:'core + كتف'}
-      ],
-      hiit:[
-        {ex:'دقيقة 1: 10 Burpees',time:'EMOM'},
-        {ex:'دقيقة 2: 15 Jump Squats',time:'EMOM'},
-        {ex:'دقيقة 3: 20 Mt. Climbers',time:'EMOM'},
-      ],
-      hiitNote:'كرر 5 مرات = 15 دقيقة EMOM'
-    },
-    {
-      id:'h5', label:'Pull B', sub:'ضهر+باي',
-      exercises: [
-        {name:'Inverted Rows (ترابيزة)',sets:4,reps:'max',note:'تحت ترابيزة قوية'},
-        {name:'Superman Pulses',sets:3,reps:'20',note:'نبضات سريعة'},
-        {name:'I-Y-T Raises (بطيء)',sets:3,reps:'10',note:'على البطن'},
-        {name:'Towel Face Pulls',sets:3,reps:'15',note:'بفوطة حول باب'},
-        {name:'Towel Hammer Curls',sets:4,reps:'12',note:'قبضة محايدة'},
-        {name:'Reverse Plank',sets:3,reps:'30 ثانية',note:'ضهر + تراي + core'}
-      ],
-      hiit:[
-        {ex:'Bear Crawl',time:'30 ثانية'},
-        {ex:'Push-up to Row',time:'30 ثانية'},
-        {ex:'Sprawls',time:'30 ثانية'},
-        {ex:'Plank Jacks',time:'30 ثانية'},
-      ],
-      hiitNote:'راحة دقيقة بين كل دايرة. كرر 4-5 مرات = 20 دقيقة'
-    },
-    {
-      id:'h6', label:'Legs B', sub:'رجل+بطن+Full Body',
-      exercises: [
-        {name:'Jump Squats',sets:4,reps:'15',note:'قوة انفجارية'},
-        {name:'Single Leg RDL',sets:3,reps:'12 لكل',note:'hamstring + توازن'},
-        {name:'Step-ups (كرسي)',sets:3,reps:'15 لكل',note:'كرسي ثابت'},
-        {name:'Sumo Squat Hold + Pulses',sets:3,reps:'20',note:'inner thigh'},
-        {name:'Nordic Curl Negatives',sets:3,reps:'5-8',note:'ركبك على مخدة'},
-        {name:'Dead Bug',sets:3,reps:'12 لكل',note:'core stability'},
-        {name:'Plank (أساسي + جانبي)',sets:3,reps:'45 ثانية',note:'3 أنواع'}
-      ],
-      hiit:[
-        {ex:'Burpees',time:'40/20'},
-        {ex:'Push-ups',time:'40/20'},
-        {ex:'Jump Lunges',time:'40/20'},
-        {ex:'Plank',time:'40/20'},
-      ],
-      hiitNote:'كرر 3-4 مرات = 15 دقيقة Full Body Finisher'
-    }
+// ===== HISTORY CHARTS =====
+function renderHistoryCharts(){
+  var dates=inbodyHistory.map(function(e){return fmt(e.date)});
+  var w=inbodyHistory.map(function(e){return e.weight});
+  var s=inbodyHistory.map(function(e){return e.smm||0});
+  var p=inbodyHistory.map(function(e){return e.pbf||0});
+  barChart('weightChart','weightLabels',w,dates,Math.min.apply(null,w)-3,Math.max.apply(null,w)+2,'var(--primary)','كجم');
+  var sf=s.filter(function(v){return v>0});
+  if(sf.length) barChart('smmChart','smmLabels',s,dates,Math.min.apply(null,sf)-2,Math.max.apply(null,sf)+2,'var(--teal)','كجم');
+  var pf=p.filter(function(v){return v>0});
+  if(pf.length) barChart('pbfChart','pbfLabels',p,dates,Math.min.apply(null,pf)-2,Math.max.apply(null,pf)+2,'var(--amber)','%');
+}
+function barChart(cid,lid,data,dates,mn,mx,color,unit){
+  var c=document.getElementById(cid),l=document.getElementById(lid);
+  var r=mx-mn||1;
+  c.innerHTML=data.map(function(v,i){var h=Math.max(5,((v-mn)/r)*100);return '<div style="height:'+h+'%;background:'+color+';opacity:'+(0.5+(i/data.length)*0.5)+'"><span class="hc-tip">'+v+' '+unit+'</span></div>'}).join('');
+  l.innerHTML=dates.map(function(d){return '<span>'+d+'</span>'}).join('');
+}
+
+// ===== TIMELINE =====
+function renderTimeline(d){
+  var w=d.weight;
+  var milestones=[
+    {time:'الآن',title:'البداية',desc:'بدأت الدايت + كرياتين + تمارين.',w:w,pbf:d.pbf||26.8,dot:'now'},
+    {time:'بعد أسبوعين',title:'دخول الجيم',desc:'الكرياتين loading اكتمل. فقدان 2-3 كجم.',w:Math.round(w-3),pbf:Math.round((d.pbf||26.8)-1.8),dot:'future'},
+    {time:'بعد شهر',title:'نتائج واضحة',desc:'فقدان 4-6 كجم. الوجه والذراعين أنحف.',w:Math.round(w-6),pbf:Math.round((d.pbf||26.8)-3.8),dot:'future'},
+    {time:'بعد شهرين',title:'تحول جذري',desc:'فقدان 8-10 كجم. BMI تحت 30.',w:Math.round(w-10),pbf:Math.round((d.pbf||26.8)-6.8),dot:'future'},
+    {time:'بعد 3 شهور',title:'الهدف',desc:'وصلت الوزن المستهدف. شكل athletic.',w:Math.round(w-14),pbf:Math.round((d.pbf||26.8)-10),dot:'future'}
   ];
+  var html='';
+  milestones.forEach(function(m){
+    html+='<div class="tl-item"><div class="tl-dot '+m.dot+'"></div><div class="tl-time">'+m.time+'</div><div class="tl-title">'+m.title+'</div><div class="tl-desc">'+m.desc+'</div><div class="tl-stats"><div class="tl-stat">الوزن: <em>'+m.w+' كجم</em></div><div class="tl-stat">الدهون: <em>~'+m.pbf+'%</em></div></div></div>';
+  });
+  document.getElementById('tlTimeline').innerHTML=html;
+}
+function renderProjChart(d){
+  var w=d.weight;
+  var proj=[w,Math.round(w-3),Math.round(w-6),Math.round(w-8),Math.round(w-10),Math.round(w-12),Math.round(w-14)];
+  var labels=['الآن','2 أسبوع','شهر','6 أسابيع','شهرين','10 أسابيع','3 شهور'];
+  var c=document.getElementById('projChart'),l=document.getElementById('projLabels');
+  c.innerHTML=proj.map(function(v){var h=Math.max(10,((v-70)/30)*100);var clr=v<=84?'var(--teal)':v<=90?'var(--amber)':'var(--primary)';return '<div style="height:'+h+'%;background:'+clr+'"><span class="hc-tip">'+v+' كجم</span></div>'}).join('');
+  l.innerHTML=labels.map(function(m){return '<span>'+m+'</span>'}).join('');
+}
 
-  function renderHomeDays() {
-    const tabs = document.getElementById('homeDayTabs');
-    tabs.innerHTML = homeDays.map((d,i) =>
-      '<button class="wday-tab '+(i===0?'active':'')+'" data-hid="'+d.id+'"><span class="wt-name">يوم '+(i+1)+'</span><span class="wt-label">'+d.label+'</span></button>'
-    ).join('') + '<button class="wday-tab rest" data-hid="rest"><span class="wt-name">يوم 7</span><span class="wt-label">راحة</span></button>';
+// ===== FOOD TRACKER =====
+var catEmojis={'بقوليات':'🫘','لحوم':'🥩','ألبان':'🥚','نشويات':'🍚','خضار':'🥬','فواكه':'🍎','مكسرات':'🥜','زيوت':'🫒','أخرى':'🍯'};
+var cats=[...new Set(FOOD_DB.map(function(f){return f.cat}))];
 
-    tabs.querySelectorAll('.wday-tab').forEach(btn => {
-      btn.addEventListener('click', () => {
-        tabs.querySelectorAll('.wday-tab').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        renderHomeDay(btn.dataset.hid);
-      });
+function renderCatTabs(){
+  var html='<button class="ftab active" data-cat="all">الكل</button>';
+  cats.forEach(function(c){html+='<button class="ftab" data-cat="'+c+'">'+(catEmojis[c]||'📦')+' '+c+'</button>'});
+  document.getElementById('catTabs').innerHTML=html;
+  document.querySelectorAll('#catTabs .ftab').forEach(function(b){
+    b.addEventListener('click',function(){
+      document.querySelectorAll('#catTabs .ftab').forEach(function(x){x.classList.remove('active')});
+      b.classList.add('active');
+      renderFoodGrid(document.getElementById('foodSearch').value,b.dataset.cat);
     });
-    renderHomeDay('h1');
+  });
+}
+
+function renderFoodGrid(q,cat){
+  q=(q||'').trim().toLowerCase();
+  cat=cat||'all';
+  var items=FOOD_DB.filter(function(f){
+    if(cat!=='all'&&f.cat!==cat) return false;
+    if(q&&f.n.toLowerCase().indexOf(q)===-1) return false;
+    return true;
+  });
+  var html='';
+  items.forEach(function(f){
+    var cal=Math.round(f.cal*f.srv/100);
+    var p=Math.round(f.p*f.srv/100);
+    var c=Math.round(f.c*f.srv/100);
+    var fat=Math.round(f.f*f.srv/100);
+    html+='<div class="food-card" data-fid="'+f.id+'"><div class="food-emoji" style="background:var(--primary-soft)">'+(catEmojis[f.cat]||'📦')+'</div><div class="food-card-info"><div class="food-card-name">'+f.n+'</div><div class="food-card-meta">'+f.srv+' '+f.u+'</div><div class="food-card-macros"><span style="background:var(--teal-soft);color:var(--teal)">P:'+p+'g</span><span style="background:var(--primary-soft);color:var(--primary)">C:'+c+'g</span><span style="background:var(--slate-soft);color:var(--slate)">F:'+fat+'g</span></div></div><div class="food-card-cal">'+cal+'<span class="meal-cal-unit">KCAL</span></div></div>';
+  });
+  if(!items.length) html='<div class="log-empty">مفيش نتائج</div>';
+  document.getElementById('foodGrid').innerHTML=html;
+  document.querySelectorAll('.food-card').forEach(function(card){
+    card.addEventListener('click',function(){
+      var fid=parseInt(card.dataset.fid);
+      selectedFood=FOOD_DB.find(function(f){return f.id===fid});
+      if(selectedFood) openQtyModal();
+    });
+  });
+}
+
+function openQtyModal(){
+  var f=selectedFood;
+  document.getElementById('qtyFoodName').textContent=f.n;
+  document.getElementById('qtyFoodMeta').textContent=f.srv+' '+f.u+' = '+Math.round(f.cal*f.srv/100)+' سعرة';
+  document.getElementById('qtyInput').value=1;
+  document.getElementById('qtyUnit').textContent=f.u;
+  updateQtyPreview();
+  document.getElementById('qtyModal').classList.add('open');
+}
+
+function updateQtyPreview(){
+  var f=selectedFood;
+  var qty=parseFloat(document.getElementById('qtyInput').value)||0;
+  var mult=qty*f.srv/100;
+  document.getElementById('qpCal').textContent=Math.round(f.cal*mult);
+  document.getElementById('qpP').textContent=Math.round(f.p*mult)+'g';
+  document.getElementById('qpC').textContent=Math.round(f.c*mult)+'g';
+  document.getElementById('qpF').textContent=Math.round(f.f*mult)+'g';
+}
+
+document.getElementById('qtyInput').addEventListener('input',updateQtyPreview);
+document.getElementById('cancelQty').addEventListener('click',function(){document.getElementById('qtyModal').classList.remove('open')});
+document.getElementById('addQty').addEventListener('click',function(){
+  var f=selectedFood;
+  var qty=parseFloat(document.getElementById('qtyInput').value)||0;
+  if(qty<=0) return;
+  var mult=qty*f.srv/100;
+  dailyLog.push({name:f.n,qty:qty,unit:f.u,cal:Math.round(f.cal*mult),p:Math.round(f.p*mult),c:Math.round(f.c*mult),f:Math.round(f.f*mult)});
+  document.getElementById('qtyModal').classList.remove('open');
+  updateDailyTotals();
+  renderDailyLog();
+  toast('✅ تم إضافة '+f.n);
+});
+
+function updateDailyTotals(){
+  var totals={cal:0,p:0,c:0,f:0};
+  dailyLog.forEach(function(item){totals.cal+=item.cal;totals.p+=item.p;totals.c+=item.c;totals.f+=item.f});
+  document.getElementById('todayCal').textContent=totals.cal.toLocaleString();
+  document.getElementById('remainCal').textContent=Math.max(0,targets.cal-totals.cal).toLocaleString();
+  document.getElementById('calFill').style.width=Math.min(100,(totals.cal/targets.cal)*100)+'%';
+  document.getElementById('pVal').textContent=totals.p+'g';
+  document.getElementById('pFill').style.width=Math.min(100,(totals.p/targets.p)*100)+'%';
+  document.getElementById('cVal').textContent=totals.c+'g';
+  document.getElementById('cFill').style.width=Math.min(100,(totals.c/targets.c)*100)+'%';
+  document.getElementById('fVal').textContent=totals.f+'g';
+  document.getElementById('fFill').style.width=Math.min(100,(totals.f/targets.f)*100)+'%';
+  document.getElementById('calVal2').textContent=totals.cal;
+  document.getElementById('calFill2').style.width=Math.min(100,(totals.cal/targets.cal)*100)+'%';
+  // Color overages
+  if(totals.cal>targets.cal) document.getElementById('calFill').style.background='var(--over)';
+  else document.getElementById('calFill').style.background='linear-gradient(90deg,var(--teal),var(--primary))';
+}
+
+function renderDailyLog(){
+  if(!dailyLog.length){document.getElementById('dailyLog').innerHTML='<div class="log-empty">لسه مضفتش أكل النهاردة 🍽️</div>';return}
+  var html='';
+  dailyLog.forEach(function(item,i){
+    html+='<div class="log-item"><div class="log-item-info"><div class="log-item-name">'+item.name+'</div><div class="log-item-qty">'+item.qty+' '+item.unit+' — P:'+item.p+'g C:'+item.c+'g F:'+item.f+'g</div></div><div class="log-item-cal">'+item.cal+'</div><button class="log-item-del" data-idx="'+i+'">✕</button></div>';
+  });
+  document.getElementById('dailyLog').innerHTML=html;
+  document.querySelectorAll('.log-item-del').forEach(function(btn){
+    btn.addEventListener('click',function(){dailyLog.splice(parseInt(btn.dataset.idx),1);updateDailyTotals();renderDailyLog()});
+  });
+}
+
+// WhatsApp share
+document.getElementById('waShare').addEventListener('click',function(){
+  if(!dailyLog.length){toast('مفيش أكل مسجل النهاردة');return}
+  var totals={cal:0,p:0,c:0,f:0};
+  dailyLog.forEach(function(item){totals.cal+=item.cal;totals.p+=item.p;totals.c+=item.c;totals.f+=item.f});
+  var text='📊 *ملخص أكل اليوم — Aggressive Cut*\n\n';
+  text+='🔥 السعرات: '+totals.cal+' / '+targets.cal+'\n';
+  text+='💪 بروتين: '+totals.p+'g / '+targets.p+'g\n';
+  text+='🍞 كاربز: '+totals.c+'g / '+targets.c+'g\n';
+  text+='🫒 دهون: '+totals.f+'g / '+targets.f+'g\n\n';
+  text+='📋 *الوجبات:*\n';
+  dailyLog.forEach(function(item,i){text+=(i+1)+'. '+item.name+' ('+item.qty+' '+item.unit+') — '+item.cal+' cal\n'});
+  text+='\n⚖️ الوزن الحالي: '+latest().weight+' كجم';
+  text+='\n🎯 المستهدف: 84 كجم';
+  window.open('https://wa.me/?text='+encodeURIComponent(text),'_blank');
+});
+
+document.getElementById('resetDay').addEventListener('click',function(){
+  if(dailyLog.length&&confirm('مسح كل أكل النهاردة؟')){dailyLog=[];updateDailyTotals();renderDailyLog();toast('🗑️ تم المسح')}
+});
+
+document.getElementById('foodSearch').addEventListener('input',function(){
+  var activeCat=document.querySelector('#catTabs .ftab.active');
+  renderFoodGrid(this.value,activeCat?activeCat.dataset.cat:'all');
+});
+
+// ===== WORKOUT RENDER =====
+function renderWorkout(days,tabsId,contentId,prefix){
+  var tabs=document.getElementById(tabsId);
+  tabs.innerHTML=days.map(function(d,i){return '<button class="wday-tab '+(i===0?'active':'')+'" data-did="'+d.id+'"><span>يوم '+(i+1)+'</span><span class="wt-label">'+d.label+'</span></button>'}).join('');
+  tabs.querySelectorAll('.wday-tab').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      tabs.querySelectorAll('.wday-tab').forEach(function(b){b.classList.remove('active')});
+      btn.classList.add('active');
+      renderDay(days,btn.dataset.did,contentId,prefix);
+    });
+  });
+  renderDay(days,days[0].id,contentId,prefix);
+}
+
+function renderDay(days,id,contentId,prefix){
+  var el=document.getElementById(contentId);
+  var day=days.find(function(d){return d.id===id});
+  if(!day){el.innerHTML='';return}
+  var html='<div class="sec-title">'+day.sub+'</div>';
+  day.exercises.forEach(function(ex,i){
+    var svg=EX_POSES[ex.pose]||EX_POSES.machine;
+    var ytQuery=encodeURIComponent(ex.ne+' exercise form');
+    html+='<div class="ex-card"><div class="ex-visual">'+svg+'<div class="ex-muscle-badge">'+ex.muscle+'</div><a href="https://www.youtube.com/results?search_query='+ytQuery+'" target="_blank" class="ex-yt">📹 الفورم</a></div><div class="ex-name-row"><div><div class="ex-name">'+ex.na+'</div><div class="ex-name-en">'+ex.ne+'</div></div></div><div class="ex-stats"><div class="ex-stat"><div class="esl">مجاميع</div><div class="esv">'+ex.sets+'</div></div><div class="ex-stat"><div class="esl">عدات</div><div class="esv">'+ex.reps+'</div></div><div class="ex-stat"><div class="esl">ملاحظة</div><div class="esv" style="font-family:Tajawal;font-size:10px;font-weight:600">'+ex.note+'</div></div></div></div>';
+  });
+  if(prefix==='gym'){
+    html+='<div class="ex-card"><div class="cardio-badge">🏃 كارديو بعد كل يوم</div><div class="ex-name">مشي سريع — تريدميل</div><div class="ex-stats"><div class="ex-stat"><div class="esl">المدة</div><div class="esv">20 د</div></div><div class="ex-stat"><div class="esl">الانحدار</div><div class="esv">10</div></div><div class="ex-stat"><div class="esl">السرعة</div><div class="esv">6</div></div></div></div>';
   }
+  el.innerHTML=html;
+}
 
-  function renderHomeDay(id) {
-    const el = document.getElementById('homeWorkoutContent');
-    if (id === 'rest') {
-      el.innerHTML = '<div style="text-align:center;padding:60px 20px;color:var(--text-3)"><div style="font-size:56px;margin-bottom:16px;opacity:.5">😴</div><div style="font-family:Fraunces,serif;font-size:18px;color:var(--text-2)">يوم راحة</div><div style="font-size:13px;margin-top:8px">مشي خفيف 30-45 دقيقة (Active Recovery)</div></div>';
-      return;
-    }
-    const day = homeDays.find(d => d.id === id);
-    if (!day) return;
-    let html = '<div class="sec-title">'+day.sub+'</div>';
-    day.exercises.forEach((ex, i) => {
-      html += '<div class="ex-card"><div class="ex-num">'+(i+1)+'</div><div class="ex-name">'+ex.name+'</div><div class="ex-stats" style="grid-template-columns:repeat(3,1fr)"><div class="ex-stat"><div class="esl">مجاميع</div><div class="esv">'+ex.sets+'</div></div><div class="ex-stat"><div class="esl">عدات</div><div class="esv">'+ex.reps+'</div></div><div class="ex-stat"><div class="esl">ملاحظة</div><div class="esv" style="font-family:Tajawal;font-size:10px;font-weight:600">'+ex.note+'</div></div></div></div>';
-    });
-    html += '<div class="hiit-card"><h4>HIIT بعد التمرين</h4>';
-    day.hiit.forEach(h => {
-      html += '<div class="hiit-item"><span class="hiit-ex">'+h.ex+'</span><span class="hiit-sets">'+h.time+'</span></div>';
-    });
-    html += '<div style="font-size:11px;color:var(--text-3);margin-top:8px;font-weight:600">'+day.hiitNote+'</div></div>';
-    el.innerHTML = html;
-  }
+// ===== INBODY MODAL =====
+document.getElementById('openInbodyModal').addEventListener('click',function(){
+  ['ib_date','ib_weight','ib_score','ib_smm','ib_fat','ib_pbf','ib_water','ib_protein','ib_bmi','ib_visc','ib_whr'].forEach(function(id){document.getElementById(id).value=''});
+  document.getElementById('inbodyModal').classList.add('open');
+});
+document.getElementById('closeIBModal').addEventListener('click',function(){document.getElementById('inbodyModal').classList.remove('open')});
+document.getElementById('cancelIBModal').addEventListener('click',function(){document.getElementById('inbodyModal').classList.remove('open')});
+document.getElementById('inbodyModal').addEventListener('click',function(e){if(e.target===this) this.classList.remove('open')});
 
-  renderHomeDays();
+document.getElementById('saveIB').addEventListener('click',function(){
+  var dateVal=document.getElementById('ib_date').value;
+  var weightVal=parseFloat(document.getElementById('ib_weight').value);
+  if(!dateVal||isNaN(weightVal)){toast('❌ لازم تملا التاريخ والوزن');return}
+  var prev=latest();
+  var entry={
+    date:dateVal, weight:weightVal,
+    score:parseFloat(document.getElementById('ib_score').value)||prev.score,
+    smm:parseFloat(document.getElementById('ib_smm').value)||prev.smm,
+    fatMass:parseFloat(document.getElementById('ib_fat').value)||prev.fatMass,
+    pbf:parseFloat(document.getElementById('ib_pbf').value)||prev.pbf,
+    water:parseFloat(document.getElementById('ib_water').value)||prev.water,
+    protein:parseFloat(document.getElementById('ib_protein').value)||prev.protein,
+    bmi:parseFloat(document.getElementById('ib_bmi').value)||prev.bmi,
+    visceral:parseFloat(document.getElementById('ib_visc').value)||prev.visceral,
+    whr:parseFloat(document.getElementById('ib_whr').value)||prev.whr,
+  };
+  inbodyHistory.push(entry);
+  inbodyHistory.sort(function(a,b){return a.date<b.date?-1:1});
+  document.getElementById('inbodyModal').classList.remove('open');
+  refreshAll();
+  toast('✅ تم تحديث كل الداتا!');
+});
 
-  // ========== GYM WORKOUT ==========
-  const gymDays = [
-    {
-      id:'g1', label:'يوم 1', sub:'صدر+كتف+تراي',
-      exercises: [
-        {name:'Smith Machine Flat Bench Press',nameAr:'بنش بريس (سميث)',sets:2,reps:'6-12',rpe:9,rest:'3 د'},
-        {name:'Hammer Strength Incline Press',nameAr:'بنش عالي (هامر)',sets:2,reps:'6-12',rpe:9,rest:'3 د'},
-        {name:'Machine Lateral Raise',nameAr:'رفرفة جانبي (ماشين)',sets:3,reps:'6-12',rpe:9,rest:'3 د'},
-        {name:'Single Arm Cable Tri-Pushdown',nameAr:'ترايسبس كابل (إيد واحدة)',sets:3,reps:'6-12',rpe:9,rest:'3 د'},
-        {name:'Chest Fly Machine',nameAr:'تفتيح صدر (ماشين)',sets:2,reps:'6-12',rpe:9,rest:'3 د'},
-      ],
-      cardio:{duration:20,incline:10,speed:6}
-    },
-    {
-      id:'g2', label:'يوم 2', sub:'ضهر+باي+كتف خلفي',
-      exercises: [
-        {name:'Wide Grip Lat Pulldown',nameAr:'سحب عالي (واسع)',sets:3,reps:'6-12',rpe:9,rest:'3 د'},
-        {name:'T-Bar Row Wide Grip',nameAr:'تي بار رو (واسع)',sets:2,reps:'6-12',rpe:9,rest:'3 د'},
-        {name:'Seated Cable Single Row',nameAr:'سحب أرضي (إيد واحدة)',sets:2,reps:'6-12',rpe:9,rest:'3 د'},
-        {name:'Incline Dumbbell Curl',nameAr:'باي دمبل (بنش مايل)',sets:3,reps:'6-12',rpe:9,rest:'3 د'},
-        {name:'Machine Rear Delt Fly',nameAr:'كتف خلفي (ماشين)',sets:2,reps:'6-12',rpe:9,rest:'3 د'},
-      ],
-      cardio:{duration:20,incline:10,speed:6}
-    },
-    {
-      id:'g3', label:'يوم 3', sub:'رجل+بطن',
-      exercises: [
-        {name:'Leg Press',nameAr:'ليج بريس',sets:2,reps:'6-12',rpe:9,rest:'3 د'},
-        {name:'Leg Extension',nameAr:'ليج إكستنشن',sets:3,reps:'6-12',rpe:9,rest:'3 د'},
-        {name:'Seated Leg Curl',nameAr:'ليج كيرل (جالس)',sets:3,reps:'6-12',rpe:9,rest:'3 د'},
-        {name:'Machine Thigh Adductor',nameAr:'ضم الفخذ (ماشين)',sets:2,reps:'6-12',rpe:9,rest:'3 د'},
-        {name:'Calf Press Machine',nameAr:'سمانة (ماشين)',sets:3,reps:'6-12',rpe:9,rest:'3 د'},
-        {name:'Ab Crunch Machine',nameAr:'بطن (ماشين)',sets:3,reps:'6-12',rpe:9,rest:'3 د'},
-        {name:'Plate Hyperextension',nameAr:'هايبر (ضهر سفلي)',sets:4,reps:'12',rpe:9,rest:'3 د'},
-      ],
-      cardio:{duration:20,incline:10,speed:6}
-    },
-    {
-      id:'g4', label:'يوم 4', sub:'جسم كامل (علوي)',
-      exercises: [
-        {name:'Smith Machine Flat Bench Press',nameAr:'بنش بريس (سميث)',sets:2,reps:'6-12',rpe:9,rest:'3 د'},
-        {name:'T-Bar Row Wide Grip',nameAr:'تي بار رو (واسع)',sets:2,reps:'6-12',rpe:9,rest:'3 د'},
-        {name:'Chest Fly Machine',nameAr:'تفتيح صدر (ماشين)',sets:2,reps:'6-12',rpe:9,rest:'3 د'},
-        {name:'Machine Lateral Raise',nameAr:'رفرفة جانبي (ماشين)',sets:2,reps:'6-12',rpe:9,rest:'3 د'},
-        {name:'Cable Rope Tricep Push Down',nameAr:'ترايسبس كابل (حبل)',sets:2,reps:'6-12',rpe:9,rest:'3 د'},
-        {name:'Cable Bicep Curl',nameAr:'باي كابل',sets:2,reps:'6-12',rpe:9,rest:'3 د'},
-      ],
-      cardio:{duration:20,incline:10,speed:6}
-    }
-  ];
+// ===== EXPORT / IMPORT =====
+document.getElementById('exportBtn').addEventListener('click',function(){
+  var data=JSON.stringify({inbody:inbodyHistory,log:dailyLog},null,2);
+  var blob=new Blob([data],{type:'application/json'});
+  var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='cut-data.json';a.click();
+  toast('📤 تم التصدير');
+});
+document.getElementById('importBtn').addEventListener('click',function(){document.getElementById('importFile').click()});
+document.getElementById('importFile').addEventListener('change',function(e){
+  var file=e.target.files[0];if(!file) return;
+  var reader=new FileReader();
+  reader.onload=function(ev){
+    try{
+      var data=JSON.parse(ev.target.result);
+      if(data.inbody) inbodyHistory=data.inbody;
+      if(data.log) dailyLog=data.log;
+      refreshAll();renderDailyLog();
+      toast('✅ تم الاستيراد');
+    }catch(err){toast('❌ خطأ في الملف')}
+  };reader.readAsText(file);e.target.value='';
+});
 
-  function renderGymDays() {
-    const tabs = document.getElementById('gymDayTabs');
-    tabs.innerHTML = gymDays.map((d,i) =>
-      '<button class="wday-tab '+(i===0?'active':'')+'" data-gid="'+d.id+'"><span class="wt-name">'+d.label+'</span><span class="wt-label">'+d.sub.substring(0,10)+'</span></button>'
-    ).join('');
-    tabs.querySelectorAll('.wday-tab').forEach(btn => {
-      btn.addEventListener('click', () => {
-        tabs.querySelectorAll('.wday-tab').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        renderGymDay(btn.dataset.gid);
-      });
-    });
-    renderGymDay('g1');
-  }
+// ===== TABS =====
+document.querySelectorAll('.tab').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    document.querySelectorAll('.tab').forEach(function(b){b.classList.remove('active')});
+    document.querySelectorAll('.section').forEach(function(s){s.classList.remove('active')});
+    btn.classList.add('active');
+    document.getElementById('sec-'+btn.dataset.tab).classList.add('active');
+  });
+});
 
-  function renderGymDay(id) {
-    const el = document.getElementById('gymWorkoutContent');
-    const day = gymDays.find(d => d.id === id);
-    if (!day) return;
-    let html = '<div class="sec-title">'+day.sub+'</div>';
-    day.exercises.forEach((ex, i) => {
-      html += '<div class="ex-card"><div class="ex-num">'+(i+1)+'</div><div class="ex-name">'+ex.nameAr+'</div><div class="ex-stats"><div class="ex-stat"><div class="esl">مجاميع</div><div class="esv">'+ex.sets+'</div></div><div class="ex-stat"><div class="esl">عدات</div><div class="esv">'+ex.reps+'</div></div><div class="ex-stat"><div class="esl">RPE</div><div class="esv">'+ex.rpe+'</div></div><div class="ex-stat"><div class="esl">راحة</div><div class="esv">'+ex.rest+'</div></div></div><div style="font-size:10px;color:var(--text-3);margin-top:8px">'+ex.name+'</div></div>';
-    });
-    html += '<div class="ex-card"><div class="cardio-badge">🏃 كارديو بعد كل يوم</div><div class="ex-name">مشي سريع — تريدميل</div><div class="ex-stats" style="grid-template-columns:repeat(3,1fr)"><div class="ex-stat"><div class="esl">المدة</div><div class="esv">'+day.cardio.duration+' د</div></div><div class="ex-stat"><div class="esl">الانحدار</div><div class="esv">'+day.cardio.incline+'</div></div><div class="ex-stat"><div class="esl">السرعة</div><div class="esv">'+day.cardio.speed+'</div></div></div></div>';
-    el.innerHTML = html;
-  }
+// Phase tabs
+document.querySelectorAll('#phaseTabs .ftab').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    document.querySelectorAll('#phaseTabs .ftab').forEach(function(b){b.classList.remove('active')});
+    btn.classList.add('active');
+    document.getElementById('phase-home').style.display=btn.dataset.phase==='home'?'block':'none';
+    document.getElementById('phase-gym').style.display=btn.dataset.phase==='gym'?'block':'none';
+  });
+});
 
-  renderGymDays();
+// Theme
+var theme='dark';
+document.getElementById('themeToggle').addEventListener('click',function(){
+  theme=theme==='dark'?'light':'dark';
+  document.documentElement.setAttribute('data-theme',theme);
+  this.textContent=theme==='dark'?'☀️':'🌙';
+});
+
+function toast(msg){var old=document.querySelector('.toast');if(old)old.remove();var t=document.createElement('div');t.className='toast';t.textContent=msg;document.body.appendChild(t);setTimeout(function(){if(t.parentNode)t.remove()},2500)}
+
+// ===== INIT =====
+renderCatTabs();
+renderFoodGrid('','all');
+renderDailyLog();
+renderWorkout(homeDays,'homeDayTabs','homeWorkoutContent','home');
+renderWorkout(gymDays,'gymDayTabs','gymWorkoutContent','gym');
+refreshAll();
 
 })();
 </script>
+
 </body>
 </html>
